@@ -1,6 +1,6 @@
-# Intro to Backennd
+# Intro to Backend
 
-Source: https://www.udacity.com/course/intro*to*backend**ud171
+Source: https://www.udacity.com/course/intro-to-backend--ud171
 
 ## Table of Content
 
