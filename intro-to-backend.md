@@ -63,6 +63,16 @@ Source: https://www.udacity.com/course/intro-to-backend--ud171
 
 * Goals: How do web sites produce neatly formatted output for users to see?
 
+* a template library is a library to build complicated strings
+* use Template Inheritance
+* separate different types of code
+* make more readable code
+* more secure websites
+* Python: jinja2, Ruby: erb, JS: EJS, Pug
+* always automatically escape variables
+* minimize code in templates
+* minimize html in code
+
 ---
 
 ## Databases
