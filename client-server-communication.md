@@ -13,11 +13,23 @@ Source: https://www.udacity.com/course/client-server-communication--ud897
 ---
 
 ## HTTP’s Request Response Cycle
+
 Goal:
 
 * Learn about HTTP's request and response cycle.
 * What makes up an HTTP requests and response?
 * What originates an HTTP request and how do they relate to one another?
+
+- CRUD: Create => `POST`, Read => `GET`, Update => `PUT`, Delete => `DELETE`
+- minimum request: what: `GET /index.html HTTP/1.1` and where: `Host: www.example.com`
+- minimum response: `HTTP/1.1 200 OK` and `Content-Length: 16824` and the requested document
+- AJAX(old: XHR => new: Fetch) to reload data when needed with JavaScript
+
+
+
+
+
+
 
 ## HTTP/1
 
@@ -30,8 +42,7 @@ Goal:
 
 Goal:
 
-* How does HTTPS differ from HTTP?
-  T- LS, cryptography, and Certificate Authorities.
+* How does HTTPS differ from HTTP? TLS, cryptography, and Certificate Authorities.
 * HTTP Mixed Content issues.
 
 ## HTTP/2
