@@ -14,46 +14,74 @@ Source: https://www.udacity.com/course/client-server-communication--ud897
 
 ## HTTP’s Request Response Cycle
 
-Goal:
+* CRUD: Create => `POST`, Read => `GET`, Update => `PUT`, Delete => `DELETE`
+* minimum request: what: `GET /index.html HTTP/1.1` and where: `Host: www.example.com`
+* minimum response: `HTTP/1.1 200 OK` and `Content-Length: 16824` and the requested document
+* AJAX(old: XHR => new: Fetch) to reload data when needed with JavaScript
 
-* Learn about HTTP's request and response cycle.
-* What makes up an HTTP requests and response?
-* What originates an HTTP request and how do they relate to one another?
-
-- CRUD: Create => `POST`, Read => `GET`, Update => `PUT`, Delete => `DELETE`
-- minimum request: what: `GET /index.html HTTP/1.1` and where: `Host: www.example.com`
-- minimum response: `HTTP/1.1 200 OK` and `Content-Length: 16824` and the requested document
-- AJAX(old: XHR => new: Fetch) to reload data when needed with JavaScript
-
-
-
-
-
-
+---
 
 ## HTTP/1
 
-Goal:
+Example of Usage:
 
-* Find out how HTTP/1 is used in practice.
-* Map the requests and response types from lesson 1 into HTTP verbs and response codes & headers.
+```
+nc google.com 80
+GET / HTTP/1.1
+```
+
+* additional Methods to CRUD: `HEAD` and `OPTIONS`
+* common Response Headers: `Content-Length`, `Content-Type`, `Last-Modified`, `Cache-Control`
+* REST work very well with HTTP: `REpresentational State Transfer`
+* Network Architecture, different Layers: Ethernet => IP (talk to other machines) => TCP(have multiple streams of data between these machines) => HTTP
+* Problem: Head of Line Blocking
+* Every time TCP Handshake for a connection => `Connection: keep-alive`
+* _Bundler for JavaScript and Images is very important for Performance_
+
+---
 
 ## HTTPS
 
-Goal:
+* uses TLS for Encryption
+* uses Authentication (againts Man in the Middle Attack)
+* _always use HTTPS_
+* TLS uses Chain of Trust (e.g. through Certificate by Let's Encrypt)
+* TLS uses Encryption and Hashing
+* Encryption through Public-Private-Key Method
+* Hashing through SHA256 or SHA512
+* Certificate Authority Signatures: Hash of Document gets encrypted
 
-* How does HTTPS differ from HTTP? TLS, cryptography, and Certificate Authorities.
-* HTTP Mixed Content issues.
+* TLS Handshake Step by Step:
+  1. Server sends you a Certificate including a Public Key, Domain and a CAS
+  1. Client checks if Domain and CAS are correct and valid
+  1. Client generates random key for this connection and encrypts it with the Servers Public Key
+* check: badssl.com
+
+---
 
 ## HTTP/2
 
-Goal:
+* Problems of HTTP/1:
 
-* Learn how HTTP/2 improves on and extends HTTP/1.
-* Look at optimizations for HTTP/1 that are now anti-patterns in HTTP/2.
+  * Head of Line Blocking: one request is blocking all other requests.
+    We can handle 6 connections in parallel.
+    With 100 requests, we need 17 requests per connection.
+    A roundtrip of request and response needs ~30ms, so the overall loading time is 0,5s.
+  * Uncompressed Header: 100kb per 100 requests
+  * Security
+
+* Improvements from HTTP/2 to HTTP/1:
+  * Multiplexing for HOL: only one connection with a Stream and Frames
+  * Header Compressing with HPACK
+* Optimizations for HTTP/1 that are now anti-patterns in HTTP/2:
+  * No Concatenation and Spriting needed, because it makes Caching inefficient
+  * Minifying is very good
+  * Use CDN (https)
+
+---
 
 ## Security
 
-Goal:
-
-* Look at and resolve common security problems like CORS, CSRF, XSS, and more!
+* common security problems like CORS, CSRF, XSS
+* same origin policy
+* always validate user input server-side!
