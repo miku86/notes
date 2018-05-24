@@ -6,18 +6,13 @@
 
 ## Chapter 1 - Into Programming
 
-*Up & Going* is an introduction to several basic concepts of programming
-and how to approach and understand the rest of the titles in this series.
+*Up & Going* is an introduction to several basic concepts of programming.
 This book will briefly explore what you need to get *up and going*.
-
-This book starts off explaining the basic principles of programming at a very high level.
 
 Chapter 1 is a quick overview of the things you'll want to learn more about
 and practice to get *into programming*.
-
-Chapter 2 will help guide you to a familiarity with JavaScript's flavor of programming.
 Chapter 2 introduces what JavaScript is about, but again, it's not a comprehensive guide
--- that's what the rest of the *YDKJS* books are for!
+- that's what the rest of the *YDKJS* books are for!
 
 ## Try It Yourself
 
@@ -36,14 +31,15 @@ JavaScript has built-in types for each of these so called *primitive* values:
 * When you need to print a value on the screen, you need a `string`.
 * When you need to make a decision in your program, you need a `boolean`.
 
-Values that are included directly in the source code are called *literals*.  
-`string` literals are surrounded by double quotes `"..."`.  
+Values that are included directly in the source code are called *literals*.
+`string` literals are surrounded by double quotes `"..."`.
 `number` and `boolean` literals are just presented as is (i.e., `42`, `true`, etc.).
 
 Beyond, it's common for programming languages to provide *arrays*, *objects*, *functions*, and more.
 
 ### Converting Between Types
-If you have a `number` but need to print it on the screen, you need to convert the value to a `string`, this conversion is called "coercion.".  
+If you have a `number` but need to print it on the screen, you need to convert the value to a `string`, this conversion is called "coercion.".
+
 If someone enters a series of numeric characters into a form on an ecommerce page, that's a `string`, but if you need to then use that value to do math operations, you need to *coerce* it to a `number`.
 
 ```js
@@ -59,66 +55,123 @@ Using `Number(..)` is an *explicit* coercion from any other type to the `number`
 What happens when you try to compare two values that are not already of the same type,
 which would require *implicit* coercion.
 
-When comparing the string `"99.99"` to the number `99.99`, most people would agree they are equivalent.  
-It's the same value in two different representations, two different *types*.  
+When comparing the string `"99.99"` to the number `99.99`, most people would agree they are equivalent.
+It's the same value in two different representations, two different *types*.
 JavaScript will sometimes kick in and *implicitly* coerce values to the matching types.
 
-So if you use the `==` loose equals operator to make the comparison `"99.99" == 99.99`,  
-JavaScript will convert the left-hand side `"99.99"` to its `number` equivalent `99.99`.  
+So if you use the `==` loose equals operator to make the comparison `"99.99" == 99.99`,
+JavaScript will convert the left-hand side `"99.99"` to its `number` equivalent `99.99`.
 The comparison then becomes `99.99 == 99.99`, which is of course `true`.
 
 Implicit coercion is a mechanism that *should be learned* by anyone.
 
 ## Code Comments
-One of the most important lessons you can learn about writing code is that it's not just for the computer.  
+One of the most important lessons you can learn about writing code is that it's not just for the computer.
+
 You should strive not just to write programs that work correctly, but programs that make sense when examined.
 
-But another important part is code comments.
-These are bits of text in your program that are inserted purely to explain things to a human.
+But another important part is code comments, text in your program purely to explain things to a human.
 
 But some observations and guidelines are quite useful:
 * Code without comments is suboptimal.
 * Too many comments is probably a sign of poorly written code.
 * Comments should explain *why*, not *what*. They can optionally explain *how* if that's particularly confusing.
 
-You will definitely want to begin your learning of programming by starting off with the habit of commenting code.
-
 ## Variables
-Most useful programs need to track a value as it changes over the course of the program.  
+Most useful programs need to track a value as it changes over the course of the program.
 The easiest way is to assign a value to a symbolic container, called a *variable*.
 
-JavaScript uses *dynamic typing*, meaning variables can hold values of any *type* without any *type* enforcement.  
-Notice there's no other *type* information in the declaration.
+JavaScript uses *dynamic typing*, meaning variables can hold values of any *type* without any *type* enforcement.
+
+`var name = "Peter"`
 
 A variable holds a running value that changes over the course of the program,
 illustrating the primary purpose of variables: managing program *state*.
 
-Another common usage of variables is for centralizing value setting.  
-This is more typically called *constants*, when you declare a variable with a value  
-and intend for that value to *not change* throughout the program.  
-You declare these *constants*, often at the top of a program,  
+Another common usage of variables is for centralizing value setting.
+This is more typically called *constants*, when you declare a variable with a value
+and intend for that value to *not change* throughout the program.
+
+You declare these *constants*, often at the top of a program,
 so that it's convenient for you to have one place to go to alter a value if you need to.
 
-Constants are useful just like variables with unchanged values,
-except that constants also prevent accidentally changing value somewhere else after the initial setting.
+## Conditionals
+There are quite a few ways we can express conditionals (aka decisions) in our programs.
 
-By the way, that kind of "protection" against mistakes is similar to the static-typing type enforcement,
-so you can see why static types in other languages can be attractive!
+The most common one is the if statement. Essentially, you're saying, "If this condition is true, do the following...".
+
+```js
+var bank_balance = 302;
+var amount = 99;
+
+if (amount < bank_balance) {
+	console.log( "I want to buy this phone!" );
+}
+```
+
+The if statement requires an expression in between the parentheses `( )` that can be treated as either true or false. In this program, we provided the expression `amount < bank_balance`, which indeed will either evaluate to true or false depending on the amount in the bank_balance variable.
+
+## Loops
+Repeating a set of actions until a certain condition fails -- in other words, repeating only while the condition holds -- is the job of programming loops; loops can take different forms, but they all satisfy this basic behavior.
+
+A loop includes the test condition as well as a block (typically as { .. }). Each time the loop block executes, that's called an iteration.
+
+```js
+while (numOfCustomers > 0) {
+	console.log( "How may I help you?" );
+	// help the customer...
+	numOfCustomers = numOfCustomers - 1;
+}
+```
+
+## Functions
+Similarly, your program will almost certainly want to break up the code's tasks into reusable pieces, instead of repeatedly repeating yourself repetitiously. The way to do this is to define a function.
+
+A function is generally a named section of code that can be "called" by name, and the code inside it will be run each time.
+
+```js
+
+function printAmount() {
+	console.log( amount.toFixed( 2 ) );
+}
+
+var amount = 10;
+printAmount(); // "10.00"
+amount = amount * 2;
+printAmount(); // "20.00"
+```
+
+## Scope
+In JavaScript, each function gets its own scope. Scope is basically a collection of variables as well as the rules for how those variables are accessed by name. Only code inside that function can access that function's scoped variables.
+
+A variable name has to be unique within the same scope -- there can't be two different a variables sitting right next to each other. But the same variable name a could appear in different scopes.
+
+```js
+function one() {
+	// this `a` only belongs to the `one()` function
+	var a = 1;
+	console.log( a );
+}
+
+function two() {
+	// this `a` only belongs to the `two()` function
+	var a = 2;
+	console.log( a );
+}
+
+one();		// 1
+two();		// 2
+```
 
 ## Practice
-There is absolutely no substitute for practice in learning programming.  
+There is absolutely no substitute for practice in learning programming.
 No amount of articulate writing on my part is alone going to make you a programmer.
-
-With that in mind, let's try practicing some of the concepts we learned here in this chapter.
-I'll give the "requirements," and you try it first.
-Then consult the code listing below to see how I approached it.
 
 * Write a program to calculate the total price of your phone purchase. You will keep purchasing phones until you run out of money in your bank account. You'll also buy accessories for each phone as long as your purchase amount is below your mental spending threshold.
 * After you've calculated your purchase amount, add in the tax, then print out the calculated purchase amount, properly formatted.
 * Finally, check the amount against your bank account balance to see if you can afford it or not.
 * You should set up some constants for the "tax rate," "phone price," "accessory price," and "spending threshold," as well as a variable for your "bank account balance.""
 * You should define functions for calculating the tax and for formatting the price with a "$" and rounding to two decimal places.
-* **Bonus Challenge:** Try to incorporate input into this program, perhaps with the `prompt(..)` covered in "Input" earlier. You may prompt the user for their bank account balance, for example. Have fun and be creative!
 
 Here's my JavaScript solution for this exercise:
 
@@ -171,13 +224,13 @@ if (amount > bank_balance) {
 
 
 ## Review
-There are just a few basic concepts you need to wrap your head around.  
+There are just a few basic concepts you need to wrap your head around.
 These act like building blocks.
 To build a tall tower, you start first by putting block on top of block on top of block.
 
 Here are some of the essential programming building blocks:
 * You need *operators* to perform actions on values.
-* You need values and *types* to perform different kinds of actions like math on `number`s or output with `string`s.
+* You need *values and *types* to perform different kinds of actions like math on `number`s or output with `string`s.
 * You need *variables* to store data (aka *state*) during your program's execution.
 * You need *conditionals* like `if` statements to make decisions.
 * You need *loops* to repeat tasks until a condition stops being true.
@@ -285,7 +338,7 @@ b.toFixed(4);			// "3.1416"
 
 The "how" behind being able to call `a.toUpperCase()` is more complicated than just that method existing on the value.
 
-Briefly, there is a `String` (capital `S`) object wrapper form, typically called a "native," that pairs with the primitive `string` type;  
+Briefly, there is a `String` (capital `S`) object wrapper form, typically called a "native," that pairs with the primitive `string` type;
 it's this object wrapper that defines the `toUpperCase()` method on its prototype.
 
 When you use a primitive value like `"hello world"` as an `object` by referencing a property or method (e.g., `a.toUpperCase()` in the previous snippet), JS automatically "boxes" the value to its object wrapper counterpart (hidden under the covers).
@@ -331,9 +384,9 @@ It's important to remember that a non-`boolean` value only follows this "truthy"
 
 
 #### Equality
-`==` checks for value equality and `===` checks for both value and type equality.  
-`==` checks for value equality with coercion allowed,  
-`===` checks for value equality without allowing coercion;  
+`==` checks for value equality and `===` checks for both value and type equality.
+`==` checks for value equality with coercion allowed,
+`===` checks for value equality without allowing coercion;
 `===` is often called "strict equality" for this reason.
 
 Consider the implicit coercion that's allowed by the `==` loose-equality comparison and not allowed with the `===` strict-equality:
@@ -388,9 +441,9 @@ a < b;		// true
 b < c;		// true
 ```
 
-If both values in the `<` comparison are `string`s (`b < c`),  
-the comparison is made alphabetically.  
-If one or both is not a `string` ()`a < b`),  
+If both values in the `<` comparison are `string`s (`b < c`),
+the comparison is made alphabetically.
+If one or both is not a `string` ()`a < b`),
 then both values are coerced to be `number`s.
 
 The biggest gotcha you may run into here with comparisons between potentially different value types -- remember, there are no "strict inequality" forms to use -- is when one of the values cannot be made into a valid number, such as:
@@ -404,7 +457,7 @@ a > b;		// false
 a == b;		// false
 ```
 
-The `b` value is being coerced to the "invalid number value" `NaN` in the `<` and `>` comparisons,  
+The `b` value is being coerced to the "invalid number value" `NaN` in the `<` and `>` comparisons,
 and the specification says that `NaN` is neither greater-than nor less-than any other value.
 
 The `==` comparison fails for a different reason.
@@ -470,7 +523,7 @@ function foo() {
 foo();
 ```
 
-Notice that `c` is not available inside of `bar()`, because it's declared only inside the inner `baz()` scope,  
+Notice that `c` is not available inside of `bar()`, because it's declared only inside the inner `baz()` scope,
 and that `b` is not available to `foo()` for the same reason.
 
 If you try to access a variable's value in a scope where it's not available, you'll get a `ReferenceError` thrown. If you try to set a variable that hasn't been declared, you'll either end up creating a variable in the top-level global scope (bad!) or getting an error, depending on "strict mode" (see "Strict Mode"). Always formally declare your variables.
@@ -677,12 +730,12 @@ More on how this code works:
 3. When we call `plusOne(3)`, it adds `3` (its inner `y`) to the `1` (remembered by `x`), and we get `4` as the result.
 4. When we call `plusTen(13)`, it adds `13` (its inner `y`) to the `10` (remembered by `x`), and we get `23` as the result.
 
-**It's one of the most powerful and useful techniques in all of programming.  
+**It's one of the most powerful and useful techniques in all of programming.
 It's definitely worth the effort to let your brain simmer on closures for a bit.**
 
 
 #### Modules
-The most common usage of closure in JavaScript is the module pattern.  
+The most common usage of closure in JavaScript is the module pattern.
 Modules let you define private implementation details (variables, functions) that are hidden from the outside world.
 
 ```js
@@ -725,7 +778,7 @@ That's why we can call `fred.login(..)` and it can still access `username` and `
 
 ## `this` Identifier
 
-If a function has a `this` reference inside it, that `this` reference usually points to an `object`.   
+If a function has a `this` reference inside it, that `this` reference usually points to an `object`.
 But which `object` it points to depends on how the function was called.
 
 It's important to realize that `this` *does not* refer to the function itself, as is the most common misconception.
@@ -782,7 +835,7 @@ It may help to visualize the `foo` and `bar` objects and their relationship:
 
 ![Prototyping](https://raw.githubusercontent.com/getify/You-Dont-Know-JS/master/up%20%26%20going/fig6.png)
 
-The `a` property doesn't actually exist on the `bar` object, but because `bar` is prototype-linked to `foo`,   
+The `a` property doesn't actually exist on the `bar` object, but because `bar` is prototype-linked to `foo`,
 JavaScript automatically falls back to looking for `a` on the `foo` object, where it's found.
 
 ## Old & New
@@ -801,7 +854,7 @@ if (!Number.isNaN) {
 }
 ```
 
-The `if` statement guards against applying the polyfill definition in ES6 browsers where it will already exist.  
+The `if` statement guards against applying the polyfill definition in ES6 browsers where it will already exist.
 If it's not already present, we define `Number.isNaN(..)`.
 
 **Note:** The `NaN` value is the only one that would make `x !== x` be `true`.
@@ -811,7 +864,7 @@ Not all new features are fully polyfillable. You should be really, really carefu
 Or better yet, use an already vetted set of polyfills that you can trust, such as those provided by ES5-Shim (https://github.com/es-shims/es5-shim) and ES6-Shim (https://github.com/es-shims/es6-shim).
 
 ### Transpiling
-The better option is to use a tool that converts your newer code into older code equivalents.  
+The better option is to use a tool that converts your newer code into older code equivalents.
 This process is commonly called "transpiling," a term for transforming + compiling.
 
 Essentially, your source code is authored in the new syntax form, but what you deploy to the browser is the transpiled code in old syntax form. You typically insert the transpiler into your build process, similar to your code linter or your minifier.
@@ -832,7 +885,7 @@ foo();		// 2
 foo( 42 );	// 42
 ```
 
-Simple, right? Helpful, too! But it's new syntax that's invalid in pre-ES6 engines.   
+Simple, right? Helpful, too! But it's new syntax that's invalid in pre-ES6 engines.
 So what will a transpiler do with that code to make it run in older environments?
 
 ```js
@@ -842,7 +895,7 @@ function foo() {
 }
 ```
 
-It checks if the `arguments[0]` value is `void 0` (aka `undefined`), and if so provides the `2` default value;   
+It checks if the `arguments[0]` value is `void 0` (aka `undefined`), and if so provides the `2` default value;
 otherwise, it assigns whatever was passed.
 
 The last important detail to emphasize about transpilers is that they should now be thought of as a standard part of the JS development ecosystem and process.
@@ -864,7 +917,7 @@ The `document` variable exists as a global variable and is not provided by the J
 
 Moreover, the `getElementById(..)` method on `document` looks like a normal JS function, but it's just a thinly exposed interface to a built-in method provided by the DOM from your browser.
 
- `alert(..)` is provided to your JS program by the browser, not by the JS engine itself.   
+ `alert(..)` is provided to your JS program by the browser, not by the JS engine itself.
  The call you make sends the message to the browser internals and it handles drawing and displaying the message box.
 
 The same goes with `console.log(..)`; your browser provides such mechanisms and hooks them up to the developer tools.
