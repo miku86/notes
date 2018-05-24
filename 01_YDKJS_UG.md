@@ -245,8 +245,6 @@ The best way to learn how to write code is to write code.
 ---
 
 ## Chapter 2 - Into JavaScript
-In this chapter, we want to focus specifically on things you need to know about JavaScript to get up and going as a JS developer.
-
 You can think of this chapter as an overview of the topics covered in detail throughout the rest of this series.
 
 ## Values & Types
@@ -261,8 +259,15 @@ The following built-in types are available:
 
 JavaScript provides a `typeof` operator that can examine a value and tell you what type it is:
 
+```s
+var a = "hello world";
+typeof a;				// "string"
+```
+
 ### Objects {...}
-The `object` type refers to a compound value where you can set properties (named locations) that each hold their own values of any type. This is perhaps one of the most useful value types in all of JavaScript.
+The `object` type refers to a compound value where you can set properties (named locations) that each hold their own values of any type.
+
+This is perhaps one of the most useful value types in all of JavaScript.
 
 ```js
 var obj = {
@@ -278,7 +283,7 @@ obj["b"];	// 42
 ```
 
 #### Arrays [...]
-An array is an `object` that holds values (of any type) not particularly in named properties/keys, but rather in numerically indexed positions. For example:
+An array is an `object` that holds values not in named properties/keys, but rather in numerically indexed positions. For example:
 
 ```js
 var arr = [
@@ -292,8 +297,6 @@ arr.length;		// 2
 
 typeof arr;		// "object"
 ```
-
-It may be helpful to think of `arr` visually:
 
 Because arrays are special objects, they can also have properties,
 including the automatically updated `length` property.
@@ -312,14 +315,12 @@ function foo() {
 	return 42;
 }
 
-foo.bar = "hello world";
-
 typeof foo;			// "function"
 typeof foo();		// "number"
-typeof foo.bar;		// "string"
+foo(); // 42
 ```
 
-Again, functions are a subtype of `objects` -- `typeof` returns `"function"`, which implies that a `function` is a main type -- and can thus have properties, but you typically will only use function object properties (like `foo.bar`) in limited cases.
+Again, functions are a subtype of `objects` -- `typeof` returns `"function"`.
 
 
 ### Built-In Type Methods
@@ -341,9 +342,7 @@ The "how" behind being able to call `a.toUpperCase()` is more complicated than j
 Briefly, there is a `String` (capital `S`) object wrapper form, typically called a "native," that pairs with the primitive `string` type;
 it's this object wrapper that defines the `toUpperCase()` method on its prototype.
 
-When you use a primitive value like `"hello world"` as an `object` by referencing a property or method (e.g., `a.toUpperCase()` in the previous snippet), JS automatically "boxes" the value to its object wrapper counterpart (hidden under the covers).
-
-For the most part, you don't need to worry about or directly use these object wrapper forms of the values -- prefer the primitive value forms in practically all cases and JavaScript will take care of the rest for you.
+When you use a primitive value like `"hello world"` as an `object` by referencing a property or method (e.g., `a.toUpperCase()`), JS automatically "boxes" the value to its object wrapper counterpart (hidden under the covers).
 
 ### Comparing Values
 There are two main types of value comparison that you will need to make in your JS programs: *equality* and *inequality*. The result of any comparison is a strictly `boolean` value (`true` or `false`), regardless of what value types are compared.
@@ -443,7 +442,7 @@ b < c;		// true
 
 If both values in the `<` comparison are `string`s (`b < c`),
 the comparison is made alphabetically.
-If one or both is not a `string` ()`a < b`),
+If one or both is not a `string` (`a < b`),
 then both values are coerced to be `number`s.
 
 The biggest gotcha you may run into here with comparisons between potentially different value types -- remember, there are no "strict inequality" forms to use -- is when one of the values cannot be made into a valid number, such as:
@@ -479,25 +478,19 @@ Consider:
 ```js
 var a = 2;
 
-foo();					// works because `foo()`
-						// declaration is "hoisted"
+foo(); // works because `foo()` declaration is "hoisted"
 
 function foo() {
 	a = 3;
-
 	console.log( a );	// 3
-
-	var a;				// declaration is "hoisted"
-						// to the top of `foo()`
+	var a; // declaration is "hoisted" to the top of `foo()`
 }
 
 console.log( a );	// 2
 ```
 
-**Warning:** It's not common or a good idea to rely on variable *hoisting* to use a variable earlier in its scope than its `var` declaration appears; it can be quite confusing. It's much more common and accepted to use *hoisted* function declarations, as we do with the `foo()` call appearing before its formal declaration.
-
 #### Nested Scopes
-When you declare a variable, it is available anywhere in that scope, as well as any lower/inner scopes. For example:
+When you declare a variable, it is available anywhere in that scope, as well as any lower/inner scopes.
 
 ```js
 function foo() {
@@ -523,14 +516,13 @@ function foo() {
 foo();
 ```
 
-Notice that `c` is not available inside of `bar()`, because it's declared only inside the inner `baz()` scope,
-and that `b` is not available to `foo()` for the same reason.
+`c` is not available inside of `bar()`, because it's declared only inside the inner `baz()` scope, and `b` is not available to `foo()` for the same reason.
 
 If you try to access a variable's value in a scope where it's not available, you'll get a `ReferenceError` thrown. If you try to set a variable that hasn't been declared, you'll either end up creating a variable in the top-level global scope (bad!) or getting an error, depending on "strict mode" (see "Strict Mode"). Always formally declare your variables.
 
 
 #### Let
-In addition to creating declarations for variables at the function level, ES6 *lets* you declare variables to belong to individual blocks (pairs of `{ .. }`), using the `let` keyword. Besides some nuanced details, the scoping rules will behave roughly the same as we just saw with functions:
+In addition to creating declarations for variables at the function level, ES6 lets you declare variables to belong to individual blocks (pairs of `{ .. }`), using the `let` keyword. Besides some nuanced details, the scoping rules will behave roughly the same as we just saw with functions:
 
 ```js
 function foo() {
@@ -557,15 +549,13 @@ Because of using `let` instead of `var`, `b` will belong only to the `if` statem
 
 ## Conditionals
 Another form of conditional in JavaScript is the "conditional operator," often called the "ternary operator."
-It's like a more concise form of a single `if..else` statement, such as:
+It's like a more concise form of a single `if..else` statement.
 
 ```js
 var a = 42;
-
 var b = (a > 41) ? "hello" : "world";
 
 // similar to:
-
 // if (a > 41) {
 //    b = "hello";
 // }
@@ -579,44 +569,14 @@ ES5 added a "strict mode" to the language, which tightens the rules for certain 
 
 **Strict mode is a big win for code, and you should use it for all your programs.**
 
-You can opt in to strict mode for an individual function, or an entire file, depending on where you put the strict mode pragma:
+If you turn on strict mode in your code, and you get errors, or code starts behaving buggy, your temptation might be to avoid strict mode. But that instinct would be a bad idea to indulge.
 
-```js
-function foo() {
-	"use strict";
-
-	// this code is strict mode
-
-	function bar() {
-		// this code is strict mode
-	}
-}
-
-// this code is not strict mode
-```
-
-Compare that to:
-
-```js
-"use strict";
-
-function foo() {
-	// this code is strict mode
-
-	function bar() {
-		// this code is strict mode
-	}
-}
-
-// this code is strict mode
-```
-
-If you turn on strict mode in your code, and you get errors, or code starts behaving buggy, your temptation might be to avoid strict mode. But that instinct would be a bad idea to indulge. If strict mode causes issues in your program, almost certainly it's a sign that you have things in your program you should fix.
+If strict mode causes issues in your program, almost certainly it's a sign that you have things in your program you should fix.
 
 Not only will strict mode keep your code to a safer path, and not only will it make your code more optimizable, but it also represents the future direction of the language.
 
 ## Functions As Values
-So far, we've discussed functions as the primary mechanism of *scope* in JavaScript. You recall typical `function` declaration syntax as follows:
+So far, we've discussed functions as the primary mechanism of *scope* in JavaScript.
 
 ```js
 function foo() {
@@ -633,13 +593,8 @@ As such, a function value should be thought of as an expression, much like any o
 Consider:
 
 ```js
-var foo = function() {
-	// ..
-};
-
-var x = function bar(){
-	// ..
-};
+var foo = function() {..};
+var x = function bar() {..};
 ```
 
 The first function expression assigned to the `foo` variable is called *anonymous* because it has no `name`.
@@ -657,8 +612,7 @@ There's another way to execute a function expression, which is typically referre
 ```js
 (function IIFE(){
 	console.log( "Hello!" );
-})();
-// "Hello!"
+})(); // "Hello!"
 ```
 
 The outer `( .. )` that surrounds the `(function IIFE(){ .. })` function expression is just a nuance of JS grammar needed to prevent it from being treated as a normal function declaration.
@@ -667,12 +621,10 @@ The final `()` on the end of the expression is what actually executes the functi
 
 ```js
 function foo() { .. }
-// `foo` function reference expression,
-// then `()` executes it
+// `foo` function reference expression, then `()` executes it
 foo();
 
-// `IIFE` function expression,
-// then `()` executes it
+// `IIFE` function expression, then `()` executes it
 (function IIFE(){ .. })();
 ```
 
@@ -833,8 +785,6 @@ bar.a;		// 42 <-- delegated to `foo`
 
 It may help to visualize the `foo` and `bar` objects and their relationship:
 
-![Prototyping](https://raw.githubusercontent.com/getify/You-Dont-Know-JS/master/up%20%26%20going/fig6.png)
-
 The `a` property doesn't actually exist on the `bar` object, but because `bar` is prototype-linked to `foo`,
 JavaScript automatically falls back to looking for `a` on the `foo` object, where it's found.
 
@@ -860,8 +810,6 @@ If it's not already present, we define `Number.isNaN(..)`.
 **Note:** The `NaN` value is the only one that would make `x !== x` be `true`.
 
 Not all new features are fully polyfillable. You should be really, really careful in implementing a polyfill yourself, to make sure you are adhering to the specification as strictly as possible.
-
-Or better yet, use an already vetted set of polyfills that you can trust, such as those provided by ES5-Shim (https://github.com/es-shims/es5-shim) and ES6-Shim (https://github.com/es-shims/es6-shim).
 
 ### Transpiling
 The better option is to use a tool that converts your newer code into older code equivalents.
