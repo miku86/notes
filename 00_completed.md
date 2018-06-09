@@ -2,4 +2,5 @@
 - [x] Book: [YDKJS: Scope & Closures](https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20&%20closures/README.md#you-dont-know-js-scope--closures) - 4hrs
 - [x] Course: [CS50](https://www.edx.org/course/introduction-computer-science-harvardx-cs50x) - 17hrs
 - [x] Course: [Learn to Code HTML & CSS](http://learn.shayhowe.com/html-css/) - 1hr
-- [x] Book: [YDKJS: Types & Grammar](https://github.com/getify/You-Dont-Know-JS/blob/master/types%20&%20grammar/README.md#you-dont-know-js-types--grammar)
+- [x] Book: [YDKJS: Types & Grammar](https://github.com/getify/You-Dont-Know-JS/blob/master/types%20&%20grammar/README.md#you-dont-know-js-types--grammar) - 5 hrs
+- [ ] Course - [Programming for the Web with JavaScript](https://www.edx.org/course/programming-web-javascript-pennx-sd4x)
