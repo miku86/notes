@@ -2,6 +2,11 @@
 - [x] Book: [YDKJS: Scope & Closures](https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20&%20closures/README.md#you-dont-know-js-scope--closures) - 4hrs
 - [x] Course: [CS50](https://www.edx.org/course/introduction-computer-science-harvardx-cs50x) - 17hrs
 - [x] Course: [Learn to Code HTML & CSS](http://learn.shayhowe.com/html-css/) - 1hr
-- [x] Book: [YDKJS: Types & Grammar](https://github.com/getify/You-Dont-Know-JS/blob/master/types%20&%20grammar/README.md#you-dont-know-js-types--grammar) - 5 hrs
-- [x] Course - [Programming for the Web with JavaScript](https://www.edx.org/course/programming-web-javascript-pennx-sd4x)
-- [ ] Book: [YDKJS: ES6 & Beyond](https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20&%20beyond/README.md#you-dont-know-js-es6--beyond)
+- [x] Book: [YDKJS: Types & Grammar](https://github.com/getify/You-Dont-Know-JS/blob/master/types%20&%20grammar/README.md#you-dont-know-js-types--grammar) - 5hrs
+- [x] Course - [Programming for the Web with JavaScript](https://www.edx.org/course/programming-web-javascript-pennx-sd4x) - 10hrs
+- [x] Book: [YDKJS: ES6 & Beyond](https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20&%20beyond/README.md#you-dont-know-js-es6--beyond) - 2hrs
+- [x] FCC Responsive Web Design Projects - 9hrs
+- [ ] FCC Javascript Algorithms And Data Structures Projects
+- [ ] Project: [100 Days of CSS](https://100dayscss.com/) - pick 1 of the 100 and implement it
+- [ ] Book: [DOM Enlightenment](http://domenlightenment.com/)
+
