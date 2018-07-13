@@ -406,6 +406,172 @@ In the example below, without the z-index property each box will be positioned p
 
 ## Responsive Web Design
 
+- it is hard to find someone who doesn’t own a mobile device connected to the Internet
+- with the growth in mobile Internet usage comes the question of how to build websites suitable for all users
+- the industry response to this question has become responsive web design, also known as RWD.
+
+### Responsive Overview
+
+- is the practice of building a website suitable to work on every device and every screen size, no matter how large or small, mobile or desktop
+- is focused around providing an intuitive and gratifying experience for everyone
+
+#### Responsive vs. Adaptive vs. Mobile
+
+- Responsive and adaptive web design are closely related, and often transposed as one in the same
+- responsive means to react quickly and positively to any change
+- adaptive means to be easily modified for a new purpose or situation
+- a combination of the two is ideal, providing the perfect formula for functional websites
+- mobile means to build a separate website commonly on a new domain solely for mobile users, it normally isn’t a great idea
+- mobile websites can be extremely light but they do come with the dependencies of a new code base and browser sniffing, all of which can become an obstacle for both developers and users
+
+- currently the most popular technique lies within RDW, favoring design that dynamically adapts to different browser and device viewports, changing layout and content along the way. This solution has the benefits of being all three, responsive, adaptive, and mobile
+- RWD is broken down into three main components: flexible layouts, media queries and flexible media
+
+### Flexible Layouts
+
+- flexible layouts is the practice of building the layout of a website with a flexible grid, capable of dynamically resizing to any width, built using relative length units, most commonly percentages or em units
+- do not advocate the use of fixed measurement units, such as pixels or inches
+- reason: the viewport height and width continually change from device to device
+- website layouts need to adapt to this change and fixed values have too many constraints
+- easy formula to help identify the proportions of a flexible layout using relative values: target ÷ parent = relative size
+- the formula is based around taking the target width of an element and dividing it by the width of it’s parent element, the result is the relative width of the target element
+
+#### Relative Viewport Lengths
+
+vw: Viewports width
+vh: Viewports height
+vmin: Minimum of the viewport’s height and width
+vmax: Maximum of the viewport’s height and width
+
+#### Flexible Grid
+
+- using the flexible grid formula we can take all of the fixed units of length and turn them into relative units
+- no matter how wide the parent container becomes, the section and aside margins and widths scale proportionally
+- taking the flexible layout concept and formula and reapplying it to all parts of a grid will create a completely dynamic website, scaling to every viewport size
+- for even more control within a flexible layout, you can also leverage the min-width, max-width, min-height, and max-height properties
+- at times the width of a browser viewport may be so small that even scaling the the layout proportionally will create columns that are too small to effectively display content
+- in this event, media queries can be used to help build a better experience
+
+### Media Queries
+
+- Media queries provide the ability to specify different styles for individual browser and device circumstances, the width of the viewport or device orientation
+
+#### Initializing Media Queries
+
+- couple different ways to use media queries: using the @media rule inside of an existing style sheet, importing a new style sheet using the @import rule, or by linking to a separate style sheet from within the HTML document
+- it is recommended to use the @media rule inside of an existing style sheet to avoid any additional HTTP requests
+
+#### Logical Operators in Media Queries
+
+- three logical operators available for use within media queries: `and`, `not`, `only`
+
+```
+<!-- The example below selects all media types between 800 and 1024 pixels wide -->
+@media all and (min-width: 800px) and (max-width: 1024px) {...}
+```
+
+```
+<!-- only screens in a portrait orientation that have a user agent capable of rending media queries -->
+@media only screen and (orientation: portrait) {...}
+```
+
+#### Media Features in Media Queries
+
+- Media features identify what attributes or properties will be targeted within the media query expression
+
+#### Height & Width Media Features
+
+- one of the most common media features revolves around determining a height or width
+- most commonly used features include `min-width` and `max-width`
+- may be any length unit, relative or absolute.
+- `@media all and (min-width: 320px) and (max-width: 780px) {...}`
+
+#### Orientation Media Feature
+
+- determines if a device is in the landscape or portrait orientation
+- landscape mode is triggered when the display is wider than taller
+- portrait mode is triggered when the display is taller than wider
+- `@media all and (orientation: landscape) {...}`
+
+#### Aspect Ratio Media Features
+
+- `aspect-ratio` and `device-aspect-ratio` specifies the width/height pixel ratio of the targeted rendering area or output device
+- min and max prefixes are available to use with the different aspect ratio features
+- consists of two positive integers separated by a forward slash
+- `@media all and (min-device-aspect-ratio: 16/9) {...}`
+
+#### Resolution Media Feature
+
+- specifies the resolution of the output device in pixel density
+- also accepts dots per pixel (1.3dppx), dots per centimeter (118dpcm), and other length based resolution values.
+- `@media print and (min-resolution: 300dpi) {...}`
+
+#### Identifying Breakpoints
+
+- when building a responsive website it should adjust to an array of different viewport sizes, regardless of the device
+- breakpoints should only be introduced when a website starts to break, look weird, or the experience is being hampered.
+- your instinct might be to write media query breakpoints around common viewport sizes as determined by different device resolutions, such as 480px, 768px, 1024px etc. This is a bad idea
+- new devices and resolutions are being released all of the time, trying to keep up with these changes could be an endless process
+
+### Mobile First
+
+- one popular technique with using media queries is called mobile first
+- it includes using styles targeted at smaller viewports as the default styles for a website, then use media queries to add styles as the viewport grows
+- the operating belief behind mobile first design is that a user on a mobile device shouldn’t have to load the styles for a desktop computer only to have them over written with mobile styles later, saving mobile data
+- the majority of Internet consumption will be done on a mobile device, plan for them accordingly and develop intrinsic mobile experiences
+
+```
+/* Default styles first then media queries */
+@media screen and (min-width: 400px)  {...}
+@media screen and (min-width: 600px)  {...}
+@media screen and (min-width: 1000px) {...}
+@media screen and (min-width: 1400px) {...}
+```
+
+### Viewport#viewport
+
+#### Viewport Height & Width
+
+- using the viewport meta tag with either the height or width values will define the height or width of the viewport respectively
+- it is recommended that you use the device defaults by applying the device-height and device-width values
+- `<meta name="viewport" content="width=device-width">`
+
+#### Viewport Scale
+
+- to control how a website is scaled on a mobile device, and how users can continue to scale a website, use the minimum-scale, maximum-scale, initial-scale, and user-scalable properties
+- the `initial-scale` of a website should be set to 1 as this defines the ratio between the device height, while in a portrait orientation, and the viewport size
+- `<meta name="viewport" content="initial-scale=1">`
+- the minimum-scale and maximum-scale values determine how small and how large a viewport may be scaled
+- these values should not be set to the same value as the initial-scale, this would disable any zooming
+
+#### Viewport Resolution
+
+- letting the browser decide how to scale a website based off any viewport scale values usually does the trick
+
+#### Combining Viewport Values
+
+- the viewport meta tag will accept individual values as well as multiple values, allowing multiple viewport properties to be set at once
+- one of the recommended viewport values is outlined below, using both the width and initial-scale properties.
+- `<meta name="viewport" content="width=device-width, initial-scale=1">`
+
+### Flexible Media#flexible-media
+
+- as viewports begin to change size media doesn’t always follow suit
+- images, videos, and other media types need to be scalable, changing their size as the size of the viewport changes
+- one quick way to make media scalable is by using the max-width property with a value of 100%, doing so ensures that as the viewport gets smaller any media will scale down according to its containers width
+
+```
+img, video, canvas {
+  max-width: 100%;
+}
+```
+
+#### Flexible Embedded Media
+
+- unfortunately the max-width property doesn’t work well for all instances of media, specifically around iframes and embedded media
+- when it comes to third party websites, such as YouTube, who use iframes for embedded media this is a huge disappointment
+- the embedded element needs to be absolutely positioned within a parent element with a width of 100% and a height of 0
+
 ---
 
 ## Preprocessors
