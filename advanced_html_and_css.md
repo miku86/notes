@@ -92,7 +92,7 @@ article.feat-post {...}
 .feat-post {...}
 ```
 
-### Reusable Code#reusable-code
+### Reusable Code
 
 - largest performance drawbacks: bloated file sizes and unnecessary browser rendering
 - quick way to cut down on file sizes is to reuse styles as much as possible
@@ -528,7 +528,7 @@ vmax: Maximum of the viewport’s height and width
 @media screen and (min-width: 1400px) {...}
 ```
 
-### Viewport#viewport
+### Viewport
 
 #### Viewport Height & Width
 
@@ -554,7 +554,7 @@ vmax: Maximum of the viewport’s height and width
 - one of the recommended viewport values is outlined below, using both the width and initial-scale properties.
 - `<meta name="viewport" content="width=device-width, initial-scale=1">`
 
-### Flexible Media#flexible-media
+### Flexible Media
 
 - as viewports begin to change size media doesn’t always follow suit
 - images, videos, and other media types need to be scalable, changing their size as the size of the viewport changes
@@ -575,6 +575,238 @@ img, video, canvas {
 ---
 
 ## Preprocessors
+
+- writing HTML and CSS may feel a bit taxing, requiring a lot of the same tasks to be completed over and over again
+- these different tasks, while commonly small, do add up to quite a bit of inefficiency
+- a preprocessor is a program that takes one type of data and converts it to another type of data
+- Haml and Sass found many additional ways to empower HTML and CSS, not only by removing the inefficiencies but also in creating ways to make building websites easier and more logical
+
+### Haml (HTML abstraction markup language)
+
+- is a markup language with the single goal of providing the ability to write beautiful markup
+- code written in Haml is later processed to HTML
+- Haml promotes DRY and well structured markup, providing a pleasing experience for anyone having to write or read it
+
+#### Installation
+
+- requires Ruby to be compiled to HTML
+- use gem to install haml
+- files written in the Haml markup should be saved with the file extension of .haml
+
+#### Doctype
+
+- the default doctype in Haml is the HTML 1.0 Transitional document type so in order to make this the HTML5 doctype the number five has to be passed in after the exclamation points, `!!! 5`
+
+#### Declaring Elements
+
+- within Haml elements only have one tag, the opening
+- elements are initialized with a percent sign `%` and then indented to identify nesting
+
+```
+%body
+  %header
+    %h1 Hello World
+  %section
+    %p Lorem ipsum dolor sit amet.
+```
+
+#### Attributes
+
+- attributes are declared directly after the element in either {} or () (Ruby or HTML)
+- `%img{src: "shay.jpg", alt: "Shay Howe"}` or `%img(src="shay.jpg" alt="Shay Howe")`
+
+#### Classes & IDs
+
+- can be identified directly after the element
+- class: `.`
+- id: `#`
+- may be mixed and matched, chaining them together in the appropriate format
+- if a class or ID is used on a div the %div may be omitted, and the class or ID value can be used outright
+
+```
+%section.feature
+%section#hello
+%div.awesome => .awesome
+```
+
+#### Comments
+
+- code can be commented out with the use of a single forward slash `/`
+- blocks of code can be commented out by being nested underneath a forward slash
+
+```
+/ Commented line
+Actual line
+```
+
+#### Silent Comments
+
+- any content within a silent comment is completely removed from the page
+- initialized with a dash then the number sign `-#`
+
+```
+-# Removed line
+Actual line
+```
+
+#### Filters
+
+- allowing different types of input to be used inside of Haml
+- identified with a colon followed by the name of the filter `:markdown`
+- `:css :erb :javascript :markdown :ruby :sass :scss`
+
+### SCSS & Sass
+
+- preprocessing languages which are compiled to CSS
+- Sass came first and is a strict indented syntax
+- SCSS followed shortly after providing the same firing power of Sass but with a more flexible syntax, including the ability to write plain CSS
+
+#### Installation
+
+- files written in SCSS or Sass need to have the .scss or .sass file extensions
+- Sass can watch the file and recompile the CSS every time a change takes place
+- single file: `sass --watch styles.sass:styles.css`
+- folder: `sass --watch assets/sass:public/css`
+
+#### Syntax
+
+- primary difference between SCSS and Sass is their syntax
+- SCSS isn’t much different than regular CSS, standard CSS will run inside of SCSS
+- Sass is fairly strict and any indenting will prohibit the styles from compiling
+- Sass omits all curly brackets and semicolons, relying on indentation and clear line breaks for formatting
+
+SCSS
+
+```
+.new {
+  color: #ff7b29;
+  span {
+    text-transform: uppercase;
+  }
+}
+```
+
+Sass
+
+```
+.new
+  color: #ff7b29
+  span
+    text-transform: uppercase
+```
+
+#### SCSS vs. Sass
+
+- boils down to personal preference, and is a decision to be made based on what is best for a specific team and project
+- Sass requires less characters and provides a cleaner syntax
+- Sass will not allow straight CSS input as SCSS does
+- Sass has a bit more of a learning curve, however well worth learning
+
+#### Nesting
+
+- nesting quickly outlines identifiable selectors, however it is important not to go overboard
+- do not nest selectors for unapparent reasons or go overboard nesting one selector under the prior one
+- using specific selectors without raising specificity is important
+
+#### Nesting Properties
+
+- also possible to nest properties
+
+```
+div
+  font:
+    family: Baskerville, Palatino, serif
+    style: italic
+```
+
+#### Parent Selector
+
+- add styles to a previous selector with the use of the parent selector, implemented by using an ampersand `&`
+
+```
+a
+  color: #0087cc
+  &:hover
+    color: #ff7b29
+```
+
+#### Parent Key Selector
+
+- parent selector may also be used as the key selector, adding qualifying selectors to make compound selectors
+
+#### Variables
+
+- with Sass you can define variables and then reuse them as necessary
+- variables are defined with a dollar sign `$`, followed by the variable name
+- `$font-base: 1rem`
+
+#### Variable Interpolation
+
+- interpolation e.g. when being used in a class name, property name, or inside a string of plain text with `#{}`
+- `.#{%location}`
+
+#### Calculations
+
+- ability to do calculations in a variety of different manners
+
+#### Number Functions
+
+- handful of built in functions, many of which are used to manipulate number values
+- `percentage() round() ceil() floor() abs()`
+
+#### Color
+
+- one of the more popular color features in Sass is the ability to change a hexadecimal color and convert it into an RGBa value.
+- `color: rgba(#8ec63f, .25)`
+
+#### Color Alterations
+
+- provide the ability to inverse colors, find complementary colors, mix colors together, or find the grayscale value of a color
+- `invert() complement() mix() grayscale()`
+
+#### HSLa Color Alterations
+
+- take things a step further, adding in even more alterations
+- `lighten() darken() saturate() desaturate() adjust-hue() fade-in() fade-out()`
+
+#### Extends
+
+- a way to easily share and reuse styles without having to explicitly repeat code or use additional classes, providing a perfect way to keep code modular
+- are established by using the `@extend` rule followed by the selector to extend
+- the original selector receives and additional selector, that of which is from the selector calling the extend
+
+#### Imports
+
+- one of nicest parts of Sass is its ability to import multiple .scss or .sass files and condense them into one single file
+- condensing all of the files into one allows for multiple stylesheets to be used for better organization without the worry of numerous HTTP request
+- instead of referencing all of the different stylesheets within an HTML document only reference the one Sass file importing all of the other stylesheets
+
+#### Loops & Conditionals
+
+- Sass supports different control directives
+
+#### If Function
+
+- `@if` tests an expressions then loads the styles beneath that expression should it return anything other than false or null
+
+#### For Loop
+
+- `@for $i from 1 to 3` will output styles up to, but not including, 3
+- `@for $i from 1 through 3` will output styles up to, and including, 3.
+
+#### Each Loop
+
+- `@each` returns styles for each item in a list, list may include multiple comma separated items
+
+#### While Loop
+
+- `@while` repeatedly returns styles until the statement becomes false
+
+### Other Preprocessors
+
+- other popular preprocessors including Jade, Slim, LESS, Stylus, and CoffeeScript
+- Projects built in Node.js may likely better benefit from Jade and Stylus
+- the most important aspect to consider, though, is what your team is accustomed to using, do your research for each project and make the most educated decision
 
 ---
 
