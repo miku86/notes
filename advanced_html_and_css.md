@@ -255,18 +255,181 @@ In the example below, without the z-index property each box will be positioned p
 
 ## Complex Selectors
 
+- selectors are one of the most important parts of CSS
+- they shape the cascade and determine how styles are to be applied to elements on a page
+
+### Common Selectors
+
+- most common selectors: type (`h1`), class (`.box`), and ID (`#intro`)
+- type: based on its type in HTML
+- class: based on its class attribute value, may be reused on multiple elements
+- ID: based on its ID attribute value, is unique and should only be used once per page
+
+### Child Selectors
+
+- child selectors provide a way to select elements that fall within one another
+- can be made two different ways, using either descendant or direct child selectors
+
+#### Descendant Selector
+
+- most common child selector, which matches every element that follows an identified ancestor
+- selects an element that resides anywhere within an identified ancestor element
+- does not have to come directly after the ancestor element inside the document tree
+- created by spacing apart elements within a selector
+- `article h2`: no matter where a h2 element lives, so long as it is within the article element, it will always be selected
+
+#### Direct Child Selector
+
+- at times only the direct children of a parent element need to be selected, not every instance of the element nested deeply inside of an ancestor
+- selects an element that resides immediately inside an identified parent element
+- `article > p`: is a direct child selector only identifying p elements that fall directly within an article element
+
+### Sibling Selectors
+
+- elements that share a common parent
+- two ways: general sibling and adjacent sibling selectors
+
+#### General Sibling Selector
+
+- selects an element that follows anywhere after the prior element, in which both elements share the same parent
+- tilde character `~` between two elements within a selector
+- the first element identifies what the second element shall be a sibling with and both of which must share the same parent
+- `h2 ~ p`: looks for p elements that follow and share the same parent of any h2 elements. In order for a p element to be selected it must come after any h2 element
+
+#### Adjacent Sibling Selector
+
+- selects an element that follows directly after the prior element, in which both elements share the same parent
+- plus character `+` between the two elements
+- the first element identifies what the second element shall directly follow after and be a sibling with, and both of which must share the same parent
+- `h2 + p`: only p elements directly following after h2 elements will be selected, both of which must also share the same parent element
+
+### Attribute Selectors
+
+#### Attribute Present Selector
+
+- selects an element if the given attribute is present, regardless of any actual value
+- include the attribute name in square brackets, []
+- `a[target] {...}` => `<a href="#" target="_blank">...</a>`
+
+#### Attribute Equals Selector
+
+- selects an element if the given attribute value exactly matches the value stated
+- inside of the square brackets following the attribute name include the desired matching value
+- `a[href="http://google.com/"] {...}` => `<a href="http://google.com/">...</a>`
+
+#### Attribute Contains Selector
+
+- selects an element if the given attribute value contains at least once instance of the value stated
+- the asterisk character `*` may be used within the square brackets of a selector
+- denotes that the value to follow only needs to appear or be contained within the attribute value
+- `a[href*="login"] {...}` => `<a href="/login.php">...</a>`
+
+#### Attribute Begins With Selector
+
+- selects an element if the given attribute value begins with the value stated
+- use the circumflex accent `^`
+- `a[href^="https://"] {...}` => `<a href="https://chase.com/">...</a>`
+
+#### Attribute Ends With Selector
+
+- selects an element if the given attribute value ends with the value stated
+- use the dollar sign `$`
+- `a[href$=".pdf"] {...}` => `<a href="/docs/menu.pdf">...</a>`
+
+#### Attribute Spaced Selector
+
+- selects an element if the given attribute value is whitespace-separated with one word being exactly as stated
+- use the tilde character `~`
+- `a[rel~="tag"] {...}` => `<a href="#" rel="tag nofollow">...</a>`
+
+#### Attribute Hyphenated Selector
+
+- selects an element if the given attribute value is hyphen-separated and begins with the word stated
+- uses the vertical line character `|`
+- `a[lang|="en"] {...}` => `<a href="#" lang="en-US">...</a>`
+
+### Pseudo-classes
+
+- are similar to regular classes in HTML however they are not directly stated within the markup, instead they are dynamically populated as a result of users’ actions or the document structure
+
+#### Link Pseudo Class
+
+- `:link`: selects a link that has not been visited by a user
+- `:visited`: selects a link that has been visited by a user
+
+#### Action Pseudo Class
+
+- `:hover`: selects an element when a user has hovered their cursor over it
+- `:active`: selects an element when a user has engaged it
+- `:focus`: selects an element when a user has made it their focus point
+
+#### State Pseudo Class
+
+- `:enabled`: selects an element in the default enabled state
+- `:disabled`: selects an element in the disabled state
+- `:checked`: selects a checkbox or radio button that has been checked
+- `:indeterminate`: selects a checkbox or radio button that neither been checked or unchecked, leaving it in an indeterminate state
+
+#### Structural Pseudo Class
+
+- `li:first-child`: selects an element that is the first within a parent
+- `li:last-child`: selects an element that is the last within a parent
+- `div:only-child`: selects an element that is the only element within a parent
+- `p:first-of-type`: selects an element that is the first of its type within a parent
+- `p:last-of-type`: selects an element that is the last of its type within a parent
+- `img:only-of-type`: selects an element that is the only of its type within a parent
+- `li:nth-child(2n+3)`: selects an element that matches the given number or expression, counting all elements from the beginning of the document tree
+- `li:nth-last-child(3n+2)`: selects an element that matches the given number or expression, counting all elements from the end of the document tree
+- `p:nth-of-type(3n)`: selects an element that matches the given number or expression, counting only elements of its type from the beginning of the document tree
+- `p:nth-last-of-type(2n+1)`: selects an element that matches the given number or expression, counting only elements of its type from the end of the document tree
+
+### Pseudo-elements
+
+- dynamic elements that don’t exist in the document tree, and when used within selectors these pseudo-elements allow unique parts of the page to be stylized
+- only one pseudo-element may be used within a selector at a given time.
+
+#### Textual Pseudo-elements
+
+- `.alpha:first-letter`: selects the first letter of text within an element
+- `.bravo:first-line`: selects the first line of text within an element
+
+#### Generated Content Pseudo-elements
+
+- `div:before`: creates a pseudo-element inside the selected element at the beginning
+- `a:after`: creates a pseudo-element inside the selected element at the end
+
+#### Fragment Pseudo-element
+
+- `::selection`: selects the part of a document which has been selected, or highlighted, by a users’ actions
+
+---
+
 ## Responsive Web Design
+
+---
 
 ## Preprocessors
 
+---
+
 ## jQuery
+
+---
 
 ## Transforms
 
+---
+
 ## Transitions & Animations
+
+---
 
 ## Feature Support & Polyfills
 
+---
+
 ## Extending Semantics & Accessibility
+
+---
 
 ## Start Learning Advanced HTML & CSS
