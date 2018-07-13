@@ -203,6 +203,56 @@ article.feat-post {...}
 
 ## Detailed Positioning
 
+- ability to float elements side by side provides a nice, clean layout that is receptive to the different elements on a page
+- when more strict control is needed, elements may be positioned using relative or absolute positioning
+- new: Flexbox and Grid
+
+### Floats
+
+- left out to not being best practice in 2018 => Flexbox and Grid
+
+### Position Property
+
+#### Position Static
+
+- default value ion value of static
+
+#### Position Relative
+
+- relative value is very similar to that of the static value
+- primary difference is that the relative value accepts the box offset properties top, right, bottom, and left to shift the element from its default position in any direction
+- the element still remains in the normal (= static) flow of the page
+- other elements will not impede on where the relatively positioned element was originally placed, the relatively positioned element may overlap or underlap other elements without moving them from their default position
+
+#### Position Absolute
+
+- elements are positioned directly in relation to their containing parent whom is relatively or absolutely positioned
+- accept box offset properties, however they are removed from the normal flow of the document
+- using an absolutely positioned element and not specifying any box offset property will position the element in the top left of its closest relatively positioned parent.
+
+#### Position Fixed
+
+- fixed works just like that of absolute, however the positioning is relative to the browser viewport, and it does not scroll with the page
+- elements will always be present no matter where a user stands on a page
+- box offset properties with fixed positioning will produce the same behaviors as an absolutely positioned element
+
+#### Fixed Header or Footer
+
+- one of the most common uses of fixed positioning is to build a fixed header or footer, that always stays within the viewport for users to interact with
+
+#### Z-Index Property
+
+- to change the order of how these elements are stacked, also known as the z-axis, the z-index property is to be used
+- elements are positioned upon the z-axis as they appear within the DOM
+- elements coming at the top of the DOM are positioned behind elements coming after them
+- the element with the highest z-index value will appear on the top regardless of its placement in the DOM
+- to apply the z-index property to an element, you must first apply a position value of relative, absolute, or fixed
+-
+
+In the example below, without the z-index property each box will be positioned precisely, starting with box two sitting on top of box one, then box three sitting on top of box two, and so forth. Reordering the stacking with the z-index property now positions box two on top of every other box, followed by box three underneath it, and box four underneath box three.
+
+---
+
 ## Complex Selectors
 
 ## Responsive Web Design
