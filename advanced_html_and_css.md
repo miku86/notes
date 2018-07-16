@@ -810,15 +810,255 @@ a
 
 ---
 
-## jQuery
-
----
-
 ## Transforms
+
+- the transform property comes in two different settings: two-dimensional and three-dimensional
+
+### 2D Transforms
+
+#### 2D Rotate
+
+- provides the ability to rotate an element from 0 to 360 degrees
+- a positive value will rotate an element clockwise, a negative value counterclockwise
+- `transform: rotate(20deg)`
+
+#### 2D Scale
+
+- allows you to change the appeared size of an element
+- default value is 1, therefore any value between .99 and .01 makes an element appear smaller while any value greater than or equal to 1.01 makes an element appear larger
+- it is possible to scale only the height or width of an element using the scaleX and scaleY values
+- `transform: scale(1.25)`
+- `transform: scaleX(1.25)`
+- `transform: scale(1.1, 1.3)`
+
+#### 2D Translate
+
+- pushs and pulls an element in different directions without interrupting the normal flow of the document
+- the distance values used within the translate value may be any general length measurement, most commonly pixels or percentages
+- positive values will push an element down and to the right of its default position while negative values will pull an element up and to the left of its default position
+- `transform: translateX(-10px);`
+- `transform: translateY(25%);`
+- `transform: translate(-10px, 25%);`
+
+#### 2D Skew
+
+- is used to distort elements on the axis
+- the distance calculation of the skew value is measured in units of degrees
+- `transform: skew(5deg, -20deg);`
+
+### Combining Transforms
+
+- multiple transforms can be combined together
+- list the transform values within the transform property one after the other without the use of commas
+- `transform: rotate(25deg) scale(.75);`
+
+### Transform Origin
+
+- the default transform origin is the dead center of an element, both 50% horizontally and 50% vertically
+- the values are treated like that of a background image position, using either a length or keyword value. 0 0 is the same value as top left, and 100% 100% is the same value as bottom right
+- `transform-origin: 0 0`
+- `transform-origin: 100% 100%`
+
+### Perspective
+
+- in order for three-dimensional transforms to work the elements need a perspective from which to transform
+- the perspective for each element can be thought of as a vanishing point, similar to that which can be seen in three-dimensional drawings
+- the perspective of an element can be set in two different ways: one way includes using the perspective value within the transform property on individual elements, the other includes using the perspective property on the parent element residing over child elements being transformed
+- Using the perspective value within the transform property works great for transforming one element from a single, unique perspective. When you want to transform a group of elements all with the same perspective, or vanishing point, apply the perspective property to their parent element
+
+#### Perspective Depth Value
+
+- can be set as none or a length measurement
+- the higher the value, the further away the perspective appears, thus creating a fairly low intensity perspective and a small three-dimensional change
+- the lower the value the closer the perspective appears, thus creating a high intensity perspective and a large three-dimensional change
+- imagine yourself standing 10 feet away from a 10 foot cube as compared to standing 1,000 feet away from the same cube. At 10 feet, your distance to the cube is the same as the dimensions of the cube, therefore the perspective shift is much greater than it will be at 1,000 feet, where the dimensions of the cube are only one one-hundredth of your distance to the cube. The same thinking applies to perspective depth values
+
+#### Perspective Origin
+
+- the same values used for the transform-origin property may also be used with the perspective-origin property
+- the large difference between the two falls where the origin of a transform determines the coordinates used to calculate the change of a transform, while the origin of a perspective identifies the coordinates of the vanishing point of a transform
+
+### 3D Transforms
+
+- working with two-dimensional transforms we are able to alter elements on the horizontal and vertical axes, however there is another axis along which we can transform elements, giving us control of depth as well as length and width
+
+#### 3D Rotate
+
+- using rotateX allows you to rotate an element around the x axis, bent in half horizontally
+- using rotateY allows you to rotate an element around the y axis, bent in half vertically
+- using rotateZ allows an element to be rotated around the z axis.
+- positive values will rotate the element around its dedicated axis clockwise, while negative values will rotate the element counterclockwise
+
+#### 3D Scale
+
+- transforming elements on the z axis isn’t extremely exciting when no other three-dimensional transforms are in place, as there is nothing in particular to scale
+
+#### 3D Translate
+
+- elements may also be translated on the z axis using the translateZ value
+- a negative value here will push an element further away on the z axis, resulting in a smaller element
+- using a positive value will pull an element closer on the z axis, resulting in a larger element
+- while this may appear to be very similar to that of the two-dimensional transform scale value, it is actually quite different: being able to move an element on the z axis does have great benefits, like when building a cube
+
+#### 3D Skew
+
+- Skew is the one two-dimensional transform that cannot be transformed on a three-dimensional scale
+
+#### Shorthand 3D Transforms
+
+- there are also properties to write out shorthand three-dimensional transforms, including rotate3d, scale3d, transition3d and matrix3d
+- these properties do require a bit more math, as well as a strong understanding of the matrices behind each transform
+
+### Transform Style
+
+- three-dimensional transforms will be applied on an element that is nested within a parent element which is also being transformed. In this event, the nested, transformed elements will not appear in their own three-dimensional space
+- to allow nested elements to transform in their own three-dimensional plane use the transform-style property with the preserve-3d value
+- the transform-style property needs to be placed on the parent element, above any nested transforms. The preserve-3d value allows the transformed children elements to appear in their own three-dimensional plane while the flat value forces the transformed children elements to lie flat on the two-dimensional plane
+
+### Backface Visibility
+
+- elements will occasionally be transformed in a way that causes them to face away from the screen. This may be caused by setting the rotateY(180deg) value for example
+- set the backface-visibility property to hidden and you will hide the element whenever it is facing away from the screen
 
 ---
 
 ## Transitions & Animations
+
+- with CSS3 transitions you have the potential to alter the appearance and behavior of an element whenever a state change occurs, such as when it is hovered over, focused on, active, or targeted
+- animations within CSS3 allow the appearance and behavior of an element to be altered in multiple keyframes
+- transitions provide a change from one state to another, while animations can set multiple points of transition upon different keyframes
+
+### Transitions
+
+- an element must have a change in state, and different styles must be identified for each state
+- the easiest way for determining styles for different states is by using the :hover, :focus, :active, and :target pseudo-classes
+- there are four transition related properties: transition-property, transition-duration, transition-timing-function, and transition-delay
+- not all of these are required to build a transition, with the first three are the most popular
+
+```
+.box {
+  background: #2db34a;
+  transition-property: background;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+}
+.box:hover {
+  background: #ff7b29;
+}
+```
+
+#### Transitional Property
+
+- transition-property determines what properties will be altered
+- if multiple properties need to be transitioned they may be comma separated within the transition-property value
+- not all properties may be transitioned, only properties that have an identifiable halfway point: colors, font sizes, and the alike may be transitioned from one value to another as they have recognizable values in-between one another. The display property, for example, may not be transitioned as it does not have any midpoint
+
+#### Transition Duration
+
+- the duration in which a transition takes place is set using the transition-duration property
+- the value of this property can be set using general timing values, including seconds (s) and milliseconds (ms)
+- you can set multiple durations, one for each property, using comma separated values
+- the order of these values when identifying individual properties and durations does matter
+
+#### Transition Timing
+
+- transition-timing-function is used to set the speed in which a transition will move
+- a few of the more popular keyword values: linear, ease-in, ease-out, and ease-in-out
+- linear: constant speed
+- ease-in: starts slowly and speeds up
+- ease-out: starts quickly and slows down
+- ease-in-out: starts slowly, speeds up in the middle, then slows down again
+- each timing function has a cubic-bezier curve behind it, which can be specifically set using the cubic-bezier(x1, y1, x2, y2) value
+
+#### Transition Delay
+
+- the delay sets a time value, that determines how long a transition should be stalled before executing
+
+### Shorthand Transitions
+
+- declaring every transition property individually can become quite intensive
+- `transition` is capable of supporting all of these different properties and values
+- you can set every value in the order of property, duration, timing-function and delay
+- `transition: background 2s linear;`
+
+### Animations
+
+- transitions do a great job of building out visual interactions from one state to another and are perfect for these kinds of single state changes
+- when more control is required, transitions need to have multiple states. this is where animations pick up where transitions leave off
+
+#### Animations Keyframes
+
+- to set multiple points at which an element should undergo a transition, use the @keyframes rule
+- the @keyframes rule includes the name, breakpoints, and the properties intended to be animated
+
+```
+@keyframes slide {
+  0% {
+    left: 0;
+    top: 0;
+  }
+  50% {
+    left: 244px;
+    top: 100px;
+  }
+  100% {
+    left: 488px;
+    top: 0;
+  }
+}
+```
+
+- the animation above is named slide
+- the different keyframe breakpoints starting at 0% and working to 100% with an intermediate breakpoint at 50%
+- the element properties to be animated are listed inside each of the breakpoints, left and top in the example above
+
+#### Animation Name
+
+- once the keyframes for an animation have been declared they need to be assigned to an element
+- to do so, the animation-name property is used with the animation name, identified from the @keyframes rule, as the property value
+- the animation-name declaration is applied to the element in which the animation is to be applied to
+
+#### Animation Duration, Timing Function, & Delay
+
+- animations need a duration declared using the animation-duration property
+- timing function and delay can be declared using the animation-timing-function and animation-delay properties respectively
+
+```
+.stage:hover .ball {
+  animation-name: slide;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-delay: .5s;
+}
+```
+
+### Customizing Animations
+
+- animations also provide the ability to further customize an element’s behavior, including the ability to declare the number of times an animation runs, as well as the direction in which an animation completes
+
+#### Animation Iteration
+
+- animations run their cycle once from beginning to end and then stop
+- to have an animation repeat itself numerous times the animation-iteration-count property may be used
+- `animation-iteration-count: infinite`
+
+#### Animation Direction
+
+- you may declare the direction an animation completes using animation-direction
+- values include normal, reverse, alternate, and alternate-reverse
+
+#### Animation Play State
+
+- allows an animation to be played or paused using the running and paused keyword values respectively
+
+#### Animation Fill Mode
+
+- identifies how an element should be styled either before, after, or before and after an animation is run
+- accepts four keyword values: none, forwards, backwards, and both
+
+### Shorthand Animations
+
+- the order of values within the animation property should be animation-name, animation-duration, animation-timing-function, animation-delay, animation-iteration-count, animation-direction, animation-fill-mode and animation-play-state
 
 ---
 
@@ -831,3 +1071,22 @@ a
 ---
 
 ## Start Learning Advanced HTML & CSS
+
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
