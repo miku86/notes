@@ -1064,29 +1064,262 @@ a
 
 ## Feature Support & Polyfills
 
+- common frustrations arise from trying to get a website to look and perform the same in every browser
+- determine what is acceptable for a given website and work from there: if a website receives under a percent of traffic from Internet Explorer 6 it might make sense to drop support for it, if that percent is still contributing to thousands of dollars in sales, support may be mandatory
+
+- when incorporating CSS3 properties, fallbacks are recommend to support older browsers
+- other techniques include shivs and polyfills
+
+### HTML5 Shiv
+
+- HTML5 Shiv was created to provide the ability to use HTML5 elements within versions of Internet Explorer 8 and below and also allows them to be properly styled with CSS
+
+### Detecting Browser Features
+
+- referencing the HTML5 Shiv works well with a conditional comment, because the intention is to specifically target browsers that don’t support new HTML5 features and elements
+- feature detection provides a way to write conditional CSS and JavaScript based on whether or not a browser supports a specific feature
+
+#### Conditionally Applying CSS Styles
+
+- CSS styles may be conditionally applied based on the features a given browser supports
+- Modernizr has detection for the majority of the CSS3 properties and values, all of which can be found in the Modernizr documentation
+- when working with CSS3 feature detection it is hard to know what the styles look like in browsers that do not support specific CSS3 features
+- there is a bookmarklet called deCSS3 which disables any CSS3 features, doing so allows you to see what a website would look like without CSS3, and if your conditional styles are working
+
+### Conditionally Loading Files
+
+- Modernizr also provides a way to use feature detection in JavaScript. JavaScript polyfills and conditional files may be loaded based on the detection of a given feature with the help of jQuery and the jQuery getScript method
+
+### Cross Browser Testing
+
+- perhaps the most dreaded part of web design and development is cross browser testing
+- the largest pitfalls live within Internet Explorer
+- there are a handful of services out there that help with cross browser testing
+- being able to interact with a browser, rather than seeing a rendered screenshot, is far more helpful for debugging code: one of the best ways to boot up multiple versions of Internet Explorer is by using multiple virtual machines, each with a different version of Internet Explorer
+- Greg Thornton has built an automated installer for all of these vms: http://xdissent.github.io/ievms/
+
 ---
 
 ## Extending Semantics & Accessibility
 
----
+- knowing how to write semantic and accessible code properly takes an understanding of how semantics and accessibility work, and how users and machines interpret them
+- do your best to write the cleanest code possible, don’t use a meaningless element where another element might make more semantic sense, using a div where a h1 would be better fitted for example
+- use semantic elements and attributes, as well as microdata and WAI-ARIA to extend the value of your code
+- be an advocate for semantics and accessibility, provide reasoning why certain modules of content are marked up in a specific way
 
-## Start Learning Advanced HTML & CSS
+### Semantic Motivation
 
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+- semantics provide: unambiguous, shared meaning within content, accessibility, search and globalization, interoperability
+
+### Structural Semantics
+
+- structural semantics, specifically using the header, nav, article, section, aside, and footer elements, are used to provide additional background context to the content within them, communicating their core meaning to web browsers and other devices
+- this is important, as it provides a better way to outline and structure pages, not to mention a more meaningful solution than divisions
+
+#### Hiding Content
+
+- every now and then you may want to hide a block of content on the page, perhaps showing or hiding an element depending on a user’s state
+- most commonly, this is accomplished with the display: none; CSS declaration. While this does work, it is semantically incorrect
+- a better option is to use the hidden Boolean attribute, which is a global attribute available to all elements for use. Functionally it performs the same way as the CSS declaration, but semantically it represents an element that should be hidden, or ignored, for the time being. Screen readers and other devices will recognize this, temporarily skipping it, where they may not done so with the CSS declaration
+- imagine a blind user attempting to fill out a form and the first piece of content, before even filling out the form, is a success message. This is a poor user experience, and one that can easily be fixed using proper semantics
+
+```
+<!-- Good -->
+<div hidden>...</div>
+
+<!-- Not good -->
+<div style="display: none;">...</div>
+```
+
+### Text Level Semantics
+
+- the majority of content on the web lives within text, and we primarily browse the Internet looking for this content, using the proper semantic markup for text makes it easier for users to find what they need
+
+#### Bolding Text
+
+- the two main elements used in this case include strong and b. While these two elements have the same presentation they have completely different semantic meanings
+- the strong element outlines text that has a strong importance
+- the b element identifies text that is to be stylistically offset, without importance
+- the b element should be used solely as a styling hook to change the presentation of an element, where the strong element should be used to identify significantly important text
+
+```
+<!-- Strong importance -->
+<strong>Caution:</strong> Falling rocks.
+
+<!-- Stylistically offset -->
+This recipe calls for <b>bacon</b> and <b>baconnaise</b>.
+```
+
+#### Italicizing Text
+
+- the two elements most commonly used are em and i
+- the em element places a stressed emphasis on text
+- the i element identifies text to be expressed in an alternate voice or tone
+- using the em element really drives prominence with an added importance
+- the i element is primarily used within dialog or prose, offsetting text without any added emphasis or importance
+
+```
+<!-- Stressed emphasis -->
+I <em>love</em> Chicago!
+
+<!-- Alternative voice or tone -->
+The name <i>Shay</i> means a gift.
+```
+
+#### Underlining Text
+
+- the two primary elements used to underline text are ins and u
+- the ins element is used to identify text that has been recently added to the document
+- the u element simply refers to an unarticulated annotation
+- underlining text that is not a hyperlink can confuse users and cause quite a bit of frustration, use underlines with caution
+
+#### Striking Text
+
+- the two properties most commonly used include del and s
+- the del element is used to identify text deleted or removed from the document
+- the s element identifies text that is no longer accurate or relevant
+
+#### Highlighting Text
+
+- to highlight text for reference purposes the mark element should be used, it provides a clean, semantic way to identify text, specifically for reference purposes without having to use an un-semantic text level element
+
+#### Abbreviations
+
+- abbreviations, the shortened form of a phrase, can be semantically marked up in HTML using the abbr element
+- the abbr element should be used along with the title attribute, of which includes the full value of the phrase being abbreviated
+- the acronym element was originally used to distinguish acronyms from abbreviations but has since been deprecated, and shouldn’t be used
+
+#### Sub & Superscripts
+
+- subscripts and superscripts may be marked up accordingly using the sub and sup elements respectively
+- these elements should be reserved for typographical conventions, not for presentational purposes
+
+```
+<!-- Subscript -->
+H<sub>2</sub>O
+
+<!-- Superscripts -->
+1<sup>st</sup> Place
+```
+
+#### Meter & Progress
+
+- to gauge scale or indicate progress the meter and progress elements should be used
+- the meter element is used to measure a fixed value, one that does not change over time
+- the progress element measures the progress of a increasing measurement
+
+- the meter element may be used with the min, max, low, high, optimum, and value attributes. The min and max attributes set the lower and upper bounds of the range, where the value attribute sets the exact measured value. The low and high attributes identify what is to be considered the lower and higher parts of the range, while the optimum value identifies the most favorable part of the range, of which may be in the lower or higher parts
+
+- the progress element indicates progress rather than a fixed measurement. It specifically represents the completion of a task, either by what is left to be completed or what has been completed thus far. There are two attributes that may be applied to the progress element, value and max. The value attributes indicates where the progress currently stands and the max attribute indicates what progress needs to be reached
+
+#### Time & Address
+
+- the time element may be used with the datetime attribute, depending on how the text within the element is formatted
+- if the content is formatted with the correct time stamp then the datetime attribute may be omitted
+- if the time is representing the date or time of a publication the pubdate Boolean attribute should be used
+- the address element may be used to hold any contact information, including a physical address as well as a website or email address
+- it should not include any further information than the contact information, and other content needs to be placed outside of the address element
+
+#### Presenting Code
+
+- presenting code snippets can be accomplished using either the code or pre elements
+- the code element is commonly used to represent a fragment of code and is displayed in the default monospace font
+- the code element is an inline level element and may be used within paragraphs of text
+- for large blocks of code, the pre element can be used in conjunction with the code element. The pre element represent preformatted text and will display text exactly as it is typed, whitespace included. Nesting the code element within the pre element semantically identifies larger samples of code, which include whitepsace, displayed in a block level manner
+
+```
+<!-- Inline code samples -->
+Use the <code>article</code> element.
+
+<!-- Larger, block level code snippets -->
+<pre><code>body {
+  color: #666;
+}</code></pre>
+```
+
+#### Line & Word Breaks
+
+- occasionally you may want to include a line break within a line of text, in which case the br element may be used
+- the br element does not have a closing tag
+- line breaks are not to be used for thematic grouping of content
+- paragraphs or other elements are better suited for thematic grouping
+- line breaks are specifically to be used where line breaks exist as part of the content, for example as within addresses and poems
+- you may also specify word breaking opportunities with the wbr element. Using the wbr element in the middle of a word ensures that, should the word need to wrap two lines, it does in a legible fashion
+
+#### Side Comments
+
+- the small element preserves the presentation of being displayed at a smaller font size, however it semantically means to be rendered as a side comments or small print, this often includes copyright information or legal print
+
+#### Citations & Quotes
+
+- the cite element refers to a title of work
+- the q element identifies dialog or prose
+- the blockquote element is used to code longer formed quotes
+
+#### Hyperlink Attributes
+
+##### Download Attribute
+
+- the download attribute tells the browser to prompt a download for a file, rather than the default behavior of navigation to the file
+- as an example, if the hyperlink reference attribute, href, is pointing to an image, the browser will prompt a user to download the image instead of opening the image within the browser
+- the download attribute can serve as a Boolean attribute, downloading the file as is, or it may contain a value, of which becomes the file name once downloaded. Using a specific value here lets you name the file as you wish on your server while still providing users with a meaningful name
+
+```
+<!-- Boolean -->
+<a href="twitter-logo.png" download>Twitter Logo</a>
+
+<!-- With a value -->
+<a href="twitter-logo.png" download="Logo">Twitter Logo</a>
+```
+
+##### Relationship Attribute
+
+- the rel attribute identifies the relationship between the current document and the document being referenced. For example, when linking to a copyright statement the rel attribute value of copyright should be used
+
+### Microdata
+
+- Microdata is HTML extended with nested groups of name-value pairs that allow machines, including browsers and search engines, to pick up additional semantics and information for rich content
+- adding microdata to your website is accomplished by using predetermined attributes and values. These attributes and values will then be interpreted, and extended, as intended
+- the more popular uses of microdata reside within coding contact information and calendar events, however there are encoding models for products, reviews, and more
+- one example of microdata at work is within Google, where microdata is interpreted and used within search results to display more relevant data. Often performing a search for a business location yields the address and sub sequential contact information within the results. Chances are this information is being pulled from microdata written on an existing website
+
+#### Outlining Microdata
+
+- Microdata is identified using three main attributes: itemscope, itemtype and itemprop
+- the itemscope Boolean attribute declares the scope of each microdata item. Place this attribute on the parent element where all of the microdata information pertaining to this item should reside
+- use the itemtype attribute to identify what microdata vocabulary should be used, some of the more popular microdata item types have been outlined at Schema.org
+- once the scope and type of the item have been determined, properties may then be set by different elements which include the itemprop attribute. The value of this attribute determines what property is being referenced, and the content within the element itself most commonly determines the value of the property
+
+#### Person Microdata
+
+- when referring to a person the person microdata library should be used. Below is an example of what a person microdata item might look like. Please notice, the person item type is used, as is the postal address item type within it. Also, please notice the different item properties and their corresponding values
+
+#### Event Microdata
+
+- the event microdata is very similar to that of the person microdata, however it uses the event microdata library instead
+
+### WAI-ARIA
+
+- WAI-ARIA, also know as Web Accessibility Initiative — Accessible Rich Internet Applications, is a specification that helps make web pages and applications more accessible to those with disabilities
+- it helps define roles (for what blocks of content do), states (for how blocks of content are configured), and additional properties to support assistive technologies
+
+#### Roles
+
+- setting WAI-ARIA roles is accomplished using the role attribute
+- these roles then specify what certain elements and blocks of content do on a page.
+
+`<header role="banner">...</header>`
+
+- roles break down into four different categories: abstract, widget, document structure, and landmark roles
+- document structure roles define the organizational structure of content on a page
+- landmark roles define the regions of a page
+- HTML5 introduced a handful of new structural elements which commonly match up against the document structure and landmark roles
+
+#### States & Properties
+
+- in combination with WAI-ARIA roles there are also states and properties which help inform assistive technologies how content is configured
+- like roles, the states and properties are broken into four categories: widget attributes, live region attributes, drag-and-drop attributes, and relationship attributes
+- the widget attributes support widget roles and are specific to the user interface and where users take actions
+- the live region attributes may be applied to any element and are used to indicate content changes for assistive technologies, on page alerts and notifications for example
+- drag-and-drop attributes supply information about drag-and-drop interface elements and provide alternate behaviors to assistive technologies
+- relationship attributes outline the relationship between elements when the document structure cannot be determined
