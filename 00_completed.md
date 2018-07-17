@@ -9,9 +9,11 @@
 - [x] FCC Javascript Algorithms And Data Structures Projects - 31hrs
 - [x] Course: [Learn to Code Advanced HTML & CSS][shay] - 8hrs
 - [x] Book: [YDKJS: this & Object Prototypes][ydkjs] - 2hrs
-- [ ] Book: [YDKJS: Async & Performance][ydkjs] -
+- [x] Book: [YDKJS: Async & Performance][ydkjs] - 3hrs
+- [ ] Book - [DOM Enlightenment][dom] -
 
 [ydkjs]: https://github.com/getify/You-Dont-Know-JS
 [cs50]: https://www.edx.org/course/introduction-computer-science-harvardx-cs50x
 [penn-web]: (https://www.edx.org/course/programming-web-javascript-pennx-sd4x)
 [shay]: http://learn.shayhowe.com/html-css/
+[dom]: http://domenlightenment.com/
