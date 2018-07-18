@@ -772,3 +772,57 @@ When it comes time to append a DOM structure created using a `documentFragment` 
 When appending a `documentFragment` the nodes contained in the Fragment are moved from the Fragment to the structure you are appending too. To leave the contents of a fragment in memory, so the nodes remain after appending, simply clone using `cloneNode()` the `documentFragment` when appending.
 
 ---
+
+# Chapter 9 - CSS Style Sheets & CSS rules
+
+## 9.1 CSS Style sheet overview
+
+A style sheet is added to an HTML document by either using the `HTMLLinkElement` node (i.e. `<link href="stylesheet.css" rel="stylesheet" type="text/css">`) to include an external style sheet or the `HTMLStyleElement` node (i.e. `<style></style>`) to define a style sheet inline. In the HTML document below both of these Element node's are in the DOM and I verify which constructor, constructs these nodes.
+
+Once a style sheet is added to an HTML document its represented by the `CSSStylesheet` object. Each CSS rule inside of a style sheet is represent by a `CSSStyleRule` object.
+
+## 9.2 Accessing all style sheets (i.e. CSSStylesheet objects) in the DOM
+
+`document.styleSheets` gives access to a list of all style sheet objects (aka `CSSStylesheet`) explicitly linked (i.e. `<link>`) or embedded (i.e. `<style>`) in an HTML document.
+
+In addtion to using `styleSheets` to access a documents styles sheets its also possible to access a style sheet in an HTML document by first selecting the element in the DOM (`<style>` or `<link>`) and using the `sheet` property to gain access to the `CSSStyleSheet` object.
+
+## 9.3 CSSStyleSheet properties and methods
+
+To get accurate information pertaining to the available properties and methods on an `CSSStyleSheet` node its best to ignore the specification and to ask the browser what is available.
+
+## 9.4 CSSStyleRule overview
+
+A `CSSStyleRule` object represents each CSS rule contained in a style sheet. Basicly a `CSSStyleRule` is the interface to the CSS properties and values attached to a selector.
+
+## 9.5 CSSStyleRule properties and methods
+
+To get accurate information pertaining to the available properties and methods on an `CSSStyleRule` node its best to ignore the specification and to ask the browser what is available.
+
+## 9.6 Getting a list of CSS Rules in a style sheet using CSSRules
+
+As previously discussed the `styleSheets` list provides a list of style sheets contained in a document. The `CSSRules` list provides a list (aka `CSSRulesList`) of all the CSS rules (i.e. `CSSStyleRule` objects) in a specific style sheet.
+
+## 9.7 Inserting & deleting CSS rules in a style sheet using .insertRule() and .deleteRule()
+
+The `insertRule()` and `deleteRule()` methods provided the ability to programatically manipulate the CSS rules in a style sheet.
+
+Deleting or removing a rule is as simple as calling `deleteRule()` method on a style sheet and passing it the index of the rule in the style sheet to be deleted.
+
+## 9.8 Editing the value of a CSSStyleRule using the .style property
+
+Just like the `style` property that facilitates the manipulation of inline styles on element nodes there is a also `style` property for `CSSStyleRule` objects that orchestrates the same manipulation of styles in style sheets.
+
+## 9.9 Creating a new inline CSS style sheets
+
+To craft a new style sheet on the fly after an html page is loaded one only has to create a new `<style>` node, add CSS rules using `innerHTML` to this node, then append the `<style>` node to the HTML document.
+
+## 9.10 Programatically adding external style sheets to an HTML document
+
+To add a CSS file to an HTML document programatically a `<link>` element node is created with the appropriate attributes and then the `<link>` element node is appended to the DOM.
+
+## 9.11 Disabling/Enabling style sheets using disabled property
+
+Using the `disabled` property of a `CSSStyleSheet` object its possible to enable or disabled a style sheet.
+
+---
