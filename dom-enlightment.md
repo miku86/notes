@@ -489,3 +489,65 @@ The `dataset` property of a element node provides an object containing all of th
 `dataset` contains camel case versions of data attributes. Meaning `data-foo-foo` will be listed as the property `fooFoo` in the dataset `DOMStringMap` object. The `-` is replaced by camel casing.
 
 ---
+
+# Chapter 4 - Element Node Selecting
+
+## 4.1 Selecting a specific element node
+
+The most common methods for getting a reference to a single element node are:
+
+- `querySelector()`
+- `getElementById()`
+
+The `getElementById()` method is pretty simple compared to the more robust `querySelector()` method. The `querySelector()` method permits a parameter in the form of a CSS selector syntax. Basically you can pass this method a CSS 3 selector (e.g. `'#score>tbody>tr>td:nth-of-type(2)'`) which it will use to select a single element in the DOM. `querySelector()` will return the first node element found in the document based on the selector.
+
+## 4.2 Selecting/creating a list (aka NodeList) of element nodes
+
+The most common methods for selecting/creating a list of nodes in an HTML document are:
+
+- `querySelectorAll()`
+- `getElementsByTagName()`
+- `getElementsByClassName()`
+
+The methods create a list (aka `NodeLists`) of elements that you can select from.
+
+`getElementsByTagName() and getElementsByClassName()` are considered live and will always reflect the state of the document even if the document is updated after the list is created/selected.
+
+`querySelectorAll()` does not return a live list of elements.The list created from `querySelectorAll()` is a snap shot of the document at the time it was created and is not reflective of the document as it changes. The list is static, not live.
+
+## 4.3 Selecting all immediate child element nodes
+
+Using the `children` property from an element node we can get a list (aka `HTMLCollection`) of all the immediate children nodes that are element nodes. Notice that using `children` only gives us the immediate element nodes excluding any nodes (e.g. text nodes) that are not elements.
+
+```js
+// create a selection/list of all of the <li>'s contained wiithin the <ul>
+document.querySelector('ul').children;
+```
+
+## 4.4 Contextual element selecting
+
+The methods `querySelector(), querySelectorAll(), getElementsByTagName(), and getElementsByClassName()` typically accessed from the `document` object are also defined on element nodes. This allows for these methods to limit its results to specific vein(s) of the DOM tree. Or said another, you can select a specific context in which you would like the methods to search for element nodes by invoking these methods on element node objects.
+
+```js
+//select a div as the context to run the selecting methods
+document.querySelector('div').querySelectorAll('li');
+```
+
+## 4.5 Pre-configured selections/lists of element nodes
+
+You should be aware that there are some legacy, pre-configured arrays-like-lists, containing element nodes from an HTML document.
+
+- `document.all` - all elements in HTML document
+- `document.forms` - all `<form>` elements in HTML document
+- `document.images` - all `<img>` elements in HTML document
+- `document.links` - all `<a>` elements in HTML document
+- `document.scripts` - all `<script>` elements in HTML document
+- `document.styleSheets` - all `<link> or <style>` objects in HTML document
+
+## 4.6 Verify an element will be selected using matches()
+
+Using the `matches()` method we can determine if an element will match a selector string. For example say we want to determine if an <li> is the first child element of a <ul>.
+
+`document.querySelector('li').matches('li:first-child'); // true`
+
+---
