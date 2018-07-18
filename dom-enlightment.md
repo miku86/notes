@@ -740,3 +740,35 @@ Sibling Text nodes are typically only encountered when text is programaticly add
 When `splitText()` is called on a `Text` node it will alter the text node its being called on (leaving the text up to the offset) and return a new Text node that contains the text split off from the orginal text based on the offset.
 
 ---
+
+# Chapter 8 - DocumentFragment Nodes
+
+## 8.1 DocumentFragment object overview
+
+The creation and use of a `DocumentFragment` node provides a light weight document DOM that is external to the live DOM tree. Think of a `DocumentFragment` as an empty document template that acts just like the live DOM tree, but only lives in memory, and its child nodes can easily be manipulated in memory and then appended to the live DOM.
+
+## 8.2 Creating DocumentFragment's using createDocumentFragment()
+
+Using a `documentFragment` to create node structures in memory is extrememly efficent when it comes time to inject the `documentFragment` into live node structures.
+
+You might wonder what is the advantage to using a `documentFragment` over simply creating (via `createElement()`) a `<div>` in memory and working within this `<div>` to create a DOM structure. The follow are the differences:
+
+- A document fragment may contain any kind of node (except `<body>` or `<html>`) where as an element may not
+- The document fragment itself is not added to the DOM when you append a fragment. The contents of the node are. As opposed to appending an element node in which the element itself is part of the appending.
+- When a document fragment is appended to the DOM it transfers from the document fragment to the place its appended. Its no longer in memory in the place you created it. This is not true for element nodes that are temperately used to contained nodes briefly and then are moved to the live DOM.
+
+## 8.3 Adding a DocumentFragment to the live DOM
+
+By passing the `appendChild()` and `insertBefore()` node methods a `documentFragment` argument the child nodes of the `documentFragment` are transported as children nodes to the DOM node the methods are called on.
+
+## 8.4 Using innerHTML on a documentFragment
+
+Creating a DOM structure in memory using node methods can be verbose and laboring. One way around this would be to created a `documentFragment`, append a `<div>` to this fragment because `innerHTML` does not work on document fragments, and then use the `innerHTML` property to update the fragment with a string of HTML. By doing this a DOM structure is crafted from the HTML string.
+
+When it comes time to append a DOM structure created using a `documentFragment` and `<div>` you'll want to append the structure skipping the injection of the `<div>`.
+
+## 8.5 Leaving a fragments containing nodes in memory by cloning
+
+When appending a `documentFragment` the nodes contained in the Fragment are moved from the Fragment to the structure you are appending too. To leave the contents of a fragment in memory, so the nodes remain after appending, simply clone using `cloneNode()` the `documentFragment` when appending.
+
+---
