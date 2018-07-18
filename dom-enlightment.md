@@ -551,3 +551,45 @@ Using the `matches()` method we can determine if an element will match a selecto
 `document.querySelector('li').matches('li:first-child'); // true`
 
 ---
+
+# Chapter 5 - Element Node Geometry & Scrolling Geometry
+
+## 5.1 Element node size, offsets, and scrolling overview
+
+DOM nodes are parsed and painted into visual shapes when viewing html documents in a web browser. Nodes, mostly element nodes, have a corresponding visual representation made viewable/visual by browsers. To inspect and in some cases manipulate the visual representation and gemometry of nodes programatically a set of API's exists and are specified in the CSSOM View Module. A subset of methods and properties found in this specification provide an API to determine the geometry (i.e. size & position using offset) of element nodes as well as hooks for manipulating scrollable nodes and getting values of scrolled nodes.
+
+Most of the properties from the CSSOM View Module specification are read only and calculated each time they are accessed. In other words, the values are live.
+
+## 5.2 Getting an elements offsetTop and offsetLeft values relative to the offsetParent
+
+Using the properties `offsetTop` and `offsetLeft` we can get the offset pixel value of an element node from the `offsetParent`. These element node properties give us the distance in pixels from an elements outside top and left border to the inside top and left border of the `offsetParent`. The value of the offsetParent is determined by searching the nearest ancestor elements for an element that has a CSS position value not equal to static. If none are found then the <body> element or what some refer to as the "document" (as opposed to the browser viewport) is the offsetParent value.
+
+## 5.3 Getting an elements top, right, bottom and left border edge offset relative to the viewport using getBoundingClientRect()
+
+Using the `getBoundingClientRect()` method we can get the position of an elements outside border edges as its painted in the browser viewport relative to the top and left edge of the viewport. This means the left and right edge are measured from the outside border edge of an element to the left edge of the viewport. And the top and bottom edges are measured from the outside border edge of an element to the top edge of the viewport.
+
+## 5.4 Getting an elements size (border + padding + content) in the viewport
+
+The `getBoundingClientRect()` returns an object with a top, right, bottom, and left property/value but also with a height and width property/value. The height and width properties indicate the size of the element where the total size is derived by adding the content of the div, its padding, and borders together.
+
+## 5.5 Getting an elements size (padding + content) in the viewport excluding borders
+
+The `clientWidth` and `clientHeight` properties return a total size of an element by adding together the content of the element and its padding excluding the border sizes.
+
+## 5.6 Getting topmost element in viewport at a specific point using elementFromPoint()
+
+Using `elementFromPoint()` it's possible to get a reference to the topmost element in an html document at a specific point in the document.
+
+## 5.7 Getting the size of the element being scrolled using scrollHeight and scrollWidth
+
+The `scrollHeight` and `scrollWidth` properties simply give you the height and width of the node being scrolled.
+
+## 5.8 Getting & Setting pixels scrolled from the top and left using scrollTop and scrollLeft
+
+The `scrollTop` and `scrollLeft` properties are read-write properties that return the pixels to the left or top that are not currently viewable in the scrollable viewport due to scrolling.
+
+## 5.9 Scrolling an element into view using scrollIntoView()
+
+By selecting a node contained inside a node that is scrollable we can tell the selected node to scroll into view using the `scrollIntoView()` method.
+
+---
