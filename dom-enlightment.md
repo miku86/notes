@@ -641,3 +641,102 @@ The `style` property only contains the css that is defined via the style attribu
 Style rules defined in a inline style sheet or external style sheet can be added or removed from an element using the `class` and `id` attribute. This is a the most common pattern for manipulating element styles.
 
 ---
+
+# Chapter 7 - Text Nodes
+
+## 7.1 Text object overview
+
+Text in an HTML document is represented by instances of the `Text()` constructor function, which produces text nodes. When an HTML document is parsed the text mixed in among the elements of an HTML page are converted to text nodes.
+
+## 7.2 Text object & properties
+
+To get accurate information pertaining to the available properties and methods on an Text node, it's best to ignore the specification and to ask the browser what is available.
+
+The available properties are many even if the inherited properties were not considered. Below I've hand pick a list of note worthy properties and methods for the context of this chapter:
+
+- `textContent`
+- `splitText()`
+- `appendData()`
+- `deleteData()`
+- `insertData()`
+- `replaceData()`
+- `subStringData()`
+- `normalize()`
+- `data`
+- `document.createTextNode()` (not a property or inherited property of text nodes)
+
+## 7.3 White space creates Text nodes
+
+When a DOM is contstructed either by the browser or by programmatic means text nodes are created from white space as well as from text characters. After all, whitespace is a character. A paragraph containing an empty space has a child Text node.
+
+Don't forget that white space and text characters in the DOM are typically represented by a text node. This of course means that carriage returns are considered text nodes.
+
+The reality is if you can input the character or whitespace into an html document using a keyboard then it can potentially be interputed as a text node. If you think about it, unless you minimze/compress the html document the average html page contains a great deal of whitespace and carriage return text nodes.
+
+## 7.4 Creating & Injecting Text Nodes
+
+Text nodes are created automatically for us when a browser interputs an HTML document and a corresponding DOM is built based on the contents of the document. After this fact, it's also possible to programatically create Text nodes using `createTextNode()`.
+
+```js
+var textNode = document.createTextNode('Hi');
+document.querySelector('div').appendChild(textNode);
+```
+
+Keep in mind that we can also inject text nodes into programmatically created DOM structures as well.
+
+```js
+var elementNode = document.createElement('p');
+var textNode = document.createTextNode('Hi');
+elementNode.appendChild(textNode);
+document.querySelector('div').appendChild(elementNode);
+```
+
+## 7.5 Getting a Text node value with .data or nodeValue
+
+The text value/data represented by a `Text` node can be extracted from the node by using the `data` or `nodeValue` property. Both of these return the text contained in a Text node.
+
+## 7.6 Maniputlating Text nodes with appendData(), deleteData(), insertData(), replaceData(), subStringData()
+
+The `CharacterData` object that Text nodes inherits methods from provides the following methods for manipulating and extracting sub values from Text node values:
+
+- `appendData()`
+- `deleteData()`
+- `insertData()`
+- `replaceData()`
+- `subStringData()`
+
+## 7.7 When mulitple sibling Text nodes occur
+
+Typically, immediate sibling Text nodes do not occur because DOM trees created by browsers intelligently combines text nodes, however two cases exist that make sibling text nodes possible.
+
+The first case is rather obvious. If a text node contains an Element node (e.g. `<p>Hi, <strong>cody</strong> welcome!</p>`) than the text will be split into the proper node groupings. The contents of the <p> element is not a single Text node, it is in fact 3 nodes, a Text node, Element node, and another Text node.
+
+## 7.8 Remove markup and return all child Text nodes using textContent
+
+The `textContent` property can be used to get all child text nodes, as well as to set the contents of a node to a specific Text node.
+
+When its used on a node to get the textual content of the node it will returned a concatenataed string of all text nodes contained with the node you call the method on. This functionality would make it very easy to extract all text nodes from an HTML document.
+
+Notice that `textContent` gathers not just immediate child text nodes but all child text nodes no matter the depth of encapsulation inside of the node the method is called.
+
+When `textContent` is used to set the text contained within a node it will remove all child nodes first, replacing them with a single Text node.
+
+## 7.9 The difference between textContent & innerText
+
+Most of the modern browser support a seemingly similiar property to `textContent` named `innerText`. However these properties are not the same. You should be aware of the following differences between `textContent & innerText`:
+
+- `innerText` is aware of CSS. So if you have hidden text `innerText` ignores this text, `textContent` will not
+- Because `innerText` cares about CSS it will trigger a reflow, whereas `textContent` will not
+- `innerText` ignores the Text nodes contained in `<script>` and `<style>` elements
+- `innerText`, unlike `textContent` will normalize the text that is returned. Just think of `textContent` as returning exactly what is in the document with the markup removed. This will include white space, line breaks, and carriage returns
+- `innerText` is considered to be non-standard and browser specific while `textContent` is implemented from the DOM specifications
+
+## 7.10 Combine sibling Text nodes into one text node using normalize()
+
+Sibling Text nodes are typically only encountered when text is programaticly added to the DOM. To eliminate sibling Text nodes that contain no `Element` nodes we can use `normalize()`. This will concatenate sibling text nodes in the DOM into a single `Text` node.
+
+## 7.11 Splitting a text node using splitText()
+
+When `splitText()` is called on a `Text` node it will alter the text node its being called on (leaving the text up to the offset) and return a new Text node that contains the text split off from the orginal text based on the offset.
+
+---
