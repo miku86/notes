@@ -73,13 +73,13 @@ Each node object in a typical DOM tree inherits properties and methods from `Nod
 - Object < Node < Document < HTMLDocument
 - Object < Node < DocumentFragment
 
-Its important not only to remember that all nodes types inherit from `Node` but that the chain of inheritance can be long. For example, all `HTMLAnchorElement` nodes inherit properties and methods from `HTMLElement, Element, Node, and Object` objects.
+It's important not only to remember that all nodes types inherit from `Node` but that the chain of inheritance can be long. For example, all `HTMLAnchorElement` nodes inherit properties and methods from `HTMLElement, Element, Node, and Object` objects.
 
 `Node` is just a JavaScript constructor function. And so logically `Node` inherits from `Object.prototype` just like all objects in JavaScript.
 
 You will see a long list of properties that are available to the element node object. The properties & methods inherited from the `Node` object are in this list as well as a great deal of other inherited properties and methods from the `Element, HTMLElement, HTMLAnchorElement, Node, and Object` object.
 
-Its not my point to examine all of these properties and methods now but simply to point out that all nodes inherit a set of baseline properties and methods from its constructor as well as properties from the prototype chain.
+It's not my point to examine all of these properties and methods now but simply to point out that all nodes inherit a set of baseline properties and methods from its constructor as well as properties from the prototype chain.
 
 ## 1.4 Properties and methods for working nodes
 
@@ -147,7 +147,7 @@ The `nodeValue` property returns null for most of the node types (except Text an
 
 ## 1.7 Creating element and text nodes using JavaScript methods
 
-When a browser parses an HTML document it constructs the nodes and tree based on the contents of the HTML file. The browser deals with the creation of nodes for the intial loading of the HTML document. However its possible to create your own nodes using JavaScript. The following two methods allow us to programatically create Element and Text nodes using JavaScript:
+When a browser parses an HTML document it constructs the nodes and tree based on the contents of the HTML file. The browser deals with the creation of nodes for the intial loading of the HTML document. However it's possible to create your own nodes using JavaScript. The following two methods allow us to programatically create Element and Text nodes using JavaScript:
 
 - `createElement()`
 - `createTextNode()`
@@ -175,7 +175,7 @@ document.getElementById('B').outerHTML = '<div id="B">Whats Shaking</div>';
 document.getElementById('C').textContent = 'dude';
 ```
 
-The `insertAdjacentHTML()` method, which only works on Element nodes, is a good deal more precise than the previously mentioned methods. Using this method its possible to insert nodes before the beginning tag, after the beginning tag, before the end tag, and after the end tag.
+The `insertAdjacentHTML()` method, which only works on Element nodes, is a good deal more precise than the previously mentioned methods. Using this method it's possible to insert nodes before the beginning tag, after the beginning tag, before the end tag, and after the end tag.
 
 ## 1.9 Extracting parts of the DOM tree as JavaScript strings
 
@@ -184,7 +184,7 @@ The same exact properties (`innerHTML, outerHTML, textContent`) that we use to c
 ```js
 console.log(document.getElementById('A').innerHTML); //logs '<i>Hi</i>'
 console.log(document.getElementById('A').outerHTML); //logs <div id="A">Hi</div>
-// all text is returned even if its in child element nodes (i.e. <strong> !</strong>)
+// all text is returned even if it's in child element nodes (i.e. <strong> !</strong>)
 console.log(document.getElementById('B').textContent); //logs 'Dude !'
 ```
 
@@ -223,7 +223,7 @@ ul.insertBefore(li, ul.firstChild);
 
 ## 1.11 Removing and replacing nodes using removeChild() and replaceChild()
 
-Removing a node from the DOM is a bit of a multi-step process. First you have to select the node you want to remove. Then you need to gain access to its parent element typically using the `parentNode` property. Its on the parent node that you invoke the `removeChild()` method passing it the reference to the node to be removed.
+Removing a node from the DOM is a bit of a multi-step process. First you have to select the node you want to remove. Then you need to gain access to its parent element typically using the `parentNode` property. It's on the parent node that you invoke the `removeChild()` method passing it the reference to the node to be removed.
 
 ```js
 //remove element node
@@ -241,7 +241,7 @@ divA.parentNode.replaceChild(newSpan, divA);
 
 ## 1.12 Cloning nodes using cloneNode()
 
-Using the `cloneNode()` method its possible to duplicate a single node or a node and all its children nodes.
+Using the `cloneNode()` method it's possible to duplicate a single node or a node and all its children nodes.
 
 `var cloneUL = document.querySelector('ul').cloneNode();`
 
@@ -279,7 +279,7 @@ In ES6 we have `Array.from` to look forward to which converts a single argument 
 
 ## 1.16 Traversing nodes in the DOM
 
-From a node reference (i.e. `document.querySelector('ul')`) its possible to get a different node reference by traversing the DOM using the following properties:
+From a node reference (i.e. `document.querySelector('ul')`) it's possible to get a different node reference by traversing the DOM using the following properties:
 
 - `parentNode`
 - `firstChild`
@@ -336,7 +336,7 @@ The code above concludes that the `HTMLDocument` constructor function constructs
 
 ## 2.2 HTMLDocument properties and methods (including inherited)
 
-To get accurate information pertaining to the available properties and methods on an `HTMLDocument` node its best to ignore the specification and to ask the browser what is available.
+To get accurate information pertaining to the available properties and methods on an `HTMLDocument` node it's best to ignore the specification and to ask the browser what is available.
 
 The available properties are many even if the inherited properties were not considered. Below I've hand pick a list of noteworthy properties and methods for the context of this chapter:
 
@@ -374,7 +374,7 @@ Using the properties listed below we can get a shortcut reference to the followi
 
 ## 2.6 Detecting DOM specifications/features using document.implementation.hasFeature()
 
-Its possible using `document.implementation.hasFeature()` to ask (boolean) the current document what feature and level the browser has implemented/supports. For example we can ask if the browser has implemented the core DOM level 3 specification by passing the name of the feature and the version to the hasFeature() method.
+It's possible using `document.implementation.hasFeature()` to ask (boolean) the current document what feature and level the browser has implemented/supports. For example we can ask if the browser has implemented the core DOM level 3 specification by passing the name of the feature and the version to the hasFeature() method.
 
 ```js
 // ask if the browser has implemented the Core 2.0 specification
@@ -426,7 +426,7 @@ The available properties are many even if the inherited properties were not cons
 
 ## 3.3 Creating Elements
 
-`Element` nodes are instantiated for us when a browser interputs an HTML document and a corresponding DOM is built based on the contents of the document. After this fact, its also possible to programaticlly create `Element` nodes using `createElement()`.
+`Element` nodes are instantiated for us when a browser interputs an HTML document and a corresponding DOM is built based on the contents of the document. After this fact, it's also possible to programaticlly create `Element` nodes using `createElement()`.
 
 ```js
 // create a <textarea> element node and then inject that node into the live DOM tree
@@ -465,7 +465,7 @@ console.log(elm.className); // logs 'big brown'
 
 ## 3.9 Adding & removing sub-values to a class attribute
 
-Using the `classList.add()` and `classList.remove()` methods its extremely simple to edit the value of a class attribute.
+Using the `classList.add()` and `classList.remove()` methods it's extremely simple to edit the value of a class attribute.
 
 ```js
 elm.classList.add('cat');
@@ -474,7 +474,7 @@ elm.classList.remove('dog');
 
 ## 3.10 Toggling a class attribute value
 
-Using the `classList.toggle()` method we can toggle a sub-value of the class attribute. This allows us to add a value if its missing or remove a value if its already added.
+Using the `classList.toggle()` method we can toggle a sub-value of the class attribute. This allows us to add a value if it's missing or remove a value if it's already added.
 
 ## 3.11 Determining if a class attribute value contains a specific value
 
@@ -484,7 +484,7 @@ Using the `classList.contains()` method it's possible to determine if a class at
 
 ## 3.12 Getting & Setting data-\* attributes
 
-The `dataset` property of a element node provides an object containing all of the attributes of an element that starts with data-\*. Because its a simply a JavaScript object we can manipulate `dataset` and have the element in the DOM reflect those changes
+The `dataset` property of a element node provides an object containing all of the attributes of an element that starts with data-\*. Because it's a simply a JavaScript object we can manipulate `dataset` and have the element in the DOM reflect those changes
 
 `dataset` contains camel case versions of data attributes. Meaning `data-foo-foo` will be listed as the property `fooFoo` in the dataset `DOMStringMap` object. The `-` is replaced by camel casing.
 
@@ -566,7 +566,7 @@ Using the properties `offsetTop` and `offsetLeft` we can get the offset pixel va
 
 ## 5.3 Getting an elements top, right, bottom and left border edge offset relative to the viewport using getBoundingClientRect()
 
-Using the `getBoundingClientRect()` method we can get the position of an elements outside border edges as its painted in the browser viewport relative to the top and left edge of the viewport. This means the left and right edge are measured from the outside border edge of an element to the left edge of the viewport. And the top and bottom edges are measured from the outside border edge of an element to the top edge of the viewport.
+Using the `getBoundingClientRect()` method we can get the position of an elements outside border edges as it's painted in the browser viewport relative to the top and left edge of the viewport. This means the left and right edge are measured from the outside border edge of an element to the left edge of the viewport. And the top and bottom edges are measured from the outside border edge of an element to the top edge of the viewport.
 
 ## 5.4 Getting an elements size (border + padding + content) in the viewport
 
@@ -591,5 +591,53 @@ The `scrollTop` and `scrollLeft` properties are read-write properties that retur
 ## 5.9 Scrolling an element into view using scrollIntoView()
 
 By selecting a node contained inside a node that is scrollable we can tell the selected node to scroll into view using the `scrollIntoView()` method.
+
+---
+
+# Chapter 6 - Element Node Inline Styles
+
+## 6.1 Style Attribute (aka element inline CSS properties) Overview
+
+Every HTML element has a style attribute that can be used to inline CSS properties specific to the element.
+
+`document.querySelector('div').style;`
+
+That what is returned from the style property is a `CSSStyleDeclaration` object and not a string. Additionally note that only the elements inline styles (i.e. excluding the computed styles, computed styles being any styles that have cascaded from style sheets) are included in the `CSSStyleDeclartion` object.
+
+## 6.2 Getting, setting, & removing individual inline CSS properties
+
+Inline CSS styles are individually represented as a property (i.e. object property) of the style object available on element node objects. This provides the interface for us to get, set, or remove individual CSS properties on an element by simply setting an objects property value.
+
+```js
+// get
+document.querySelector('div').style.backgroundColor;
+// set
+document.querySelector('div').style.backgroundColor = 'red';
+// remove
+document.querySelector('div').style.backgroundColor = '';
+```
+
+The style object is a `CSSStyleDeclaration` object and it provides not only access to inidividual CSS properties, but also the `setPropertyValue(propertyName), getPropertyValue(propertyName,value), and removeProperty()` methods used to manipulate individual CSS properties on a element node.
+
+```js
+// get
+document.querySelector('div').style.getPropertyValue('background-color'));
+// set
+document.querySelector('div').style.setProperty('background-color','red');
+// remove
+document.querySelector('div').style.removeProperty('background-color'));
+```
+
+## 6.3 Getting, setting, & removing all inline CSS properties
+
+It's possible using the `cssText` property as well as the `getAttribute() and setAttribute()` method to get, set, and remove the entire (i.e. all inline CSS properties) value of the style attribute using a JavaScript string.
+
+## 6.4 Getting an elements computed styles (i.e. actual styles including any from the cascade) using getComputedStyle()
+
+The `style` property only contains the css that is defined via the style attribute. To get an elements css from the cascade (i.e. cascading from inline style sheets, external style sheets, browser style sheets) as well as its inline styles you can use `getComputedStyle()`. This method provides a read-only `CSSStyleDeclaration` object similar to `style`. Make sure you note that `getComputedStyle()` method honors the CSS specificity hierarchy.
+
+## 6.5 Apply & remove css properties on an element using class & id attributes
+
+Style rules defined in a inline style sheet or external style sheet can be added or removed from an element using the `class` and `id` attribute. This is a the most common pattern for manipulating element styles.
 
 ---
