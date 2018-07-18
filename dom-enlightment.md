@@ -398,3 +398,94 @@ You should be aware that the `defaultView` property is a shortcut to the JavaScr
 The `ownerDocument` property when called on a node returns a reference to the `Document` the node is contained within.
 
 ---
+
+# Chapter 3 - Element Nodes
+
+## 3.1 HTML\*Element object overview
+
+Elements in an html document all have a unique nature and as such they all have a unique JavaScript constructor that instantiates the element as a node object in a DOM tree. For example, an `<a>` element is created as a DOM node from the `HTMLAnchorElement()` constructor.
+
+Each element in the DOM is constructed from a unique JavaScript intefaces/constructor. Each `HTML*Element` inherits properties and methods from `HTMLElement, Element, Node, and Object`.
+
+## 3.2 HTML\*Element object properties and methods (including inherited)
+
+To get accurate information pertaining to the available properties and methods on an `HTML*Element` node it's best to ignore the specification and to ask the browser what is available.
+
+The available properties are many even if the inherited properties were not considered. Below I've hand pick a list of note worthy properties and methods (inherited as well) for the context of this chapter:
+
+- `createElement()`
+- `tagName`
+- `children`
+- `getAttribute()`
+- `setAttribute()`
+- `hasAttribute()`
+- `removeAttribute()`
+- `classList()`
+- `dataset`
+- `attributes`
+
+## 3.3 Creating Elements
+
+`Element` nodes are instantiated for us when a browser interputs an HTML document and a corresponding DOM is built based on the contents of the document. After this fact, its also possible to programaticlly create `Element` nodes using `createElement()`.
+
+```js
+// create a <textarea> element node and then inject that node into the live DOM tree
+var elementNode = document.createElement('textarea');
+document.body.appendChild(elementNode);
+```
+
+The value passed to the `createElement()` method is a string that specifices the type of element (aka `tagName`) to be created.
+
+## 3.4 Get the tag name of an element
+
+Using the `tagName` property we can access the name of an element. The `tagName` property returns the same value that using `nodeName` would return.
+
+## 3.5 Getting a list/collection of element attributes and values
+
+Using the `attributes` property (inherited by element nodes from `Node`) we can get a collection of the `Attr` nodes that an element currently has defined. The list returned is a `NameNodeMap`.
+
+## 3.6 Getting, Setting, & Removing an element's attribute value
+
+The most consistent way to get, set, or remove an elements attribute value is to use the `getAttribute(), setAttribute(), and removeAttribute()` method.
+
+## 3.7 Verifying an element has a specific attribute
+
+The best way to determine if an element has an attribute is to use the `hasAttribute()` method.
+
+`console.log(document.querySelector('a').hasAttribute('href'));`
+
+## 3.8 Getting a list of class attribute values
+
+Using the `classList` property available on element nodes we can access a list (i.e. `DOMTokenList`) of class attribute values that is much easier to work with than a space-delimited string value returned from the `className` property. The `classList` is an array like collection.
+
+```js
+console.log(elm.classList); // big brown {0="big", 1="brown", length=2, ...}
+console.log(elm.className); // logs 'big brown'
+```
+
+## 3.9 Adding & removing sub-values to a class attribute
+
+Using the `classList.add()` and `classList.remove()` methods its extremely simple to edit the value of a class attribute.
+
+```js
+elm.classList.add('cat');
+elm.classList.remove('dog');
+```
+
+## 3.10 Toggling a class attribute value
+
+Using the `classList.toggle()` method we can toggle a sub-value of the class attribute. This allows us to add a value if its missing or remove a value if its already added.
+
+## 3.11 Determining if a class attribute value contains a specific value
+
+Using the `classList.contains()` method it's possible to determine if a class attribute value contains a specific sub-value.
+
+`console.log(elm.classList.contains('brown')); // logs true`
+
+## 3.12 Getting & Setting data-\* attributes
+
+The `dataset` property of a element node provides an object containing all of the attributes of an element that starts with data-\*. Because its a simply a JavaScript object we can manipulate `dataset` and have the element in the DOM reflect those changes
+
+`dataset` contains camel case versions of data attributes. Meaning `data-foo-foo` will be listed as the property `fooFoo` in the dataset `DOMStringMap` object. The `-` is replaced by camel casing.
+
+---
