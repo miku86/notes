@@ -320,3 +320,81 @@ Two nodes are equal if and only if the following conditions are satisfied:
 Calling the `isEqualNode()` method on a node in the DOM will ask if that node is equal to the node that you pass it as a parameter.
 
 ---
+
+# Chapter 2 - Document Nodes
+
+## 2.1 document node overview
+
+The `HTMLDocument` constructor (which inherits from `document`) when instantiated represents specifically a DOCUMENT_NODE (i.e. `window.document`) in the DOM. To verify this we can simply ask which constructor was used in the creation of the `document` node object.
+
+```js
+console.log(window.document.constructor); //logs function HTMLDocument()
+console.log(window.document.nodeType); //logs 9, which is mapping to DOCUMENT_NODE
+```
+
+The code above concludes that the `HTMLDocument` constructor function constructs the `window.document` node object and that this node is a `DOCUMENT_NODE` object.
+
+## 2.2 HTMLDocument properties and methods (including inherited)
+
+To get accurate information pertaining to the available properties and methods on an `HTMLDocument` node its best to ignore the specification and to ask the browser what is available.
+
+The available properties are many even if the inherited properties were not considered. Below I've hand pick a list of noteworthy properties and methods for the context of this chapter:
+
+- `doctype`
+- `documentElement`
+- `implementation.*`
+- `activeElement`
+- `body`
+- `head`
+- `title`
+- `lastModified`
+- `referrer`
+- `URL`
+- `defaultview`
+- `compatMode`
+- `ownerDocument`
+- `hasFocus`
+
+## 2.3 Getting general HTML document information (title, url, referrer, lastModified, compatMode)
+
+The `document` object provides access to some general information about the HTML document/DOM being loaded with `document.title, document.URL, document.referrer, document.lastModified, and document.compatMode` properties to gain some general information about the document. Based on the property name the returned values should be obvious.
+
+## 2.4 document child nodes
+
+`Document` nodes can contain one `DocumentType` node object and one `Element` node object. This should not be a surprise since HTML documents typically contain only one doctype (e.g. `<!DOCTYPE html>`) and one element (e.g. `<html lang="en">`). Thus if you ask for the children (e.g. `document.childNodes`) of the Document object you will get an array containing at the very least the documents `doctype/DTD` and `<html lang="en">` element.
+
+## 2.5 document provides shortcuts to <!DOCTYPE>, <html lang="en">, <head>, and <body>
+
+Using the properties listed below we can get a shortcut reference to the following nodes:
+
+- `document.doctype` refers to `<!DOCTYPE>`
+- `document.documentElement` refers to `<html lang="en">`
+- `document.head` refers to `<head>`
+- `document.body` refers to `<body>`
+
+## 2.6 Detecting DOM specifications/features using document.implementation.hasFeature()
+
+Its possible using `document.implementation.hasFeature()` to ask (boolean) the current document what feature and level the browser has implemented/supports. For example we can ask if the browser has implemented the core DOM level 3 specification by passing the name of the feature and the version to the hasFeature() method.
+
+```js
+// ask if the browser has implemented the Core 2.0 specification
+console.log(document.implementation.hasFeature('Core', '2.0'));
+```
+
+## 2.7 Get a reference to the focus/active node in the document
+
+Using the `document.activeElement` we can quickly get a reference to the node in the document that is focused/active.
+
+## 2.8 Determing if the document or any node inside of the document has focus
+
+Using the `document.hasFocus()` method it's possible to know if the user currently is focused on the window that has the HTML document loaded.
+
+## 2.9 document.defaultview is a shortcut to the head/global object
+
+You should be aware that the `defaultView` property is a shortcut to the JavaScript head object or what some refer to as the global object. The head object in a web browser is the `window` object and `defaultView` will point to this object in a JavaScript browser enviroment.
+
+## 2.9 Getting a reference to the Document from an element using ownerDocument
+
+The `ownerDocument` property when called on a node returns a reference to the `Document` the node is contained within.
+
+---
