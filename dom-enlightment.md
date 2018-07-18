@@ -826,3 +826,51 @@ To add a CSS file to an HTML document programatically a `<link>` element node is
 Using the `disabled` property of a `CSSStyleSheet` object its possible to enable or disabled a style sheet.
 
 ---
+
+# Chapter 10 - JavaScript in the DOM
+
+## 10.1 Inserting & executing JavaScript overview
+
+JavaScript can be inserted in to an HTML document in a modern way by including external JavaScript files or writing page level inline JavaScript, which is basically the contents of an external JavaScript file literally embed in the HTML page as a text node. Don't confuse element inline JavaScript contained in attribute event handlers (i.e. `<div onclick="alert('yo')"></div>`) with page inline JavaScript (i.e. `<script>alert('hi')</script>`).
+
+Both methods of inserting JavaScript into an HTML document require the use of a `<script>` element node. The `<script>` element can contain JavaScript code or can be used to link to external JavaScript files using the `src` attribute.
+
+## 10.2 JavaScript is parsed synchronously by default
+
+By default when the DOM is being parsed and it encounters a `<script>` element it will stop parsing the document, block any further rendering & downloading, and exectue the JavaScript.
+
+Because this behavior is blocking and does not permit parallel parsing of the DOM or exection of JavaScriopt its consider to be synchronous. If the JavaScript is external to the html document the blocking is exacerbated because the JavaScript must first be downloaed before it can be parsed.
+
+The default blocking nature of a `<script>` element can have a significant effect on the performance of the visual rendering of a HTML web page. If you have a couple of script elements at the start of an html page nothing else is happening (e.g. DOM parsing & resource loading) until each one is downloaded and executed sequentially.
+
+## 10.3 Defering the downloading & exectuion of external JavaScript using defer
+
+The `<script>` element has an attribute called defer that will defer the blocking, downloading, and executing of an external JavaScript file until the browser has parsed the closing `<html>` node. Using this attribute simply defers what normally occurs when a web browser encounters a `<script>` node.
+
+## 10.4 Asynchronously downloading & executing external JavaScript files using async
+
+The `<script>` element has an attribute called `async` that will override the sequential blocking nature of `<script>` elements when the DOM is being constructed by a web browser.
+
+By using this attribute, we are telling the browser not to block the construction (i.e. DOM parsing, downloading other assets e.g. images, style sheets, etc...) of the html page and forgo the the sequential loading as well.
+
+What happens by using the async attribute is the files are loaded in parallel and parsed in order of download once they are fully downloaded.
+
+## 10.5 Forcing asynchronous downloading & parsing of external JavaScript using dynamic <script>
+
+A known hack for forcing a web browser into asynchronous JavaScript downloading and parsing without using the async attribure is to programatically create `<script>` elements that include external JavaScript files and insert them in the DOM.
+
+## 10.6 Using the onload call back for asynchronous <script>'s so we know when its loaded
+
+The `<script>` element supports a load event handler (i.e. `onload`) that will execute once an external JavaScript file has been loaded and executed.
+
+## 10.7 Be mindful of <script> 's placement in HTML for DOM manipulation
+
+Given a `<script>` elements synchronous nature, placing one in the `<head>` element of an HTML document presents a timing problem if the JavaScript execution is dependant upon any of the DOM that proceeds the `<script>`.
+
+Many developers, myself being one of them, for this reason will attempt to place all `<script>` elements before the closing `</body>` element. By doing this you can rest assured the DOM in front of the `<script>`'s has been parsed and is ready for scripting. As well, this strategy will remove a dependancy on DOM ready events that can liter a code base.
+
+## 10.8 Getting a list of <script>'s in the DOM
+
+The `document.scripts` property avaliable from the document object provides a list (i.e. an HTMLCollection) of all of the scripts currently in the DOM.
+
+---
