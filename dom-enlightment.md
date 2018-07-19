@@ -2,15 +2,15 @@
 
 # Introduction
 
-This book is not an exhaustive reference on DOM scripting or JavaScript. It may be the most exhaustive book written about DOM scripting without the use of a library/framework. The lack of authorship around this topic is not without good reason. Most technical authors are not willing to wrangle this topic because of the differences that exist among legacy browsers and their implementations of the DOM specifications (or lack thereof).
+This book is not an exhaustive reference on DOM scripting or JS. It may be the most exhaustive book written about DOM scripting without the use of a library/framework. The lack of authorship around this topic is not without good reason. Most technical authors are not willing to wrangle this topic because of the differences that exist among legacy browsers and their implementations of the DOM specifications (or lack thereof).
 
 For the purpose of this book, I'm going to sidestep the browser API mess and dying browser discrepancies in an effort to expose the modern DOM. That's right, I'm going to sidestep the ugliness in an effort to focus on the here and now. After all, we have solutions like jQuery to deal with all that browser ugliness, and you should definitely be leveraging something like jQuery when dealing with deprecated browsers.
 
-While I am not promoting the idea of only going native when it comes to DOM scripting, I did write this book in part so that developers may realize that DOM libraries are not always required when scripting the DOM. I also wrote for the lucky few who get to write JavaScript code for a single environment (i.e. one browser, mobile browsers, or HTML+CSS+JavaScript-to-native via something like PhoneGap). What you learn in this book may just make a DOM library unnecessary in ideal situations, say for example, some light DOM scripting for deployment on a Webkit mobile browser only.
+While I am not promoting the idea of only going native when it comes to DOM scripting, I did write this book in part so that developers may realize that DOM libraries are not always required when scripting the DOM. I also wrote for the lucky few who get to write JS code for a single environment (i.e. one browser, mobile browsers, or HTML+CSS+JS-to-native via something like PhoneGap). What you learn in this book may just make a DOM library unnecessary in ideal situations, say for example, some light DOM scripting for deployment on a Webkit mobile browser only.
 
 ## Who should read this book
 
-I specifically had two types of developers in mind. I assume both types already have an intermediate to advanced knowledge of JavaScript, HTML, and CSS. The first developer is someone who has a good handle on JavaScript or jQuery, but has really never taken the time to understand the purpose and value of a library like jQuery (the reason for its rhyme, if you will). Equipped with the knowledge from this book, that developer should fully be able to understand the value provided by jQuery for scripting the DOM. And not just the value, but how jQuery abstracts the DOM and where and why jQuery is filling the gaps. The second type of developer is an engineer who is tasked with scripting HTML documents that will only run in modern browsers or that will get ported to native code for multiple OS's and device distributions (e.g. PhoneGap) and needs to avoid the overhead (i.e. size or size v.s. use) of a library.
+I specifically had two types of developers in mind. I assume both types already have an intermediate to advanced knowledge of JS, HTML, and CSS. The first developer is someone who has a good handle on JS or jQuery, but has really never taken the time to understand the purpose and value of a library like jQuery (the reason for its rhyme, if you will). Equipped with the knowledge from this book, that developer should fully be able to understand the value provided by jQuery for scripting the DOM. And not just the value, but how jQuery abstracts the DOM and where and why jQuery is filling the gaps. The second type of developer is an engineer who is tasked with scripting HTML documents that will only run in modern browsers or that will get ported to native code for multiple OS's and device distributions (e.g. PhoneGap) and needs to avoid the overhead (i.e. size or size v.s. use) of a library.
 
 # Preface
 
@@ -46,7 +46,7 @@ The above HTML code when parsed by a browser creates a document that contains no
 
 For example, the `body` element is an element node and an instance of the `HTMLBodyElement` interface.
 
-What you should take away here is that html documents get parsed by a browser and converted into a tree structure of node objects representing a live document. The purpose of the DOM is to provide a programatic interface for scripting (removing, adding, replacing, eventing, modifiying) this live document using JavaScript.
+What you should take away here is that html documents get parsed by a browser and converted into a tree structure of node objects representing a live document. The purpose of the DOM is to provide a programatic interface for scripting (removing, adding, replacing, eventing, modifiying) this live document using JS.
 
 ## 1.2 Node object types
 
@@ -59,9 +59,9 @@ The most common types of nodes one encounters when working with HTML documents a
 - DOCUMENT_FRAGMENT_NODE (e.g. `document.createDocumentFragment()`)
 - DOCUMENT_TYPE_NODE (e.g. `<!DOCTYPE html>`)
 
-I've listed the node types above formatted exactly as the constant property is written in the JavaScript browser environment as a property of the `Node` object. These `Node` properties are constant values and are used to store numeric code values which map to a specific type of node object. For example, `Node.ELEMENT_NODE` is equal to 1. And 1 is the code value used to identify element nodes.
+I've listed the node types above formatted exactly as the constant property is written in the JS browser environment as a property of the `Node` object. These `Node` properties are constant values and are used to store numeric code values which map to a specific type of node object. For example, `Node.ELEMENT_NODE` is equal to 1. And 1 is the code value used to identify element nodes.
 
-What I hope you take away is that the `nodeType` value (i.e. 1) is just a numeric classificaiton used to describe a certain type of node constructed from a certain JavaScript interface/constructor. For example, the `HTMLBodyElement` interface represents a node object that has a node type of 1, which is a classification for `ELEMENT_NODE`'s.
+What I hope you take away is that the `nodeType` value (i.e. 1) is just a numeric classificaiton used to describe a certain type of node constructed from a certain JS interface/constructor. For example, the `HTMLBodyElement` interface represents a node object that has a node type of 1, which is a classification for `ELEMENT_NODE`'s.
 
 ## 1.3 Sub-node objects inherit from the Node object
 
@@ -75,7 +75,7 @@ Each node object in a typical DOM tree inherits properties and methods from `Nod
 
 It's important not only to remember that all nodes types inherit from `Node` but that the chain of inheritance can be long. For example, all `HTMLAnchorElement` nodes inherit properties and methods from `HTMLElement, Element, Node, and Object` objects.
 
-`Node` is just a JavaScript constructor function. And so logically `Node` inherits from `Object.prototype` just like all objects in JavaScript.
+`Node` is just a JS constructor function. And so logically `Node` inherits from `Object.prototype` just like all objects in JS.
 
 You will see a long list of properties that are available to the element node object. The properties & methods inherited from the `Node` object are in this list as well as a great deal of other inherited properties and methods from the `Element, HTMLElement, HTMLAnchorElement, Node, and Object` object.
 
@@ -145,9 +145,9 @@ It makes sense to simply memorize these numeric code's for the more common nodes
 
 The `nodeValue` property returns null for most of the node types (except Text and Comment). It's use is centered around extracting actual text strings from Text and Comment nodes.
 
-## 1.7 Creating element and text nodes using JavaScript methods
+## 1.7 Creating element and text nodes using JS methods
 
-When a browser parses an HTML document it constructs the nodes and tree based on the contents of the HTML file. The browser deals with the creation of nodes for the intial loading of the HTML document. However it's possible to create your own nodes using JavaScript. The following two methods allow us to programatically create Element and Text nodes using JavaScript:
+When a browser parses an HTML document it constructs the nodes and tree based on the contents of the HTML file. The browser deals with the creation of nodes for the intial loading of the HTML document. However it's possible to create your own nodes using JS. The following two methods allow us to programatically create Element and Text nodes using JS:
 
 - `createElement()`
 - `createTextNode()`
@@ -162,7 +162,7 @@ console.log(textNode, textNode.nodeType); //logs Text {} 3, and 3 indicates a te
 
 ## 1.8 Creating and adding element and text nodes to the DOM using JS strings
 
-The `innerHTML, outerHTML, textContent and insertAdjacentHTML()` properties and methods provide the functionality to create and add nodes to the DOM using JavaScript strings.
+The `innerHTML, outerHTML, textContent and insertAdjacentHTML()` properties and methods provide the functionality to create and add nodes to the DOM using JS strings.
 
 ```js
 //create a strong element and text node and add it to the DOM
@@ -177,9 +177,9 @@ document.getElementById('C').textContent = 'dude';
 
 The `insertAdjacentHTML()` method, which only works on Element nodes, is a good deal more precise than the previously mentioned methods. Using this method it's possible to insert nodes before the beginning tag, after the beginning tag, before the end tag, and after the end tag.
 
-## 1.9 Extracting parts of the DOM tree as JavaScript strings
+## 1.9 Extracting parts of the DOM tree as JS strings
 
-The same exact properties (`innerHTML, outerHTML, textContent`) that we use to create and add nodes to the DOM can also be used to extract parts of the DOM (or really the entire DOM) as a JavaScript string. In the code example below I use these properties to return a string value containing text and html values from the HTML document.
+The same exact properties (`innerHTML, outerHTML, textContent`) that we use to create and add nodes to the DOM can also be used to extract parts of the DOM (or really the entire DOM) as a JS string. In the code example below I use these properties to return a string value containing text and html values from the HTML document.
 
 ```js
 console.log(document.getElementById('A').innerHTML); //logs '<i>Hi</i>'
@@ -190,7 +190,7 @@ console.log(document.getElementById('B').textContent); //logs 'Dude !'
 
 ## 1.10 Adding node objects to the DOM using appendChild()& insertBefore()
 
-The `appendChild()` and `insertBefore()` Node methods allow us to insert JavaScript node objects into the DOM tree.
+The `appendChild()` and `insertBefore()` Node methods allow us to insert JS node objects into the DOM tree.
 
 The `appendChild()` method will append a node(s) to the end of the child node(s) of the node the method is called on. If there are no child node(s) then the node being appended is appended as the first child.
 
@@ -263,17 +263,17 @@ Using the `childNodes` property produces an array like list (i.e. `NodeList`) of
 
 `var ulElementChildNodes = document.querySelector('ul').childNodes;`
 
-## 1.15 Convert a NodeList or HTMLCollection to JavaScript Array
+## 1.15 Convert a NodeList or HTMLCollection to JS Array
 
-Node lists and html collections are array like but not a true JavaScript array which inherits array methods. We programtically confirm this using `isArray()`.
+Node lists and html collections are array like but not a true JS array which inherits array methods. We programtically confirm this using `isArray()`.
 
 `console.log(Array.isArray(document.links));`
 
-Converting a node list and html collection list to a true JavaScript array can provide a good deal of advantages.
+Converting a node list and html collection list to a true JS array can provide a good deal of advantages.
 
 First it gives us the ability to create a snapshot of the list that is not tied to the live DOM considering that `NodeList` and `HTMLCollection` are live lists.
 
-Secondly, converting a list to a JavaScript array gives access to the methods provided by the Array object (e.g. `forEach, pop, map, reduce` etc...).
+Secondly, converting a list to a JS array gives access to the methods provided by the Array object (e.g. `forEach, pop, map, reduce` etc...).
 
 In ES6 we have `Array.from` to look forward to which converts a single argument that is an array-like object or list (eg. arguments, NodeList, DOMTokenList, NamedNodeMap) into a `new Array()` and returns it.
 
@@ -391,7 +391,7 @@ Using the `document.hasFocus()` method it's possible to know if the user current
 
 ## 2.9 document.defaultview is a shortcut to the head/global object
 
-You should be aware that the `defaultView` property is a shortcut to the JavaScript head object or what some refer to as the global object. The head object in a web browser is the `window` object and `defaultView` will point to this object in a JavaScript browser enviroment.
+You should be aware that the `defaultView` property is a shortcut to the JS head object or what some refer to as the global object. The head object in a web browser is the `window` object and `defaultView` will point to this object in a JS browser enviroment.
 
 ## 2.9 Getting a reference to the Document from an element using ownerDocument
 
@@ -403,9 +403,9 @@ The `ownerDocument` property when called on a node returns a reference to the `D
 
 ## 3.1 HTML\*Element object overview
 
-Elements in an html document all have a unique nature and as such they all have a unique JavaScript constructor that instantiates the element as a node object in a DOM tree. For example, an `<a>` element is created as a DOM node from the `HTMLAnchorElement()` constructor.
+Elements in an html document all have a unique nature and as such they all have a unique JS constructor that instantiates the element as a node object in a DOM tree. For example, an `<a>` element is created as a DOM node from the `HTMLAnchorElement()` constructor.
 
-Each element in the DOM is constructed from a unique JavaScript intefaces/constructor. Each `HTML*Element` inherits properties and methods from `HTMLElement, Element, Node, and Object`.
+Each element in the DOM is constructed from a unique JS intefaces/constructor. Each `HTML*Element` inherits properties and methods from `HTMLElement, Element, Node, and Object`.
 
 ## 3.2 HTML\*Element object properties and methods (including inherited)
 
@@ -484,7 +484,7 @@ Using the `classList.contains()` method it's possible to determine if a class at
 
 ## 3.12 Getting & Setting data-\* attributes
 
-The `dataset` property of a element node provides an object containing all of the attributes of an element that starts with data-\*. Because it's a simply a JavaScript object we can manipulate `dataset` and have the element in the DOM reflect those changes
+The `dataset` property of a element node provides an object containing all of the attributes of an element that starts with data-\*. Because it's a simply a JS object we can manipulate `dataset` and have the element in the DOM reflect those changes
 
 `dataset` contains camel case versions of data attributes. Meaning `data-foo-foo` will be listed as the property `fooFoo` in the dataset `DOMStringMap` object. The `-` is replaced by camel casing.
 
@@ -546,7 +546,7 @@ You should be aware that there are some legacy, pre-configured arrays-like-lists
 
 ## 4.6 Verify an element will be selected using matches()
 
-Using the `matches()` method we can determine if an element will match a selector string. For example say we want to determine if an <li> is the first child element of a <ul>.
+Using the `matches()` method we can determine if an element will match a selector string.
 
 `document.querySelector('li').matches('li:first-child'); // true`
 
@@ -562,7 +562,7 @@ Most of the properties from the CSSOM View Module specification are read only an
 
 ## 5.2 Getting an elements offsetTop and offsetLeft values relative to the offsetParent
 
-Using the properties `offsetTop` and `offsetLeft` we can get the offset pixel value of an element node from the `offsetParent`. These element node properties give us the distance in pixels from an elements outside top and left border to the inside top and left border of the `offsetParent`. The value of the offsetParent is determined by searching the nearest ancestor elements for an element that has a CSS position value not equal to static. If none are found then the <body> element or what some refer to as the "document" (as opposed to the browser viewport) is the offsetParent value.
+Using the properties `offsetTop` and `offsetLeft` we can get the offset pixel value of an element node from the `offsetParent`. These element node properties give us the distance in pixels from an elements outside top and left border to the inside top and left border of the `offsetParent`. The value of the offsetParent is determined by searching the nearest ancestor elements for an element that has a CSS position value not equal to static. If none are found then the `<body>` element or what some refer to as the "document" (as opposed to the browser viewport) is the offsetParent value.
 
 ## 5.3 Getting an elements top, right, bottom and left border edge offset relative to the viewport using getBoundingClientRect()
 
@@ -630,7 +630,7 @@ document.querySelector('div').style.removeProperty('background-color'));
 
 ## 6.3 Getting, setting, & removing all inline CSS properties
 
-It's possible using the `cssText` property as well as the `getAttribute() and setAttribute()` method to get, set, and remove the entire (i.e. all inline CSS properties) value of the style attribute using a JavaScript string.
+It's possible using the `cssText` property as well as the `getAttribute() and setAttribute()` method to get, set, and remove the entire (i.e. all inline CSS properties) value of the style attribute using a JS string.
 
 ## 6.4 Getting an elements computed styles (i.e. actual styles including any from the cascade) using getComputedStyle()
 
@@ -709,13 +709,13 @@ The `CharacterData` object that Text nodes inherits methods from provides the fo
 
 Typically, immediate sibling Text nodes do not occur because DOM trees created by browsers intelligently combines text nodes, however two cases exist that make sibling text nodes possible.
 
-The first case is rather obvious. If a text node contains an Element node (e.g. `<p>Hi, <strong>cody</strong> welcome!</p>`) than the text will be split into the proper node groupings. The contents of the <p> element is not a single Text node, it is in fact 3 nodes, a Text node, Element node, and another Text node.
+The first case is rather obvious. If a text node contains an Element node (e.g. `<p>Hi, <strong>cody</strong> welcome!</p>`) than the text will be split into the proper node groupings. The contents of the `<p>` element is not a single Text node, it is in fact 3 nodes, a Text node, Element node, and another Text node.
 
 ## 7.8 Remove markup and return all child Text nodes using textContent
 
 The `textContent` property can be used to get all child text nodes, as well as to set the contents of a node to a specific Text node.
 
-When its used on a node to get the textual content of the node it will returned a concatenataed string of all text nodes contained with the node you call the method on. This functionality would make it very easy to extract all text nodes from an HTML document.
+When it's used on a node to get the textual content of the node it will returned a concatenataed string of all text nodes contained with the node you call the method on. This functionality would make it very easy to extract all text nodes from an HTML document.
 
 Notice that `textContent` gathers not just immediate child text nodes but all child text nodes no matter the depth of encapsulation inside of the node the method is called.
 
@@ -737,7 +737,7 @@ Sibling Text nodes are typically only encountered when text is programaticly add
 
 ## 7.11 Splitting a text node using splitText()
 
-When `splitText()` is called on a `Text` node it will alter the text node its being called on (leaving the text up to the offset) and return a new Text node that contains the text split off from the orginal text based on the offset.
+When `splitText()` is called on a `Text` node it will alter the text node it's being called on (leaving the text up to the offset) and return a new Text node that contains the text split off from the orginal text based on the offset.
 
 ---
 
@@ -755,7 +755,7 @@ You might wonder what is the advantage to using a `documentFragment` over simply
 
 - A document fragment may contain any kind of node (except `<body>` or `<html>`) where as an element may not
 - The document fragment itself is not added to the DOM when you append a fragment. The contents of the node are. As opposed to appending an element node in which the element itself is part of the appending.
-- When a document fragment is appended to the DOM it transfers from the document fragment to the place its appended. Its no longer in memory in the place you created it. This is not true for element nodes that are temperately used to contained nodes briefly and then are moved to the live DOM.
+- When a document fragment is appended to the DOM it transfers from the document fragment to the place it's appended. It's no longer in memory in the place you created it. This is not true for element nodes that are temperately used to contained nodes briefly and then are moved to the live DOM.
 
 ## 8.3 Adding a DocumentFragment to the live DOM
 
@@ -779,17 +779,17 @@ When appending a `documentFragment` the nodes contained in the Fragment are move
 
 A style sheet is added to an HTML document by either using the `HTMLLinkElement` node (i.e. `<link href="stylesheet.css" rel="stylesheet" type="text/css">`) to include an external style sheet or the `HTMLStyleElement` node (i.e. `<style></style>`) to define a style sheet inline. In the HTML document below both of these Element node's are in the DOM and I verify which constructor, constructs these nodes.
 
-Once a style sheet is added to an HTML document its represented by the `CSSStylesheet` object. Each CSS rule inside of a style sheet is represent by a `CSSStyleRule` object.
+Once a style sheet is added to an HTML document it's represented by the `CSSStylesheet` object. Each CSS rule inside of a style sheet is represent by a `CSSStyleRule` object.
 
 ## 9.2 Accessing all style sheets (i.e. CSSStylesheet objects) in the DOM
 
 `document.styleSheets` gives access to a list of all style sheet objects (aka `CSSStylesheet`) explicitly linked (i.e. `<link>`) or embedded (i.e. `<style>`) in an HTML document.
 
-In addtion to using `styleSheets` to access a documents styles sheets its also possible to access a style sheet in an HTML document by first selecting the element in the DOM (`<style>` or `<link>`) and using the `sheet` property to gain access to the `CSSStyleSheet` object.
+In addtion to using `styleSheets` to access a documents styles sheets it's also possible to access a style sheet in an HTML document by first selecting the element in the DOM (`<style>` or `<link>`) and using the `sheet` property to gain access to the `CSSStyleSheet` object.
 
 ## 9.3 CSSStyleSheet properties and methods
 
-To get accurate information pertaining to the available properties and methods on an `CSSStyleSheet` node its best to ignore the specification and to ask the browser what is available.
+To get accurate information pertaining to the available properties and methods on an `CSSStyleSheet` node it's best to ignore the specification and to ask the browser what is available.
 
 ## 9.4 CSSStyleRule overview
 
@@ -797,7 +797,7 @@ A `CSSStyleRule` object represents each CSS rule contained in a style sheet. Bas
 
 ## 9.5 CSSStyleRule properties and methods
 
-To get accurate information pertaining to the available properties and methods on an `CSSStyleRule` node its best to ignore the specification and to ask the browser what is available.
+To get accurate information pertaining to the available properties and methods on an `CSSStyleRule` node it's best to ignore the specification and to ask the browser what is available.
 
 ## 9.6 Getting a list of CSS Rules in a style sheet using CSSRules
 
@@ -823,31 +823,31 @@ To add a CSS file to an HTML document programatically a `<link>` element node is
 
 ## 9.11 Disabling/Enabling style sheets using disabled property
 
-Using the `disabled` property of a `CSSStyleSheet` object its possible to enable or disabled a style sheet.
+Using the `disabled` property of a `CSSStyleSheet` object it's possible to enable or disabled a style sheet.
 
 ---
 
-# Chapter 10 - JavaScript in the DOM
+# Chapter 10 - JS in the DOM
 
-## 10.1 Inserting & executing JavaScript overview
+## 10.1 Inserting & executing JS overview
 
-JavaScript can be inserted in to an HTML document in a modern way by including external JavaScript files or writing page level inline JavaScript, which is basically the contents of an external JavaScript file literally embed in the HTML page as a text node. Don't confuse element inline JavaScript contained in attribute event handlers (i.e. `<div onclick="alert('yo')"></div>`) with page inline JavaScript (i.e. `<script>alert('hi')</script>`).
+JS can be inserted in to an HTML document in a modern way by including external JS files or writing page level inline JS, which is basically the contents of an external JS file literally embed in the HTML page as a text node. Don't confuse element inline JS contained in attribute event handlers (i.e. `<div onclick="alert('yo')"></div>`) with page inline JS (i.e. `<script>alert('hi')</script>`).
 
-Both methods of inserting JavaScript into an HTML document require the use of a `<script>` element node. The `<script>` element can contain JavaScript code or can be used to link to external JavaScript files using the `src` attribute.
+Both methods of inserting JS into an HTML document require the use of a `<script>` element node. The `<script>` element can contain JS code or can be used to link to external JS files using the `src` attribute.
 
-## 10.2 JavaScript is parsed synchronously by default
+## 10.2 JS is parsed synchronously by default
 
-By default when the DOM is being parsed and it encounters a `<script>` element it will stop parsing the document, block any further rendering & downloading, and exectue the JavaScript.
+By default when the DOM is being parsed and it encounters a `<script>` element it will stop parsing the document, block any further rendering & downloading, and exectue the JS.
 
-Because this behavior is blocking and does not permit parallel parsing of the DOM or exection of JavaScriopt its consider to be synchronous. If the JavaScript is external to the html document the blocking is exacerbated because the JavaScript must first be downloaed before it can be parsed.
+Because this behavior is blocking and does not permit parallel parsing of the DOM or exection of JavaScriopt it's consider to be synchronous. If the JS is external to the html document the blocking is exacerbated because the JS must first be downloaed before it can be parsed.
 
 The default blocking nature of a `<script>` element can have a significant effect on the performance of the visual rendering of a HTML web page. If you have a couple of script elements at the start of an html page nothing else is happening (e.g. DOM parsing & resource loading) until each one is downloaded and executed sequentially.
 
-## 10.3 Defering the downloading & exectuion of external JavaScript using defer
+## 10.3 Defering the downloading & exectuion of external JS using defer
 
-The `<script>` element has an attribute called defer that will defer the blocking, downloading, and executing of an external JavaScript file until the browser has parsed the closing `<html>` node. Using this attribute simply defers what normally occurs when a web browser encounters a `<script>` node.
+The `<script>` element has an attribute called defer that will defer the blocking, downloading, and executing of an external JS file until the browser has parsed the closing `<html>` node. Using this attribute simply defers what normally occurs when a web browser encounters a `<script>` node.
 
-## 10.4 Asynchronously downloading & executing external JavaScript files using async
+## 10.4 Asynchronously downloading & executing external JS files using async
 
 The `<script>` element has an attribute called `async` that will override the sequential blocking nature of `<script>` elements when the DOM is being constructed by a web browser.
 
@@ -855,22 +855,267 @@ By using this attribute, we are telling the browser not to block the constructio
 
 What happens by using the async attribute is the files are loaded in parallel and parsed in order of download once they are fully downloaded.
 
-## 10.5 Forcing asynchronous downloading & parsing of external JavaScript using dynamic <script>
+## 10.5 Forcing asynchronous downloading & parsing of external JS using dynamic <script>
 
-A known hack for forcing a web browser into asynchronous JavaScript downloading and parsing without using the async attribure is to programatically create `<script>` elements that include external JavaScript files and insert them in the DOM.
+A known hack for forcing a web browser into asynchronous JS downloading and parsing without using the async attribure is to programatically create `<script>` elements that include external JS files and insert them in the DOM.
 
-## 10.6 Using the onload call back for asynchronous <script>'s so we know when its loaded
+## 10.6 Using the onload call back for asynchronous <script>'s so we know when it's loaded
 
-The `<script>` element supports a load event handler (i.e. `onload`) that will execute once an external JavaScript file has been loaded and executed.
+The `<script>` element supports a load event handler (i.e. `onload`) that will execute once an external JS file has been loaded and executed.
 
 ## 10.7 Be mindful of <script> 's placement in HTML for DOM manipulation
 
-Given a `<script>` elements synchronous nature, placing one in the `<head>` element of an HTML document presents a timing problem if the JavaScript execution is dependant upon any of the DOM that proceeds the `<script>`.
+Given a `<script>` elements synchronous nature, placing one in the `<head>` element of an HTML document presents a timing problem if the JS execution is dependant upon any of the DOM that proceeds the `<script>`.
 
 Many developers, myself being one of them, for this reason will attempt to place all `<script>` elements before the closing `</body>` element. By doing this you can rest assured the DOM in front of the `<script>`'s has been parsed and is ready for scripting. As well, this strategy will remove a dependancy on DOM ready events that can liter a code base.
 
 ## 10.8 Getting a list of <script>'s in the DOM
 
-The `document.scripts` property avaliable from the document object provides a list (i.e. an HTMLCollection) of all of the scripts currently in the DOM.
+The `document.scripts` property available from the document object provides a list (i.e. an HTMLCollection) of all of the scripts currently in the DOM.
 
 ---
+
+# Chapter 11 - DOM Events
+
+## 11.1 DOM events overview
+
+An event, in terms of the DOM, is either a pre-defined or custom moment in time that occurs in relationship with an element in the DOM, the document object, or the window object. These moments are typically predetermined and programaticlly accounted for by associating functionality (i.e. handlers/callbacks) to occur when these moments in time come to pass. These moments can be initiated by that state of the UI (e.g. input is focused or something has been dragged), the state of the enviroment that is running the JS program (e.g. page is loaded or XHR request has finished), or the state of the program itself (e.g. start monitor users ui interaction for 30 seconds after the page has loaded).
+
+Setting up events can be accomplished using inline attribute event handlers, property event handlers, or the `addEventListener()` method.
+
+```js
+// inline attribure event handler pattern
+<body onclick="console.log('fire/trigger attribure event handler')">
+
+// property event handler pattern
+document.querySelector('div').onclick = function(){...)};
+
+//addEventListener method pattern
+document.querySelector('div').addEventListener('click',function(){...}, false);
+```
+
+While all three of these patterns for attaching an event to the DOM programatically schedule the event, only the `addEventListener()` provides a robust and organized solution. The inline attribute event handler mixes together JS and HTML and best practices advise keeping these things seperate.
+
+The downside to using a property event handler is that only one value can be assigned to the event property at a time. Meaning, you can't add more than one propety event handler to a DOM node when assigning events as property values.
+
+Additionaly, using event handlers inline or property event handlers can suffer from scoping nuances as one attempts to leverage the scope chain from the function that is invoked by the event. The `addEventListener()` smooths out all of these issues, and will be used throughout this chapter.
+
+## 11.2 DOM event types
+
+In the tables below I detail the most common pre-defined events that can be attached to Element nodes, the document object, and the window object. Of course not all events are directly applicable to the node or object it can be attached too. That is, just because you can attach the event without error, and most likley invoke the event (i.e. bubbling events like onchange to window), does not mean that adding something like window.onchange is logical given that this event, by design was not meant for the window object.
+
+[See List](http://domenlightenment.com/#11.2)
+
+Most used:
+
+- Document: `readystatechange`, `DOMContentLoaded`
+- Mouse: `click`, `dblclick`, `mouseenter`, `mouseleave`
+- Keyboard: `keydown`, `keyup`, `keypress`
+- Focus: `blur`, `focus`
+- UI: `load`
+- Form: `submit`
+
+## 11.3 The event flow
+
+When an event is invoked the event flows or propagates through the DOM, firing the same event on other nodes and JS objects. The event flow can be programmed to occur as a capture phase (i.e. DOM tree trunk to branch, left to right) or bubbling phase (i.e. DOM tree branches to trunk, right to left), or both.
+
+In the code below I set up 10 event listeners that can all be invoked, due to the event flow, by clicking once on the `<div>` element in the HTML document. When the `<div>` is clicked the capture phase begins at the window object and propagates down the DOM tree firing the click event for each object (i.e. `window > document > <html> > <body> > event target`) until it hits the event target. Once the capture phase ends the target phase starts, firing the click event on the target element itself. Next the propagation phase propagates up from the event target firing the click event until it reaches the window object (i.e. `event target > <body> > <html> > document > window`). With this knowledge it should be obvious why clicking the `<div>` in the code example logs to the console 1,2,3,4,5,6,7,8,9,10.
+
+```js
+/* notice that I am passing the addEventListener() a boolean parameter of true so capture events fire, not just bubbling events*/
+
+// 1 capture phase
+window.addEventListener(
+  'click',
+  () => {
+    console.log(1);
+  },
+  true,
+);
+
+// 2 capture phase
+document.addEventListener(
+  'click',
+  () => {
+    console.log(2);
+  },
+  true,
+);
+
+// 3 capture phase
+document.documentElement.addEventListener(
+  'click',
+  () => {
+    console.log(3);
+  },
+  true,
+);
+
+// 4 capture phase
+document.body.addEventListener(
+  'click',
+  () => {
+    console.log(4);
+  },
+  true,
+);
+
+// 5 target phase occurs during capture phase
+document.querySelector('div').addEventListener(
+  'click',
+  () => {
+    console.log(5);
+  },
+  true,
+);
+
+// 6 target phase occurs during bubbling phase
+document.querySelector('div').addEventListener(
+  'click',
+  () => {
+    console.log(6);
+  },
+  false,
+);
+
+// 7 bubbling phase
+document.body.addEventListener(
+  'click',
+  () => {
+    console.log(7);
+  },
+  false,
+);
+
+// 8 bubbling phase
+document.documentElement.addEventListener(
+  'click',
+  () => {
+    console.log(8);
+  },
+  false,
+);
+
+// 9 bubbling phase
+document.addEventListener(
+  'click',
+  () => {
+    console.log(9);
+  },
+  false,
+);
+
+// 10 bubbling phase
+window.addEventListener(
+  'click',
+  () => {
+    console.log(10);
+  },
+  false,
+);
+```
+
+# 11.4 Adding event listeners to Element nodes, window object, and Document object
+
+The `addEventListener()` method is avaliabe on all Element nodes, the window object, and the document object providing the ability to added event listeners to parts of an HTML document as well as JS objects relating to the DOM and BOM (browser object model).
+
+```js
+//add a mousemove event to a <div> element object, invoking the event during the bubbling phase
+document.querySelector('div').addEventListener('mousemove',() => {...},false);
+```
+
+The `addEventListener()` method used in the above code example takes three arguments. The first argument is the type of event to listen for. Notice that the event type string does not contain the "on" prefix (i.e. `onmousemove`) that event handlers require. The second argument is the function to be invoked when the event occurs. The third parameter is a boolean indicating if the event should be fired during the capture phase or bubbling phase of the event flow.
+
+Typically a developer wants events to fire during the bubbling phase so that object eventing handles the event before bubbling the event up the DOM. Because of this you almost always provide a false value as the last argument to the `addEventListener()`. In modern browsers if the 3rd parameter is not specified it will `default to false`.
+
+## 11.5 Removing event listeners
+
+The `removeEventListener()` method can be used to remove events listeners, if the orginal listener was not added using an anonymous function. In the code below I add two events listeners to the HTML document and attempt to remove both of them. However, only the listener that was attached using a function reference is removed.
+Anonymous functions added using `addEventListener()` method simply cannot be removed.
+
+## 11.6 Getting event properties from the event object
+
+The handler or callback function invoked for events is sent by default a parameter that contains all relevant information about an event itself. In the code below I demostrate access to this event object and log all of its properties and values for a load event as well as a click event. Make sure you click the `<div>` to see the properties assocaited with a click event.
+
+```js
+document.querySelector('div').addEventListener('click',(event) => {...},false);
+```
+
+Keep in mind that each event will contain slightly different properties based on the event type (e.g. MouseEvent, KeyboardEvent, WheelEvent).
+
+The event object also provides the stopPropagation(), stopImediatePropagation(), and preventDefault() methods.
+
+## 11.7 The value of this when using addEventListener()
+
+The value of `this` inside of the event listener function passed to the `addEventListener()` method will be a reference to the node or object the event is attached too.
+
+When events are invoked as part of the event flow the this value will remain the value of the node or object that the event listener is attached too.
+
+Additionally it's possible using the event.currentTarget property to get the same reference, to the node or object invoking the event listener, that the this property provides.
+
+## 11.8 Referencing the target of an event and not the node or object the event is invoked on
+
+Because of the event flow it's possible to click a `<div>`, contained inside of a `<body>` element and have a click event listener attached to the `<body>` element get invoked. When this happens, the event object passed to the event listener function attached to the `<body>` provides a reference (i.e. `event.target`) to the node or object that the event originated on (i.e. the target).
+
+The event.target can be extremely useful when an event that fires because of the event flow needs knowledge about the origin of the event.
+
+## 11.9 Cancelling default browser events using preventDefault()
+
+Browsers provide several events already wired up when an HTML page is presented to a user. For example, clicking a link has a corresponding event (i.e. you navigate to a url). So does clicking a checkbox (i.e. box is checked) or typing text into a text field (i.e. text is inputed and appears on screen). These browser events can be prevented by calling the preventDefault() method inside of the event handler function associated with a node or object that invokes a browser default event.
+
+```js
+// stop the default event for <a> which would be to load a url
+document.querySelector('a').addEventListener(
+  'click',
+  (event) => {
+    event.preventDefault();
+  },
+  false,
+);
+```
+
+The `preventDefault()` methods does not stop events from propagating (i.e. bubbling or capture phases)
+
+Providing a return false at the end of the body of the event listener has the same result as call the preventDefault() method.
+
+## 11.10 Stoping the event flow using stopPropagation()
+
+Calling `stopProgagation()` from within an event handler/listener will stop the capture and bubble event flow phases, but any events directly attached to the node or object will still be invoked.
+
+Additionally using `stopPropagation()` does not prevent default events.
+
+## 11.11 Stoping the event flow as well as other like events on the same target using stopImmediatePropagation()
+
+Calling the `stopImmediatePropagation()` from within an event handler/listener will stop the event flow phases (i.e. `stopPropagation()`), as well as any other like events attached to the event target that are attached after the event listener that invokes the `stopImmediatePropagation()` method.
+
+Using the `stopImmediatePropagation()` does not prevent default events. Browser default events still get invoked and only calling `preventDefault()` will stop these events.
+
+## 11.12 Custom events
+
+A developer is not limited to the predefined event types. it's possible to attach and invoke a custom event, using the `addEventListener()` method like normal in combiniation with `document.createEvent(), initCustomEvent(), and dispatchEvent()`.
+
+## 11.13 Simulating/Triggering mouse events
+
+Simulating an event is not unlike creating a custom event. In the case of simulating a mouse event we create a 'MouseEvent' using `document.createEvent()`. Then, using `initMouseEvent()` we setup the mouse event that is going to occur. Next the mouse event is dispatched on the element that we'd like to simulate an event on.
+
+## 11.14 Event delegation
+
+Event delegation is the programmatic act of leveraging the event flow and a single event listener to deal with multiple event targets. A side effect of event delegation is that the event targets don't have to be in the DOM when the event is created in order for the targets to respond to the event. This is of course rather handy when dealing with XHR responses that update the DOM. By implementing event delegation new content that is added to the DOM post JS load parsing can immediately start responding to events.
+
+Imagine you have a table with an unlimited number of rows and columns. Using event delegation we can add a single event listener to the `<table>` node which acts as a delegate for the node or object that is the initial target of the event. In the code example below, clicking any of the `<td>`'s (i.e. the target of the event) will delegate its event to the click listener on the `<table>`. Don't forget this is all made possible because of the event flow and in this specific case the bubbling phase.
+
+```js
+document.querySelector('table').addEventListener(
+  'click',
+  function(event) {
+    //make sure we only run code if a td is the target
+    if (event.target.tagName.toLowerCase() === 'td') {
+      //use event.target to gain access to target of the event which is the td
+      console.log(event.target.textContent);
+    }
+  },
+  false,
+);
+```
+
+If we were to update the table in the code example with new rows, the new rows would responded to the click event as soon as they were render to the screen because the click event is delegated to the `<table>` element node.
