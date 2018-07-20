@@ -13,6 +13,7 @@
 - [x] Book: [YDKJS: Async & Performance][ydkjs] - 3hrs
 - [x] Book: [DOM Enlightenment][dom] - 5hrs
 - [ ] Book - [JavaScript Allongé, the "Six" Edition][allonge] -
+- [ ] Project: Pick a template from [here][temps1] or [here][temps2] and implement the frontend (do not use its assets) -
 
 [git1]: https://medium.com/@francesco.agnoletto/how-to-not-f-up-your-local-files-with-git-part-1-e0756c88fd3c
 [git2]: https://medium.com/@francesco.agnoletto/how-to-not-f-up-your-local-files-with-git-part-2-fc4e243be0
