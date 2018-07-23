@@ -12,8 +12,9 @@
 - [x] Book: [YDKJS: this & Object Prototypes][ydkjs] - 2hrs
 - [x] Book: [YDKJS: Async & Performance][ydkjs] - 3hrs
 - [x] Book: [DOM Enlightenment][dom] - 5hrs
+- [x] Project: Pick a template from [here][temps1] or [here][temps2] and implement the frontend: [result][proj1]
+- [ ] Project: Pick a template from [here][temps1] or [here][temps2] and implement the frontend: [result][proj2]
 - [ ] Book - [JavaScript Allongé, the "Six" Edition][allonge] -
-- [ ] Project: Pick a template from [here][temps1] or [here][temps2] and implement the frontend (do not use its assets) -
 
 [git1]: https://medium.com/@francesco.agnoletto/how-to-not-f-up-your-local-files-with-git-part-1-e0756c88fd3c
 [git2]: https://medium.com/@francesco.agnoletto/how-to-not-f-up-your-local-files-with-git-part-2-fc4e243be0
@@ -24,3 +25,9 @@
 [shay]: http://learn.shayhowe.com/html-css/
 [dom]: http://domenlightenment.com/
 [allonge]: https://leanpub.com/javascriptallongesix
+[100css]: https://100dayscss.com/
+[temps1]: https://freebiesbug.com/psd-freebies/website-template/
+[temps2]: http://www.free-css.com/free-css-templates
+[todd]: https://github.com/toddmotto/public-apis
+[proj1]: https://github.com/miku86/template-resume
+[proj2]: #
