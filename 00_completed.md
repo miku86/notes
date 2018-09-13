@@ -14,7 +14,7 @@
 - [x] Book: [DOM Enlightenment][dom]
 - [x] Project: Pick a template from [here][temps1] or [here][temps2] and implement the frontend: [result][proj1]
 - [x] Article: Read [Project Specification Documents][docs] and get in the habit of including information details that makes sense for a project in the README.md
-- [ ] Regex Speedrun: [1][regex1],[2][regex2],[3][regex3],[4][regex4]
+- [x] Regex Speedrun: [1][regex1],[2][regex2],[3][regex3],[4][regex4]
 
 [git1]: https://medium.com/@francesco.agnoletto/how-to-not-f-up-your-local-files-with-git-part-1-e0756c88fd3c
 [git2]: https://medium.com/@francesco.agnoletto/how-to-not-f-up-your-local-files-with-git-part-2-fc4e243be0
