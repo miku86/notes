@@ -4,7 +4,7 @@ Source: https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS101x+3T201
 
 ## Chapter 1: The Linux Foundation
 
-### Discuss the role of The Linux Foundation:
+### Discuss the role of The Linux Foundation
 
 The Linux Foundation is the umbrella organization for many critical open source projects that power corporations, spanning all industry sectors. Its work today extends far beyond Linux, fostering innovation at every layer of the software stack.
 
@@ -15,6 +15,24 @@ SUSE Family Systems (including openSUSE)
 Debian Family Systems (including Ubuntu and Linux Mint).
 
 ## Chapter 2: Linux Philosophy and Concepts
+
+Linux borrows heavily from the UNIX operating system, with which its creators were well-versed.
+Linux accesses many features and services through files and file-like objects.
+Linux is a fully multi-tasking, multi-user operating system, with built-in networking and service processes known as daemons.
+Linux is developed by a loose confederation of developers from all over the world, collaborating over the Internet, with Linus Torvalds at the head. Technical skill and a desire to contribute are the only qualifications for participating.
+The Linux community is a far reaching ecosystem of developers, vendors, and users that supports and advances the Linux operating system.
+
+### Define the common terms associated with Linux
+
+Kernel: glue between hardware and applications
+Distribution: collection of software, combined with the Linux Kernel, making up a Linux-based Operating System
+Bootloader: program that boots the Operating System
+Service: program that runs as a background process
+Filesystem: method for storing and organizing files
+X Window System: graphical subsystem on nearly all Linux systems
+Desktop Environment: graphical user interface on top of the OS
+Command Line: interface for typing commands on top of the OS
+Shell: Command Line Interpreter that interprets the Command Line input and instructs the OS to perform any tasks and command
 
 ## Chapter 3: Linux Basics and System Startup
 
