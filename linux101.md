@@ -36,6 +36,24 @@ Shell: Command Line Interpreter that interprets the Command Line input and instr
 
 ## Chapter 3: Linux Basics and System Startup
 
+### Identify the differences between partitions and filesystems
+
+A partition is a physically contiguous section of a disk, or what appears to be so.
+A filesystem is a method of storing/finding files on a hard disk (usually in a partition).
+One can think of a partition as a container in which a filesystem resides, although in some circumstances, a filesystem can span more than one partition if one uses symbolic links, which we will discuss much later.
+
+### Describe the boot process
+
+Power On
+BIOS: Initialize hardware, test memory
+MBR: boot loader is stored in boot sector or efi partition
+Boot Loader: load kernel image and initial Ram Disk
+Kernel: initialize and configure memory and all hardware
+Initial Ram Disk: load filesystem, drivers
+sbin/init (systemd now): init program of root filesystem
+Command Shell using getty: User Login
+X Windows System
+
 ## Chapter 4: Graphical Interface
 
 ## Chapter 5: System Configuration from the Graphical Interface
