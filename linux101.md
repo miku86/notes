@@ -56,6 +56,26 @@ X Windows System
 
 ## Chapter 4: Graphical Interface
 
+You can use either a Command Line Interface (CLI) or a Graphical User Interface (GUI) when using Linux.
+
+To work at the CLI, you have to remember which programs and commands are used to perform tasks, and how to quickly and accurately obtain more information about their use and options. For repetitive tasks, the CLI is often more efficient.
+
+Using the GUI is often quick and easy. It allows you to interact with your system through graphical icons and screens. The GUI is easier to navigate if you do not remember all the details or do something only rarely.
+
+X Window System: Display Manager: A service called the display manager keeps track of the displays being provided and loads the X server (it provides graphical services to applications). The display manager also handles graphical logins and starts the appropriate desktop environment after a user logs in.
+
+If the display manager is not started by default in the default runlevel, you can start X a different way, after logging on to a text-mode console, by running startx from the command line. Or, you can start the display manager (gdm, lightdm, kdm, xdm, etc.) manually from the command line.
+
+A desktop environment consists of a session manager, which starts and maintains the components of the graphical session, and the window manager, which controls the placement and movement of windows, window title-bars, and controls.
+
+GNOME is a popular desktop environment with an easy-to-use graphical user interface. It is bundled as the default desktop environment for most Linux distributions. Another common desktop environment very important in the history of Linux and also widely used is KDE, which has often been used in conjunction with SUSE and openSUSE.
+
+### Manage graphical interface sessions
+
+### Perform basic operations using the graphical interface
+
+### Change the graphical desktop to suit your needs
+
 ## Chapter 5: System Configuration from the Graphical Interface
 
 ## Chapter 6: Common Applications
