@@ -70,12 +70,6 @@ A desktop environment consists of a session manager, which starts and maintains 
 
 GNOME is a popular desktop environment with an easy-to-use graphical user interface. It is bundled as the default desktop environment for most Linux distributions. Another common desktop environment very important in the history of Linux and also widely used is KDE, which has often been used in conjunction with SUSE and openSUSE.
 
-### Manage graphical interface sessions
-
-### Perform basic operations using the graphical interface
-
-### Change the graphical desktop to suit your needs
-
 ## Chapter 5: System Configuration from the Graphical Interface
 
 ## Chapter 6: Common Applications
