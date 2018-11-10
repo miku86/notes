@@ -86,6 +86,16 @@ Red Hat Package Manager (RPM): The high-level package manager differs between di
 
 ## Chapter 6: Common Applications
 
+Web browsers: Firefox, Google Chrome, Epiphany, w3m, lynx, and others.
+Email clients: Thunderbird, Evolution, Claws Mail, Mutt and mail.
+Internet-related tasks: such as Filezilla, XChat, Pidgin, and others.
+Office: LibreOffice to create and edit different kinds of documents.
+Development applications and tools, including compilers and debuggers.
+Sound players: including Amarok, Audacity, and Rhythmbox.
+Movie players: including VLC, MPlayer, Xine, and Totem.
+Movie editors: including Kino, Cinepaint, Blender among others.
+Graphic Tools: GIMP, eog, Inkscape, convert, and Scribus.
+
 ## Chapter 7: Command Line Operations
 
 ## Chapter 8: Finding Linux Documentation
