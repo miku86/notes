@@ -98,6 +98,67 @@ Graphic Tools: GIMP, eog, Inkscape, convert, and Scribus.
 
 ## Chapter 7: Command Line Operations
 
+Graphical user interfaces make easy tasks easier, while command line interfaces make difficult tasks possible.
+
+Advantages:
+
+- No GUI overhead is incurred.
+- Virtually any and every task can be accomplished while sitting at the command line.
+- You can implement scripts for often-used or easy-to-forget tasks and series of procedures.
+- You can sign into remote machines anywhere on the Internet.
+- You can initiate graphical applications directly from the command line instead of hunting through menus.
+- While graphical tools may vary among Linux distributions, the command line interface does not.
+
+```
+General usage: command - option - argument
+Turn off GUI: `sudo telinit 3`
+Turn on GUI: `sudo telinit 5`
+Locating application: `which` or `whereis`
+Shortcuts for directories: `.` (present directory), `..` (parent directory) and `~` (your home directory)
+Absolute paths always start with `/`.
+Relative paths never start with `/`.
+```
+
+When commands are executed, by default there are three standard file streams open for use:
+standard input (standard in or stdin), standard output (standard out or stdout) and standard error (or stderr).
+Usually, stdin is your keyboard, and stdout and stderr are printed on your terminal.
+
+Through the command shell, we can redirect the three standard file streams so that we can get input from either a file or another command, instead of from our keyboard, and we can write output and errors to files or use them to provide input for subsequent commands.
+
+If we have a program called do_something that reads from stdin and writes to stdout, we can change its input source by using the less-than sign ( `<` ) followed by the name of the file to be consumed for input data: `do_something < input-file`.
+If you want to send the output to a file, use the greater-than sign `>` as in: `do_something 2> error-file`
+
+The UNIX/Linux philosophy is to have many simple and short programs (or commands) cooperate together to produce quite complex results. In order to accomplish this, extensive use of pipes is made. You can pipe the output of one command or program into another as its input.
+
+In order to do this, we use the vertical-bar, `|`, (pipe symbol) between commands as in: `command1 | command2`
+
+`find` is an extremely useful and often-used utility program in the daily life of a Linux system administrator. It recurses down the filesystem tree from any particular directory and locates files that match specified conditions. The default pathname is always the present working directory.
+
+Searching for regular files named gcc: `find /usr -type f -name gcc`
+Find and remove all files that end with .swp: `find -name "*.swp" -ok rm {} ’;’`
+
+### Package Management Systems on Linux
+
+The core parts of a Linux distribution and most of its add-on software are installed via the Package Management System. Each package contains the files and other instructions needed to make one software component work well and cooperate with the other components that comprise the entire system. Packages can depend on each other.
+
+There are two broad families of package managers: those based on Debian and those which use RPM as their low-level package manager. The two systems are incompatible, but broadly speaking, provide the same features and satisfy the same needs.
+
+Both package management systems operate on two distinct levels: a low-level tool (such as dpkg or rpm) takes care of the details of unpacking individual packages, running scripts, getting the software installed correctly, while a high-level tool (such as apt-get, yum) works with groups of packages, downloads packages from the vendor, and figures out dependencies.
+
+Most of the time users need to work only with the high-level tool, which will take care of calling the low-level tool as needed. Dependency resolution is a particularly important feature of the high-level tool, as it handles the details of finding and installing each dependency for you.
+
+The Advanced Packaging Tool (apt) is the underlying package management system that manages software on Debian-based systems. While it forms the backend for graphical package managers, such as the Ubuntu Software Center and synaptic, its native user interface is at the command line, with programs that include apt-get and apt-cache.
+
+```
+Low Level:
+dpkg --list: see all packages
+dpkg --list | grep zsh : see zsh package
+dpkg --listfiles zsh: see all files of package
+
+High Level:
+apt-cache search zsh: show zsh package and its deps
+```
+
 ## Chapter 8: Finding Linux Documentation
 
 ## Chapter 9: Processes
@@ -119,3 +180,7 @@ Graphic Tools: GIMP, eog, Inkscape, convert, and Scribus.
 ## Chapter 17: Printing
 
 ## Chapter 18: Local Security Principles
+
+```
+
+```
