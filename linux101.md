@@ -411,6 +411,73 @@ It allows you to create or extract files from an archive file, often called a ta
 
 ## Chapter 11: Text Editors
 
+At some point, you will need to manually edit text files. You might be composing an email off-line, writing a script to be used for bash or altering a system or application configuration file.
+
+Note that word processing applications including those that are part of office suites are not really basic text editors because they add a lot of extra (usually invisible) formatting information that will probably render system administration configuration files unusable for their intended purpose. So, using text editors really is essential in Linux.
+
+When it comes to text editors, there are many choices, ranging from quite simple to very complex, including: nano, gedit, vi, emacs.
+
+### How to create and edit files using the available Linux text editors
+
+Sometimes, you may want to create a short file and don't want to bother invoking a full text editor. In addition, doing so can be quite useful when used from within scripts, even when creating longer files.
+
+If you want to create a file without using an editor, there is an easy way to create one from the command line and fill it with content.
+
+```
+$ echo line one > myfile
+$ echo line two >> myfile
+$ echo line three >> myfile
+```
+
+Note that while a single greater-than sign (>) will send the output of a command to a file, two of them (>>) will append the new output to an existing file.
+
+### nano, a simple text-based editor
+
+Just invoke nano by giving a file name as an argument. All the help you need is displayed at the bottom of the screen, and you should be able to proceed without any problem.
+
+nano is easy to use, and requires very little effort to learn. To open a file in nano, type `nano <filename>` and press Enter. If the file does not exist, it will be created.
+
+nano provides a two line “shortcut bar” at the bottom of the screen that lists the available commands. Some of these commands are:
+
+```
+CTRL-G: Display the help screen
+CTRL-O: Write to a file
+CTRL-X: Exit a file
+CTRL-R: Insert contents from another file to the current buffer
+CTRL-C: Cancels previous commands
+```
+
+### gedit, a simple graphical editor
+
+gedit is a simple-to-use graphical editor that can only be run within a Graphical Desktop environment. It is visually quite similar to the Notepad text editor in Windows, but is actually far more capable and very configurable and has a wealth of plugins available to extend its capabilities further.
+
+To open a new file in gedit, find the program in your desktop's menu system, or from the command line type `gedit <filename>`. If the file does not exist, it will be created.
+
+### vi and emacs, two advanced editors with both text-based and graphical interfaces
+
+Developers and administrators experienced in working on UNIX-like systems almost always use one of the two venerable editing options: vi and emacs. Both are present or easily available on all distributions and are completely compatible with the versions available on other operating systems.
+
+Both vi and emacs have a basic purely text-based form that can run in a non-graphical environment. They also have one or more graphical interface forms with extended capabilities; these may be friendlier for a less experienced user. While vi and emacs can have significantly steep learning curves for new users, they are extremely efficient when one has learned how to use them.
+
+Use `vimtutor` to learn it.
+
+vi provides three modes. It is vital to not lose track of which mode you are in. Many keystrokes and commands behave quite differently in different modes.
+
+Command: By default, vi starts in Command mode. Each key is an editor command. Keyboard strokes are interpreted as commands that can modify file contents.
+
+Insert: Type i to switch to Insert mode from Command mode. Insert mode is used to enter (insert) text into a file. Insert mode is indicated by an “? INSERT ?” indicator at the bottom of the screen. Press Esc to exit Insert mode and return to Command mode.
+
+Line: Type : to switch to the Line mode from Command mode. Each key is an external command, including operations such as writing the file contents to disk or exiting. Uses line editing commands inherited from older line editors. Some line editing commands are very powerful. Press Esc to exit Line mode and return to Command mode.
+
+```
+vi myfile: start the vi editor and edit the myfile file
+:w : write to the file
+:x : exit vi and write out modified file
+:q : quit vi
+/pattern: search forward for pattern
+?pattern: search backward for pattern
+```
+
 ## Chapter 12: User Environment
 
 ## Chapter 13 : Manipulating Text
