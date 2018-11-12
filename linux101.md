@@ -540,6 +540,87 @@ One often uses a shorthand which lets you set all the permissions in one step. T
 
 ## Chapter 13 : Manipulating Text
 
+- cat is used to read, print, and combine files.
+- echo displays a line of text either on standard output or to place in a file.
+- sed is used to filter and perform substitutions on files and text data streams.
+- awk is used as a data extraction and reporting tool.
+- sort is used to sort text files and output streams in either ascending or descending order.
+- uniq eliminates duplicate entries in a text file.
+- paste combines fields from different files. It can also extract and combine lines from multiple sources.
+- join combines lines from two files based on a common field.
+- split breaks up a large file into equal-sized segments.
+- Regular expressions are text strings used for pattern matching.
+- grep searches text files and data streams for patterns and can be used with regular expressions.
+- tr translates characters, copies standard input to standard output, and handles special characters.
+- tee saves a copy of standard output to a file while still displaying at the terminal
+- wc (word count) displays the number of lines, words, and characters in a file or group of files.
+- cut extracts columns from a file.
+- less views files a page at a time and allows scrolling in both directions.
+- head displays the first few lines of a file or data stream on standard output.
+- tail displays the last few lines of a file or data stream on standard output.
+- strings extracts printable character strings from binary files.
+- The z command family is used to read and work with compressed files.
+
+### Display and append to file contents using cat and echo
+
+Irrespective of the role you play with Linux (system administrator, developer or user), you often need to browse through and parse text files, and/or extract data from them. These are file manipulation operations. Thus, it is essential for the Linux user to become adept at performing certain operations on files.
+
+Most of the time, such file manipulation is done at the command line, which allows users to perform tasks more efficiently than while using a GUI. Furthermore, the command line is more suitable for automating often executed tasks.
+
+Indeed, experienced system administrators write customized scripts to accomplish such repetitive tasks, standardized for each particular environment. We will discuss such scripting later in much detail.
+
+#### cat
+
+cat is short for concatenate and is one of the most frequently used Linux command line utilities. It is often used to read and print files, as well as for simply viewing file contents. To view a file, use the following command: `cat <filename>`
+
+For example, `cat readme.txt` will display the contents of readme.txt on the terminal. However, the main purpose of cat is often to concatenate multiple files together.
+
+The tac command (cat spelled backwards) prints the lines of a file in reverse order. Each line remains the same, but the order of lines is inverted. The syntax of tac is exactly the same as for cat, as in: `tac file`
+
+```
+cat file1 file2: concatenate multiple files and display the output
+cat file1 file2 > newfile: combine multiple files and save the output into a new file
+cat file >> existingfile: append a file to the end of an existing file
+```
+
+#### echo
+
+echo simply displays (echoes) text: `echo string`
+
+echo can be used to display a string on standard output (i.e. the terminal) or to place in a new file (using the > operator) or append to an already existing file (using the >> operator).
+
+echo is particularly useful for viewing the values of environment variables (built-in shell variables). For example, echo \$USERNAME will print the name of the user who has logged into the current terminal.
+
+#### less
+
+System administrators need to work with configuration files, text files, documentation files, and log files. Some of these files may be large or become quite large as they accumulate data with time.
+
+In such cases, directly opening the file in an editor will cause issues, due to high memory utilization, as an editor will usually try to read the whole file into memory first. However, one can use less to view the contents of such a large file, scrolling up and down page by page, without the system having to place the entire file in memory before starting. This is much faster than using a text editor.
+
+Viewing somefile can be done by typing either of the two following commands: `less somefile`, `cat somefile | less`
+
+#### sed
+
+sed is a powerful text processing tool. It is used to modify the contents of a file, usually placing the contents into a new file. Its name is an abbreviation for stream editor. sed can filter text, as well as perform substitutions in data streams.
+
+Data from an input source/file (or stream) is taken and moved to a working space. The entire list of operations/modifications is applied over the data in the working space and the final contents are moved to the standard output space (or stream).
+
+#### awk
+
+awk is used to extract and then print specific contents of a file and is often used to construct reports. It is a powerful utility and interpreted programming language. It is used to manipulate data files, retrieving, and processing text. It works well with fields (containing a single piece of data, essentially a column) and records (a collection of fields, essentially a line in a file).
+
+#### File Manipulation
+
+In managing your files, you may need to perform many tasks, such as sorting data and copying data from one location to another. Linux provides several file manipulation utilities that you can use while working with text files: sort, uniq, paste, join, split.
+
+#### grep
+
+grep is extensively used as a primary text searching tool. It scans files for specified patterns and can be used with regular expressions, as well as simple strings.
+
+### Search for patterns using grep
+
+### Use multiple other utilities for file and text manipulation
+
 ## Chapter 14: Network Operations
 
 ## Chapter 15 : The Bash Shell and Basic Scripting
