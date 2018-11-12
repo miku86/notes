@@ -202,6 +202,79 @@ Online resources.
 
 ## Chapter 9: Processes
 
+### Describe what a process is and distinguish between types of processes
+
+Processes are used to perform various tasks on the system.
+Processes can be single-threaded or multi-threaded.
+Processes can be of different types, such as interactive and non-interactive.
+Every process has a unique identifier (PID) to enable the operating system to keep track of it.
+The nice value, or niceness, can be used to set priority.
+ps provides information about the currently running processes.
+You can use top to get constant real-time updates about overall system performance, as well as information about the processes running on the system.
+Load average indicates the amount of utilization the system is under at particular times.
+Linux supports background and foreground processing for a job.
+at executes any non-interactive command at a specified time.
+cron is used to schedule tasks that need to be performed at regular intervals.
+
+A process is simply an instance of one or more related tasks (threads) executing on your computer. It is not the same as a program or a command. A single command may actually start several processes simultaneously. Some processes are independent of each other and others are related. A failure of one process may or may not affect the others running on the system.
+
+Processes use many system resources, such as memory, CPU cycles, and peripheral devices. The operating system (especially the kernel) is responsible for allocating a proper share of these resources to each process and ensuring overall optimized system utilization.
+
+### Types of Processes
+
+Interactive Processes: Need to be started by a user, either at a command line or through a graphical interface such as an icon or a menu selection. bash, firefox.
+
+Batch Processes: Automatic processes which are scheduled from and then disconnected from the terminal. These tasks are queued and work on a FIFO basis. updatedb.
+
+Daemons: Server processes that run continuously. Many are launched during system startup and then wait for a user or system request indicating that their service is required. httpd, xinetd, sshd.
+
+Threads: These are tasks that run under the umbrella of a main process, sharing memory and other resources, but are scheduled and run by the system on an individual basis. An individual thread can end without terminating the whole process and a process can create new threads at any time. Many non-trivial programs are multi-threaded. firefox, gnome-terminal-server.
+
+Kernel Threads: Kernel tasks that users neither start nor terminate and have little control over. These may perform actions like moving a thread from one CPU to another, or making sure input/output operations to disk are completed. kthreadd, migration, ksoftirqd
+
+#### Process Scheduling and States
+
+A critical kernel function called the scheduler constantly shifts processes on and off the CPU, sharing time according to relative priority, how much time is needed and how much has already been granted to a task.
+
+When a process is in a so-called running state, it means it is either currently executing instructions on a CPU, or is waiting to be granted a share of time (a time slice) so it can execute. All processes in this state reside on what is called a run queue and on a computer with multiple CPUs, or cores, there is a run queue on each.
+
+However, sometimes processes go into what is called a sleep state, generally when they are waiting for something to happen before they can resume, perhaps for the user to type something. In this condition, a process is sitting on a wait queue.
+
+There are some other less frequent process states, especially when a process is terminating. Sometimes, a child process completes, but its parent process has not asked about its state. Amusingly, such a process is said to be in a zombie state; it is not really alive, but still shows up in the system's list of processes.
+
+To terminate a process, you can type `kill -9 <pid>`.
+Put process in background: `<process> &`
+See all processes: `ps -u`
+Taskmanager: `top`
+
+### Use at, cron, and sleep to schedule processes in the future or pause them
+
+cron is a time-based scheduling utility program. It can launch routine background jobs at specific times and days on an on-going basis. cron is driven by a configuration file called /etc/crontab (cron table), which contains the various shell commands that need to be run at the properly scheduled times. There are both system-wide crontab files and individual user-based ones. Each line of a crontab file represents a job, and is composed of a so-called CRON expression, followed by a shell command to execute.
+
+The crontab -e command will open the crontab editor to edit existing jobs or to create new jobs.
+
+sleep and at are quite different; sleep delays execution for a specific period, while at starts execution at a later time.
+
+```
+Example:
+
+Set up a cron job to do some simple task every day at 10 AM.
+
+Create a file named mycrontab with the following content: 0 10 * * * /tmp/myjob.sh
+
+Create /tmp/myjob.sh containing:
+#!/bin/bash
+echo Hello I am running $0 at $(date)
+
+Make it executable: chmod +x /tmp/myjob.sh
+
+Put it in the crontab system with: crontab mycrontab
+
+Verify it was loaded with: crontab -l
+
+You can remove it with: crontab -r
+```
+
 ## Chapter 10: File Operations
 
 ## Chapter 11: Text Editors
