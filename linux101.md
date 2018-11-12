@@ -480,6 +480,64 @@ vi myfile: start the vi editor and edit the myfile file
 
 ## Chapter 12: User Environment
 
+### Use and configure user accounts and user groups
+
+To identify the current user, type `whoami`.
+
+Most commonly, users only fiddle with ~/.bashrc, as it is invoked every time a new command line shell initiates, or another program is launched from a terminal window, while the other files are read and executed only when the user first logs onto the system.
+
+You can create customized commands or modify the behavior of already existing ones by creating aliases. Most often, these aliases are placed in your ~/.bashrc file so they are available to any command shells you create. unalias removes an alias.
+
+Typing alias with no arguments will list currently defined aliases.
+
+Please note there should not be any spaces on either side of the equal sign and the alias definition needs to be placed within either single or double quotes if it contains any spaces.
+
+Distributions have straightforward graphical interfaces for creating and removing users and groups and manipulating group membership. However, it is often useful to do it from the command line or from within shell scripts. Only the root user can add and remove users and groups.
+
+Adding a new user is done with useradd and removing an existing user is done with userdel. In the simplest form, an account for the new user bjmoose would be done with: `sudo useradd bjmoose`.
+
+Adding a user to an already existing group is done with usermod. For example, you would first look at what groups the user already belongs to: `groups rjsquirrel` `bjmoose : rjsquirrel`.
+
+The root account is very powerful and has full access to the system. Other operating systems often call this the administrator account; in Linux, it is often called the superuser account. You must be extremely cautious before granting full root access to a user. External attacks often consist of tricks used to elevate to the root account.
+
+When assigning elevated privileges, you can use the command su to launch a new shell running as another user. Most often, this other user is root, and the new shell allows the use of elevated privileges until it is exited. It is almost always a bad practice to use su to become root. Granting privileges using sudo is less dangerous and is preferred. By default, sudo must be enabled on a per-user basis.
+
+Typing long commands and filenames over and over gain gets rather tedious, and leads to a lot of trivial errors, such as typos. Deploying aliases allows us to define shortcuts to alleviate the pain of all of this typing.
+
+### Use and set environment variables
+
+Environment variables are quantities that have specific values which may be utilized by the command shell, such as bash, or other utilities and applications. Some environment variables are given preset values by the system (which can usually be overridden), while others are set directly by the user, either at the command line or within startup and other scripts.
+
+An environment variable is actually just a character string that contains information used by one or more applications. There are a number of ways to view the values of currently set environment variables; one can type set, env, or export. Depending on the state of your system, set may print out many more lines than the other two methods.
+
+### Use the previous shell command history
+
+`history` to see history
+`!<number>` to rerun it
+
+### Use and define aliases
+
+`alias newName="cd /path"`
+
+### Use and set file permissions and ownership
+
+In Linux, every file is associated with a user who is the owner. Every file is also associated with a group which has an interest in the file and certain rights, or permissions: read, write, and execute.
+
+The following utility programs involve user and group ownership and permission setting:
+chown: Used to change user ownership of a file or directory
+chgrp: Used to change group ownership
+chmod: Used to change the permissions on the file, which can be done separately for owner, group and the rest of the world
+
+#### chmod
+
+Files have three kinds of permissions: read (r), write (w), execute (x). These are generally represented as in rwx. These permissions affect three groups of owners: user/owner (u), group (g), and others (o).
+
+There are a number of different ways to use chmod. For instance, to give the owner and others execute permission and remove the group write permission:
+
+One often uses a shorthand which lets you set all the permissions in one step. This is done with a simple algorithm, and a single digit suffices to specify all three permission bits for each entity. This digit is the sum of:
+
+4 if read permission is desired, 2 if write permission is desired, 1 if execute permission is desired. Thus, 7 means read/write/execute, 6 means read/write, and 5 means read/execute.
+
 ## Chapter 13 : Manipulating Text
 
 ## Chapter 14: Network Operations
