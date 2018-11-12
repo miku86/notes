@@ -277,6 +277,138 @@ You can remove it with: crontab -r
 
 ## Chapter 10: File Operations
 
+### Explore the filesystem and its hierarchy
+
+In Linux it is often said “Everything is a file”, or at least it is treated as such. This means whether you are dealing with normal data files and documents, or with devices such as sound cards and printers, you interact with them through the same kind of Input/Output (I/O) operations. This simplifies things: you open a “file” and perform normal operations like reading the file and writing on it.
+
+On many systems, the filesystem is structured like a tree. The tree is usually portrayed as inverted, and starts at what is most often called the root directory, which marks the beginning of the hierarchical filesystem and is simply denoted by /. The root directory is not the same as the root user. The hierarchical filesystem also contains other elements in the path (directory names), which are separated by forward slashes (/), as in /usr/bin/emacs, where the last element is the actual file name.
+
+Linux supports a number of native filesystem types, expressly created by Linux developers, such as: ext3, ext4, squashfs, btrfs.
+
+It also offers implementations of filesystems used on other alien operating systems, such as those from: Windows (ntfs, vfat), SGI (xfs), IBM (jfs), MacOS (hfs, hfs+).
+
+It is often the case that more than one filesystem type is used on a machine, based on considerations such as the size of files, how often they are modified, what kind of hardware they sit on and what kind of access speed is needed, etc. The most advanced filesystem types in common use are the journaling varieties: ext4, xfs, btrfs, and jfs. These have many state-of-the-art features and high performance, and are very hard to corrupt accidentally.
+
+Each filesystem on a Linux system occupies a hard disk partition. Partitions help to organize the contents of disks according to the kind and use of the data contained. For example, important programs required to run the system are often kept on a separate partition (known as root or /) than the one that contains files owned by regular users of that system (/home). In addition, temporary files created and destroyed during the normal operation of Linux may be located on dedicated partitions. One advantage of this kind of isolation by type and variability is that when all available space on a particular partition is exhausted, the system may still operate normally.
+
+Before you can start using a filesystem, you need to mount it to the filesystem tree at a mount point. This is simply a directory (which may or may not be empty) where the filesystem is to be attached (mounted). Sometimes, you may need to create the directory if it does not already exist.
+
+The mount command is used to attach a filesystem somewhere within the filesystem tree. The basic arguments are the device node and mount point.
+
+`sudo mount /dev/sda5 /home` will attach the filesystem contained in the disk partition associated with the /dev/sda5 device node, into the filesystem tree at the /home mount point. There are other ways to specify the partition other than the device node, such as using the disk label or UUID.
+
+To unmount the partition, the command would be: `sudo umount /home`
+
+If you want it to be automatically available every time the system starts up, you need to edit /etc/fstab accordingly. Looking at this file will show you the configuration of all pre-configured filesystems. man fstab will display how this file is used and how to configure it.
+
+Typing `mount` without any arguments will show all presently mounted filesystems.
+
+The command `df -Th` will display information about mounted filesystems, including the filesystem type, and usage statistics about currently used and available space.
+
+### Explain the filesystem architecture
+
+Each user has a home directory, usually placed under /home. The /root ("slash-root") directory on modern Linux systems is no more than the home directory of the root user.
+
+On multi-user systems, the /home directory infrastructure is often mounted as a separate filesystem on its own partition, or even exported (shared) remotely on a network.
+
+Sometimes, you may group users based on their department or function. You can then create subdirectories under the /home directory for each of these groups.
+
+The /bin directory contains executable binaries, essential commands used to boot the system or in single-user mode, and essential commands required by all system users, such as cat, cp, ls, mv, ps, and rm. Likewise, the /sbin directory is intended for essential binaries related to system administration, such as fsck and shutdown.
+
+Commands that are not essential (theoretically) for the system to boot or operate in single-user mode are placed in the /usr/bin and /usr/sbin directories. Historically, this was done so /usr could be mounted as a separate filesystem that could be mounted at a later stage of system startup or even over a network. However, nowadays most find this distinction is obsolete. In fact, many distributions have been discovered to be unable to boot with this separation, as this modality had not been used or tested for a long time. Thus, on some of the newest Linux distributions /usr/bin and /bin are actually just symbolically linked together, as are /usr/sbin and /sbin.
+
+Certain filesystems, like the one mounted at /proc, are called pseudo-filesystems because they have no permanent presence anywhere on the disk. The /proc filesystem contains virtual files (files that exist only in memory) that permit viewing constantly changing kernel data. This filesystem contains files and directories that mimic kernel structures and configuration information. It does not contain real files, but runtime system information, e.g. system memory, devices mounted, hardware configuration, etc.
+
+The /dev directory contains device nodes, a type of pseudo-file used by most hardware and software devices, except for network devices. This directory is empty on the disk partition when it is not mounted and contains entries which are created by the udev system, which creates and manages device nodes on Linux, creating them dynamically when devices are found.
+
+The /var directory contains files that are expected to change in size and content as the system is running, such as System log files: /var/log, Packages and database files: /var/lib, Print queues: /var/spool, Temporary files: /var/tmp.
+
+The /etc directory is the home for system configuration files. It contains no binary programs, although there are some executable scripts. For example, /etc/resolv.conf tells the system where to go on the network to obtain host name to IP address mappings (DNS). Files like passwd, shadow and group for managing user accounts are found in the /etc directory. While some distributions have historically had their own extensive infrastructure under /etc, with the advent of systemd there is much more uniformity among distributions today.
+
+The /boot directory contains the few essential files needed to boot the system. For every alternative kernel installed on the system there are four files: vmlinuz (the compressed Linux kernel, required for booting), initramfs (the initial ram filesystem, required for booting, sometimes called initrd), config (the kernel configuration file, only used for debugging and bookkeeping), System.map (Kernel symbol table, only used for debugging). The GRUB files such as /boot/grub/grub.conf or /boot/grub2/grub2.cfg are also found under the /boot directory.
+
+/lib contains libraries for the essential programs in /bin and /sbin. These library filenames either start with ld or lib. For example, /lib/libncurses.so.5.9. Most of these are what is known as dynamically loaded libraries (also known as shared libraries or Shared Objects (SO)).
+
+Most Linux systems are configured so any removable media are automatically mounted when the system notices something has been plugged in. While historically this was done under the /media directory, modern Linux distributions place these mount points under the /run directory. For example, a USB pen drive with a label "myusbdrive" for a user name "student" would be mounted at /run/media/student/myusbdrive. The /mnt directory has been used since the early days of UNIX for temporarily mounting filesystems. These can be those on removable media, but more often might be network filesystems with NFS, which are not normally mounted.
+
+### Compare files and identify different file types
+
+diff is used to compare files and directories. This often-used utility program has many useful options: To compare two files, at the command prompt, type `diff [options] <filename1> <filename2>`.
+
+Use `file <filename>` to see the type of file, e.g. bash script.
+
+### Back up data
+
+Basic ways to back up data include the use of simple copying with cp and use of the more robust rsync.
+
+rsync is more efficient, because it checks if the file being copied already exists. If the file exists and there is no change in size or modification time, rsync will avoid an unnecessary copy and save time. Because rsync copies only the parts of files that have actually changed, it can be very fast.
+
+cp can only copy files to and from destinations on the local machine, but rsync can also be used to copy files from one machine to another.
+
+rsync is very efficient when recursively copying one directory tree to another, because only the differences are transmitted over the network. One often synchronizes the destination directory tree with the origin, using the -r option to recursively walk down the directory tree copying all files and directories below the one listed as the source.
+
+rsync is a very powerful utility. For example, a very useful way to back up a project directory might be to use the following command: `rsync -r project-X archive-machine:archives/project-X`
+
+Note that rsync can be very destructive! Accidental misuse can do a lot of harm to data and programs, by inadvertently copying changes to where they are not wanted. Take care to specify the correct options and paths. It is highly recommended that you first test your rsync command using the -dry-run option to ensure that it provides the results that you want.
+
+To use rsync at the command prompt, type rsync sourcefile destinationfile; The contents of sourcefile will be copied to destinationfile.
+
+A good combination of options is shown in: `rsync --progress -avrxH --delete sourcedir destdir`
+
+### Compress data
+
+File data is often compressed to save disk space and reduce the time it takes to transmit files over networks.
+
+Linux uses a number of methods to perform this compression, including:
+
+- gzip: The most frequently used Linux compression utility
+- bzip2: Produces files significantly smaller than those produced by gzip
+- xz: The most space-efficient compression utility used in Linux
+- zip: Is often required to examine and decompress archives from other operating systems
+
+These techniques vary in the efficiency of the compression and in how long they take to compress; generally, the more efficient techniques take longer. Decompression time does not vary as much across different methods.
+
+#### gzip
+
+gzip is the most often used Linux compression utility. It compresses very well and is very fast. The following table provides some usage examples:
+
+- gzip \*: each file is compressed and renamed with a .gz extension
+- gzip -r projectX: compresses all files in the projectX directory, along with all files in all of the directories under projectX
+- gunzip foo: de-compresses foo found in the file foo.gz
+
+#### bzip2
+
+bzip2 has a syntax that is similar to gzip but it uses a different compression algorithm and produces significantly smaller files, at the price of taking a longer time to do its work. Thus, it is more likely to be used to compress larger files.
+
+- bzip2 \*: compresses all of the files in the current directory and replaces each file with a file renamed with a .bz2 extension
+- bunzip2 \*.bz2: decompresses all of the files with an extension of .bz2 in the current directory
+
+#### xz
+
+xz is the most space efficient compression utility used in Linux and is now used to store archives of the Linux kernel. Once again, it trades a slower compression speed for an even higher compression ratio.
+
+- xz \*: compresses all of the files in the current directory and replaces each file with one with a .xz extension
+- xz foo: compresses the file foo into foo.xz using the default compression level (-6), and removes foo if compression succeeds
+- xz -dk bar.xz: decompresses bar.xz into bar and does not remove bar.xz even if decompression is successful
+- xz -d \*.xz: decompresses the files compressed using xz
+
+#### zip
+
+The zip program is not often used to compress files in Linux, but is often required to examine and decompress archives from other operating systems. It is only used in Linux when you get a zipped file from a Windows user.
+
+- zip backup \*: compresses all files in the current directory and places them in the file backup.zip
+- zip -r backup.zip ~: archives your login directory (~) and all files and directories under it in the file backup.zip
+- unzip backup.zip: extracts all files in the file backup.zip and places them in the current directory
+
+#### tar
+
+It allows you to create or extract files from an archive file, often called a tarball. At the same time, you can optionally compress while creating the archive, and decompress while extracting its contents.
+
+- tar xvf mydir.tar: extract all the files in mydir.tar into the mydir directory
+- tar zcvf mydir.tar.gz mydir: create the archive and compress with gzip
+- tar jcvf mydir.tar.bz2 mydir: create the archive and compress with bz2
+- tar Jcvf mydir.tar.xz mydir: create the archive and compress with xz
+
 ## Chapter 11: Text Editors
 
 ## Chapter 12: User Environment
