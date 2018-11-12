@@ -161,6 +161,45 @@ apt-cache search zsh: show zsh package and its deps
 
 ## Chapter 8: Finding Linux Documentation
 
+### Use different sources of documentationLinux Documentation Sources
+
+You will need to consult help documentation regularly. Because Linux-based systems draw from a large variety of sources, there are numerous reservoirs of documentation and ways of getting help.
+
+Important Linux documentation sources include:
+
+- The man pages (short for manual pages)
+- GNU Info
+- The help command and --help option
+- Other documentation sources, e.g. Gentoo Handbook or Ubuntu Documentation.
+
+### The man pages
+
+The man pages are the most often-used source of Linux documentation. They provide in-depth documentation about many programs and utilities, as well as other topics. They are present on all Linux distributions and are always at your fingertips.
+
+Typing man with a topic name as an argument retrieves the information stored in the topic's man pages. The man program searches, formats, and displays the information contained in the man page system.
+
+A given topic may have multiple pages associated with it and there is a default order determining which one is displayed when no options or section number is specified. To list all pages on the topic, use `-f`. To list all pages that discuss a specified topic, use the `–k`.
+
+### Access the GNU info System
+
+This is the GNU project's standard documentation format, which it prefers as an alternative to man. The Info System is basically free-form, and supports linked subsections.
+
+Functionally, info resembles man in many ways. However, topics are connected using links (even though its design predates the World Wide Web). Information can be viewed through either a command line interface, a graphical help utility, printed or viewed online.
+
+### Use the help command and --help option
+
+Most commands have an available short description which can be viewed using the --help or the -h option along with the command or application. For example, to learn more about the man command, you can run the following command: `man --help`
+
+The --help option is useful as a quick reference and it displays information faster than the man or info pages.
+
+### Use other documentation sources
+
+In addition to the man pages, the GNU info System, and the help command, there are other sources of Linux documentation, some examples of which include:
+
+Desktop help system: `gnome-help`
+Package documentation
+Online resources.
+
 ## Chapter 9: Processes
 
 ## Chapter 10: File Operations
@@ -180,7 +219,3 @@ apt-cache search zsh: show zsh package and its deps
 ## Chapter 17: Printing
 
 ## Chapter 18: Local Security Principles
-
-```
-
-```
