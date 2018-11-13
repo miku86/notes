@@ -729,4 +729,50 @@ Linux provides several different ways of generating random numbers, which are wi
 
 ## Chapter 17: Printing
 
+### Configure a printer on a Linux machine
+
+To manage printers and print directly from a computer or across a networked environment, you need to know how to configure and install a printer. Printing itself requires software that converts information from the application you are using to a language your printer can understand. The Linux standard for printing software is the Common UNIX Printing System (CUPS).
+
+Modern Linux desktop systems make installing and administering printers pretty simple and intuitive, and not unlike how it is done on other operating systems.
+
+#### CUPS Overview
+
+CUPS is the underlying software almost all Linux systems use to print from applications like a web browser or LibreOffice. It converts page descriptions produced by your application and then sends the information to the printer. It acts as a print server for both local and network printers.
+
+Printers manufactured by different companies may use their own particular print languages and formats. CUPS uses a modular printing system which accommodates a wide variety of printers and also processes various data formats. This makes the printing process simpler; you can concentrate more on printing and less on how to print.
+
+Generally, the only time you should need to configure your printer is when you use it for the first time. In fact, CUPS often figures things out on its own by detecting and configuring any printers it locates.
+
+CUPS carries out the printing process with the help of its various components: Configuration Files, Scheduler, Job Files, Log Files, Filter, Printer Drivers, Backend.
+
+Scheduler: CUPS is designed around a print scheduler that manages print jobs, handles administrative commands, allows users to query the printer status, and manages the flow of data through all CUPS components. We will look at the browser-based interface that can be used with CUPS, which allows you to view and manipulate the order and status of pending print jobs.
+
+Configuration Files: The print scheduler reads server settings from several configuration files, the two most important of which are cupsd.conf and printers.conf. These and all other CUPS related configuration files are stored under the /etc/cups/ directory. cupsd.conf is where most system-wide settings are located; it does not contain any printer-specific details. Most of the settings available in this file relate to network security, i.e. which systems can access CUPS network capabilities, how printers are advertised on the local network, what management features are offered, and so on. printers.conf is where you will find the printer-specific settings. For every printer connected to the system, a corresponding section describes the printer’s status and capabilities. This file is generated only after adding a printer to the system and should not be modified by hand.
+
+Job Files: CUPS stores print requests as files under the /var/spool/cups directory (these can actually be accessed before a document is sent to a printer). Data files are prefixed with the letter "d" while control files are prefixed with the letter "c". After a printer successfully handles a job, data files are automatically removed. These data files belong to what is commonly known as the print queue.
+
+Log Files: Log files are placed in /var/log/cups and are used by the scheduler to record activities that have taken place. These files include access, error, and page records. Note on some distributions permissions are set such that you don't need the sudo. You can view the log files with the usual tools.
+
+Filters, Printer Drivers, and Backends: CUPS uses filters to convert job file formats to printable formats. Printer drivers contain descriptions for currently connected and configured printers, and are usually stored under /etc/cups/ppd/. The print data is then sent to the printer through a filter and via a backend that helps to locate devices connected to the system. So, in short, when you execute a print command, the scheduler validates the command and processes the print job, creating job files according to the settings specified in the configuration files. Simultaneously, the scheduler records activities in the log files. Job files are processed with the help of the filter, printer driver, and backend, and then sent to the printer.
+
+Managing CUPS: Assuming CUPS has been installed you'll need to start and manage the CUPS daemon so that CUPS is ready for configuring a printer. Managing the CUPS daemon is simple; all management features can be done with the systemctl utility.
+
+### Manipulate postscript and PDF files using command line utilities
+
+PostScript is a standard page description language. It effectively manages scaling of fonts and vector graphics to provide quality printouts. It is purely a text format that contains the data fed to a PostScript interpreter. The format itself is a language that was developed by Adobe in the early 1980s to enable the transfer of data to printers.
+
+Postscript has been for the most part superseded by the PDF format which produces far smaller files in a compressed format for which support has been integrated into many applications. However, one still has to deal with postscript documents, often as an intermediate format on the way to producing final documents.
+
+CUPS provides two command-line interfaces: the System V and BSD.
+The CUPS interface is available at http://localhost:631.
+lp and lpr are used to submit a document to CUPS directly from the command line.
+lpoptions can be used to set printer options and defaults.
+PostScript effectively manages scaling of fonts and vector graphics to provide quality prints.
+enscript is used to convert a text file to PostScript and other formats.
+Portable Document Format (PDF) is the standard format used to exchange documents while ensuring a certain level of consistency in the way the documents are viewed.
+pdftk joins and splits PDFs; pulls single pages from a file; encrypts and decrypts PDF files; adds, updates, and exports a PDF’s metadata; exports bookmarks to a text file; adds or removes attachments to a PDF; fixes a damaged PDF; and fills out PDF forms.
+pdfinfo can extract information about PDF documents.
+flpsed can add data to a PostScript document.
+pdfmod is a simple application with a graphical interface that you can use to modify PDF documents.
+
 ## Chapter 18: Local Security Principles
