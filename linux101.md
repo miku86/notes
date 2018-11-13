@@ -617,11 +617,77 @@ In managing your files, you may need to perform many tasks, such as sorting data
 
 grep is extensively used as a primary text searching tool. It scans files for specified patterns and can be used with regular expressions, as well as simple strings.
 
-### Search for patterns using grep
-
-### Use multiple other utilities for file and text manipulation
-
 ## Chapter 14: Network Operations
+
+### Explain basic networking concepts, including types of networks and addressing issues
+
+A network is a group of computers and computing devices connected together through communication channels, such as cables or wireless media.
+
+A network is used to: Allow the connected devices to communicate with each other, Enable multiple users to share devices over the network, such as printers and scanners, Share and manage information across computers easily.
+
+Most organizations have both an internal network and an Internet connection for users to communicate with machines and people outside the organization. The Internet is the largest network in the world and can be called "the network of networks".
+
+Devices attached to a network must have at least one unique network address identifier known as the IP address. The address is essential for routing packets of information through the network.
+
+Exchanging information across the network requires using streams of small packets, each of which contains a piece of the information going from one machine to another. These packets contain data buffers together with headers which contain information about where the packet is going to and coming from, and where it fits in the sequence of packets that constitute the stream.
+
+There are two different types of IP addresses available: IPv4 and IPv6. IPv4 is older and by far the more widely used, while IPv6 is newer and is designed to get past limitations inherent in the older standard and furnish many more possible addresses.
+
+IPv4 uses 32-bits for addresses; there are only 4.3 billion unique addresses available. Furthermore, many addresses are allotted and reserved, but not actually used. IPv4 is considered inadequate for meeting future needs because the number of devices available on the global network has increased enormously in recent years.
+
+IPv6 uses 128-bits for addresses; this allows for 3.4 X 10^38 unique addresses. If you have a larger network of computers and want to add more, you may want to move to IPv6, because it provides more unique addresses.
+
+One reason IPv4 has not disappeared is there are ways to effectively make many more addresses available by methods such as NAT. NAT enables sharing one IP address among many locally connected computers, each of which has a unique address only seen on the local network. While this is used in organizational settings, it also used in simple home networks. For example, if you have a router hooked up to your Internet Provider it gives you one externally visible address, but issues each device in your home an individual local address.
+
+You can assign IP addresses to computers over a network either manually or dynamically. Manual assignment adds static (never changing) addresses to the network. Dynamically assigned addresses can change every time you reboot or even more often; the Dynamic Host Configuration Protocol (DHCP) is used to assign IP addresses.
+
+Name Resolution is used to convert numerical IP address values into a human-readable format known as the hostname. For example, 104.95.85.15 is the numerical IP address that refers to the hostname whitehouse.gov. Hostnames are much easier to remember!
+
+Given an IP address, you can obtain its corresponding hostname. Accessing the machine over the network becomes easier when you can type the hostname instead of the IP address.
+
+The special hostname localhost is associated with the IP address 127.0.0.1, and describes the machine you are currently on (which normally has additional network-related IP addresses).
+
+DNS (Domain Name System) is used for converting Internet domain and host names to IP addresses.
+
+### Configure network interfaces and use basic networking utilities
+
+Network interfaces are a connection channel between a device and a network. Physically, network interfaces can proceed through a network interface card (NIC), or can be more abstractly implemented as software. You can have multiple network interfaces operating at once.
+
+Information about a particular network interface or all network interfaces can be reported by the ip and ifconfig utilities. ip is newer than ifconfig and has far more capabilities, but its output is uglier to the human eye.
+
+- `ifconfig` is used to display current active network interfaces.
+- `ip addr show` and `ip route show` can be used to view IP address and routing information.
+- `ping` to check if the remote host is alive and responding.
+- `route` to manage IP routing.
+- `wget` to download webpages.
+- `curl` to obtain information about URLs.
+
+### Use graphical and non-graphical browsers
+
+Browsers are used to retrieve, transmit, and explore information resources, usually on the World Wide Web. Linux users commonly use both graphical and non-graphical browser applications. The common graphical browsers used in Linux are: Firefox, Google Chrome.
+You can also use non-graphical browsers, such as: Lynx, ELinks, w3m.
+
+Sometimes, you need to download files and information, but a browser is not the best choice. wget is a command line utility that can capably handle this. To download a web page, you can simply type `wget <url>`, and then you can read the downloaded page as a local file using a graphical or non-graphical browser.
+
+Besides downloading, you may want to obtain information about a URL, such as the source code being used. curl can be used from the command line or a script to read such information. curl also allows you to save the contents of a web page to a file, as does wget. You can read a URL using `curl <URL>`. To get the contents of a web page and store it to a file, type `curl -o saved.html http://www.mysite.com`.
+
+### Transfer files to and from clients and servers
+
+#### FTP
+
+When you are connected to a network, you may need to transfer files from one machine to another. File Transfer Protocol (FTP) is a well-known and popular method for transferring files between computers using the Internet. This method is built on a client-server model. FTP can be used within a browser or with stand-alone client programs.
+
+FTP is one of the oldest methods of network data transfer, dating back to the early 1970s. As such, it is considered inadequate for modern needs, as well as being intrinsically insecure. FTP has fallen into disfavor on modern systems, as it is intrinsically insecure, since passwords are user credentials that can be transmitted without encryption and are thus prone to interception. Thus, it was removed in favor of using rsync and web browser https access for example.
+
+FTP clients enable you to transfer files with remote computers using the FTP protocol. These clients can be either graphical or command line tools.
+
+#### SSH
+
+Secure Shell (SSH) is a cryptographic network protocol used for secure data communication. It is also used for remote services and other secure services between two devices on the network and is very useful for administering systems which are not easily available to physically work on, but to which you have remote access.
+
+To login to a remote system using your same user name you can just type `ssh some_system`. ssh then prompts you for the remote password. You can also configure ssh to securely allow your remote access without typing a password each time.
+
+If you want to run as another user, you can do either `ssh -l someone some_system` or `ssh someone@some_system`. To run a command on a remote system via SSH, at the command prompt, you can type `ssh some_system my_command`.
 
 ## Chapter 15 : The Bash Shell and Basic Scripting
 
