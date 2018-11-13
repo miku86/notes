@@ -691,6 +691,32 @@ If you want to run as another user, you can do either `ssh -l someone some_syste
 
 ## Chapter 15 : The Bash Shell and Basic Scripting
 
+### Explain the features and capabilities of bash shell scripting
+
+Suppose you want to look up a filename, check if the associated file exists, and then respond accordingly, displaying a message confirming or not confirming the file's existence. If you only need to do it once, you can just type a sequence of commands at a terminal. However, if you need to do this multiple times, automation is the way to go. In order to automate sets of commands, you will need to learn how to write shell scripts, the most common of which are used with bash.
+
+Typing a long sequence of commands at a terminal window can be complicated, time consuming, and error prone. By deploying shell scripts, using the command line becomes an efficient and quick way to launch complex sequences of steps. The fact that shell scripts are saved in a file also makes it easy to use them to create new script variations and share standard procedures with several users.
+
+A shell is a command line interpreter which provides the user interface for terminal windows. It can also be used to run scripts, even in non-interactive sessions without a terminal window, as if the commands were being directly typed in.
+
+The first line of the script, that starts with `#!`, contains the full path of the command interpreter (in this case `/bin/bash`) that is to be used on the file. As we have noted, you have quite a few choices for the scripting language you can use, such as /usr/bin/perl, /bin/csh, /usr/bin/python, etc.
+
+`read x` to save var in x
+`$x` to use var
+`$(<command>)` ro run command in var
+
+
+Scripts are a sequence of statements and commands stored in a file that can be executed by a shell.
+Command substitution allows you to substitute the result of a command as a portion of another command.
+Functions or routines are a group of commands that are used for execution.
+Environmental variables are quantities either preassigned by the shell or defined and modified by the user.
+To make environment variables visible to child processes, they need to be exported.
+Scripts can behave differently based on the parameters (values) passed to them.
+The process of writing the output to a file is called output redirection.
+The process of reading input from a file is called input redirection.
+The if statement is used to select an action based on a condition.
+Arithmetic expressions consist of numbers and arithmetic operators, such as +, -, and *.
+
 ## Chapter 16: More on Bash Shell Scripting
 
 ## Chapter 17: Printing
