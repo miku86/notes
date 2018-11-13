@@ -776,3 +776,43 @@ flpsed can add data to a PostScript document.
 pdfmod is a simple application with a graphical interface that you can use to modify PDF documents.
 
 ## Chapter 18: Local Security Principles
+
+### Best practices and tools for making Linux systems as secure as possible
+
+User Accounts: The Linux kernel allows properly authenticated users to access files and applications. While each user is identified by a unique integer (the user id or UID), a separate database associates a username with each UID. Upon account creation, new user information is added to the user database and the user's home directory must be created and populated with some essential files. Command line programs such as useradd and userdel as well as GUI tools are used for creating and removing accounts.
+
+Types of Accounts: By default, Linux distinguishes between several account types in order to isolate processes and workloads. Linux has four types of accounts: root, system, Normal, Network.
+
+For a safe working environment, it is advised to grant the minimum privileges possible and necessary to accounts, and remove inactive accounts. The last utility, which shows the last time each user logged into the system, can be used to help identify potentially inactive accounts which are candidates for system removal.
+
+Keep in mind that practices you use on multi-user business systems are more strict than practices you can use on personal desktop systems that only affect the casual user. This is especially true with security. We hope to show you practices applicable to enterprise servers that you can use on all systems, but understand that you may choose to relax these rules on your own personal system.
+
+root is the most privileged account on a Linux/UNIX system. This account has the ability to carry out all facets of system administration, including adding accounts, changing user passwords, examining log files, installing software, etc. Utmost care must be taken when using this account. It has no security restrictions imposed upon it.
+
+root privileges are required to perform operations such as: Creating, removing and managing user accounts; Managing software packages; Removing or modifying system files; Restarting system services.
+
+Regular account users of Linux distributions might be allowed to install software packages, update some settings, use some peripheral devices, and apply various kinds of changes to the system. However, root privilege is required for performing administration tasks such as restarting services, manually installing packages and managing parts of the filesystem that are outside the normal user’s directories.
+
+In Linux you can use either su or sudo to temporarily grant root access to a normal user; these methods are actually quite different.
+
+### Explain the importance of process isolation and hardware access
+
+Process Isolation: Linux is considered to be more secure than many other operating systems because processes are naturally isolated from each other. One process normally cannot access the resources of another process, even when that process is running with the same user privileges. Linux thus makes it difficult (though certainly not impossible) for viruses and security exploits to access and attack random resources on a system.
+
+Hardware Device Access: Linux limits user access to non-networking hardware devices in a manner that is extremely similar to regular file access. Applications interact by engaging the filesystem layer (which is independent of the actual device or hardware the file resides on). This layer will then open a device special file (often called a device node) under the /dev directory that corresponds to the device being accessed. Each device special file has standard owner, group and world permission fields. Security is naturally enforced just as it is when standard files are accessed.
+
+Keeping Current: When security problems in either the Linux kernel or applications and libraries are discovered, Linux distributions have a good record of reacting quickly and pushing out fixes to all systems by updating their software repositories and sending notifications to update immediately. The same thing is true with bug fixes and performance improvements that are not security related.
+
+### Work with passwords, including how to set and change them
+
+The SHA-512 algorithm is typically used to encode passwords. They can be encrypted, but not decrypted.
+
+Pluggable Authentication Modules (PAM) can be configured to automatically verify that passwords created or modified using the passwd utility are strong enough (what is considered strong enough can also be configured).
+
+### Describe how to secure the boot process and hardware resources
+
+Hardware Vulnerability: When hardware is physically accessible, security can be compromised by: Key logging, Recording the real time activity of a computer user including the keys they press. The captured data can either be stored locally or transmitted to remote machines. Network sniffing, Capturing and viewing the network packet level data on your network, ooting with a live or rescue disk, Remounting and modifying disk content.
+
+Your IT security policy should start with requirements on how to properly secure physical access to servers and workstations. Physical access to a system makes it possible for attackers to easily leverage several attack vectors, in a way that makes all operating system level recommendations irrelevant.
+
+The guidelines of security are: Lock down workstations and servers. Protect your network links such that it cannot be accessed by people you do not trust. Protect your keyboards where passwords are entered to ensure the keyboards cannot be tampered with. Ensure a password protects the BIOS in such a way that the system cannot be booted with a live or rescue DVD or USB key.
