@@ -705,7 +705,6 @@ The first line of the script, that starts with `#!`, contains the full path of t
 `$x` to use var
 `$(<command>)` ro run command in var
 
-
 Scripts are a sequence of statements and commands stored in a file that can be executed by a shell.
 Command substitution allows you to substitute the result of a command as a portion of another command.
 Functions or routines are a group of commands that are used for execution.
@@ -715,9 +714,18 @@ Scripts can behave differently based on the parameters (values) passed to them.
 The process of writing the output to a file is called output redirection.
 The process of reading input from a file is called input redirection.
 The if statement is used to select an action based on a condition.
-Arithmetic expressions consist of numbers and arithmetic operators, such as +, -, and *.
 
 ## Chapter 16: More on Bash Shell Scripting
+
+You can manipulate strings to perform actions such as comparison, sorting, and finding length.
+You can use Boolean expressions when working with multiple data types, including strings or numbers, as well as files.
+The output of a Boolean expression is either true or false.
+Operators used in Boolean expressions include the && (AND), ||(OR), and ! (NOT) operators.
+We looked at the advantages of using the case statement in scenarios where the value of a variable can lead to different execution paths.
+Script debugging methods help troubleshoot and resolve errors.
+The standard and error outputs from a script or shell commands can easily be redirected into the same file or separate files to aid in debugging and saving results
+Linux allows you to create temporary files and directories, which store data for a short duration, both saving space and increasing security.
+Linux provides several different ways of generating random numbers, which are widely used.
 
 ## Chapter 17: Printing
 
