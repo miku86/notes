@@ -15,17 +15,12 @@ Source: https://www.smashingmagazine.com/2018/06/bem-for-beginners/
 
 ## Only Use Classes, no other Selectors
 
-No `ID`: `ID` is unique, so you can't reuse it. Instead of `<input id="ID"><label for="ID">Text</label>`, use `<label><input>Text</label>`.
-
-No `Tag`: HTML page markup is unstable: A new design can change the nesting of the sections, heading levels etc. Any of these changes will break styles that are written for tags. Even if the design doesn’t change, the set of tags is limited. To use an existing layout in another project, you have to solve conflicts between styles written for the same tags.
-
-No `CSS Reset`: These styles affect all layout nodes, violate the independence of components, and make it harder to reuse them. Resetting and normalization cancel existing styles and replace them with other styles, which you will have to change and update later in any case. As a result, the developer has to write styles that override the ones that were just reset.
-
-No Universal Selector `*`: The universal selector indicates that the project features a style that affects all nodes in the layout. This limits reuse of the layout in other. A universal selector can make the project code unpredictable. For example, it can affect the styles of the universal library components. Common styles don’t save you time. Often developers start by resetting all margins for components, but then they still set them the same as in the layout.
-
-No `Nested Selectors`: Nested selectors increase code coupling and make it difficult to reuse the code. BEM doesn’t prohibit nested selectors, but it recommends not to use them too much.
-
-No `Combined Selectors`: Combined selectors are more specific than single selectors, which makes it more difficult to redefine blocks.
+- No `ID`: `ID` is unique, so you can't reuse it.
+- No `Tag`: HTML page markup is unstable: A new design can change the nesting of the sections, heading levels etc. Any of these changes will break styles that are written for tags. Even if the design doesn’t change, the set of tags is limited.
+- No `CSS Reset`: These styles affect all layout nodes, violate the independence of components, and make it harder to reuse them. Resetting and normalization cancel existing styles and replace them with other styles, which you will have to change and update later in any case.
+- No Universal Selector `*`: The universal selector indicates that the project features a style that affects all nodes in the layout. This limits reuse of the layout in other. A universal selector can make the project code unpredictable.
+- No `Nested Selectors`: Nested selectors increase code coupling and make it difficult to reuse the code. BEM doesn’t prohibit nested selectors, but it recommends not to use them too much.
+- No `Combined Selectors`: Combined selectors are more specific than single selectors, which makes it more difficult to redefine blocks.
 
 ```
 <button class="button button_theme_islands button_active">...</button>
@@ -40,9 +35,8 @@ No `Combined Selectors`: Combined selectors are more specific than single select
 .button {}
 ```
 
-No Combination of `Tag and Class`: Combining a tag and a class in the same selector (for example, `button.button`) makes CSS rules more specific, so it is more difficult to redefine them.
-
-No `Attribute` Selectors: Attribute selectors are less informative than class selectors.
+- No Combination of `Tag and Class`: Combining a tag and a class in the same selector (for example, `button.button`) makes CSS rules more specific, so it is more difficult to redefine them.
+- No `Attribute` Selectors: Attribute selectors are less informative than class selectors.
 
 Summary: `class` is the only selector that allows you to isolate the styles of each component in the project, increase the readability of the code and do not limit the re-use of the layout. CSS styles isolation is the most frequent start point of the BEM journey. But this is the least that BEM can give you.
 
@@ -64,13 +58,12 @@ All parts of the form (the `form` block) that don’t make sense on their own ar
 
 ```html
 <form class="form" action="/">
-  <input class="form__search" name="s">
-  <input class="form__submit" type="submit">
+  <input class="form__search" name="s" />
+  <input class="form__submit" type="submit" />
 </form>
 ```
 
 The block’s name is separated from the element’s name with two underscores. The important thing is that separators allow you to distinguish blocks from elements and modifiers programmatically.
-
 Selector names make it clear that in order to move the form to another project, you need to copy all of its components:
 
 ```css
@@ -95,11 +88,11 @@ A modifier defines the look, state and behavior of a block or an element. Adding
 Imagine the project needs the same search form as in the example above. It should have the same functions but look different (for example, the search forms in the header and in the footer of the page should differ). The first thing you can do to change the appearance of the form is to write additional styles.
 
 In BEM, you can use a modifier to add new styles to the block:
-`<form class="form form_type_original" action="/">`
+`<form class="form form--original">`
 
 The line indicates that the block was assigned a type modifier with the original value. In a classic scheme, the modifier name is separated from the block or element name with an underscore.
 
-The form can have a unique color, size, type, or design theme. All these parameters can be set with a modifier: `<form class="form form_type_original form_size_m form_theme_forest"></form>`
+The form can have a unique color, size, type, or design theme. All these parameters can be set with a modifier: `<form class="form form--original form--size-m form--theme_forest">`
 
 Important: A modifier contains only additional styles that change the original block implementation in some way. This allows you to set the appearance of a universal block only once, and add only those features that differ from the original block code into the modifier styles:
 
@@ -107,7 +100,7 @@ Important: A modifier contains only additional styles that change the original b
 .form {
   /* universal block styles */
 }
-.form_type_original {
+.form--original {
   /* added styles */
 }
 ```
@@ -126,18 +119,17 @@ Now you can make a search form from the universal form. Create an additional `se
 
 ```html
 <form class="form search" action="/">
-  <input class="form__search" name="s">
-  <input class="form__submit" type="submit">
+  <input class="form__search" name="s" />
+  <input class="form__submit" type="submit" />
 </form>
 ```
 
 In this case, the `.search` class is a separate block that defines behavior. This block can’t have modifiers responsible for the form, themes, and sizes. These modifiers already belong to the universal form. A mix helps to combine the styles and behavior of these blocks.
 
-Let’s take one more example where the component’s semantics is changed. Here is a navigation menu in the page header in which all entries are links:
+Let’s take one more example where the component’s semantics is changed:
 
 ```html
 <nav class="menu">
-  <a class="link" href=""></a>
   <a class="link" href=""></a>
   <a class="link" href=""></a>
 </nav>
@@ -149,7 +141,6 @@ Use a mix of the `link` universal block and the `item` element of the `menu` blo
 
 ```html
 <nav class="menu">
-  <a class="link menu__item" href=""></a>
   <a class="link menu__item" href=""></a>
   <a class="link menu__item" href=""></a>
 </nav>
@@ -180,7 +171,6 @@ Create the menu block modifier:
 ```html
 <div>
   <ul class="menu menu_type_header">
-    <li class="menu__item"><a href=""></a></li>
     <li class="menu__item"><a href=""></a></li>
     <li class="menu__item"><a href=""></a></li>
   </ul>
@@ -236,11 +226,9 @@ Using blocks and storing all block technologies in the same folder makes it easy
 ### Parallel Development
 
 In BEM, any layout is divided into blocks. Because the blocks are independent, they can be developed in parallel by several developers.
-
 A developer creates a block as a universal component that can be reused in any other project.
 
 An example is the bem-components block library, which contains universal blocks, such as a link, button, and input field. It is easier to create more complex blocks from universal components.
-
 Using blocks in project layout helps you save the time on integrating code written by several developers, guarantees the uniqueness of component names, and lets you test blocks at the development stage.
 
 ### Testing
