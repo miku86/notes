@@ -367,6 +367,76 @@
 
 ## User Input, Debugging
 
+### User Input
+
+- Controlled vs uncontrolled components: Where is the source of truth for the value of an input?
+- React recommends always using controlled components
+- Pass value and onChangeText props
+
+### Handling multiple inputs
+
+- <form> exists in HTML, but not in React Native
+- With controlled components, we maintain an object with all inputs’ values
+- We can define a function that handles the data to submit
+
+### Validating Input
+
+- Conditionally set state based on input value
+- Validate form before submitting
+- Validate form after changing single input value
+- this.setState() can take a callback as the second argument
+- componentDidUpdate()
+
+### KeyboardAvoidingView
+
+- Native component to handle avoiding the virtual keyboard
+- Good for simple/short forms
+- The view moves independent of any of its child TextInputs
+
+### Debugging
+
+- React errors/warnings
+- Chrome Developer Tools (devtools)
+- React Native Inspector
+- react-devtools
+
+### React Errors and Warnings
+
+- Errors show up as full page alerts
+- Trigger with console.error()
+- Warnings are yellow banners
+- Trigger with console.warn()
+- ○n production mode
+
+### Chrome Devtools
+
+- Google Chrome has amazing developer tools (debugger)
+- We can run the JavaScript inside a Chrome tab
+- Separate threads for native and JavaScript
+- Communicate asynchronously through bridge
+- No reason that the JavaScript needs to be run on device
+
+### React Native Inspector
+
+- Analogous to the Chrome element inspector
+- Allows you to inspect data associated with elements, such as margin, padding, size, etc.
+- Does not allow you to live-edit elements
+
+### react-devtools
+
+- “Inspect the React component hierarchy, including component props and state.”
+- Install with `npm install -g react-devtools`
+- Run with `react-devtools`
+
+### External Libraries
+
+- Libraries are code written outside the context of your project that you can bring into your project
+- Since React Native is just JavaScript, you can add any JavaScript library
+- Install using `npm install <library>`
+- Use the --save flag for npm@"<5"
+- Use the -g flag to install things globally
+- Import into your project: import React from 'react
+
 ---
 
 ## Navigation
