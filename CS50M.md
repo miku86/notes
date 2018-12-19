@@ -403,7 +403,7 @@
 ### React Errors and Warnings
 
 - Errors show up as full page alerts
-- Trigger with console.error()
+- Trigger with consssole.error()
 - Warnings are yellow banners
 - Trigger with console.warn()
 - ○n production mode
@@ -441,9 +441,140 @@
 
 ## Navigation
 
+### What is navigation?
+
+- Navigation is a broad term that covers topics related to how you move between screens in your app
+- Web navigation is oriented around URLs
+- Mobile apps do not use URLs for navigating within the app
+- Navigation APIs completely different on iOS and Android
+- Several React Native libraries provide a platform agnostic alternative
+- We will talk about one of them today, React Navigation
+
+### React Navigation and alternatives
+
+- Two distinct approaches
+  1.Implement mainly in JavaScript with React
+  2.Implement mostly in native, expose an interface to JavaScript for existing native navigation APIs
+- React Navigation takes approach #1
+
+### Navigators, routes, and screen components
+
+- A navigator is a component that implements a navigation pattern (eg: tabs)
+- Each navigator must have one or more routes.
+- A navigator is a parent of a route.
+- A route is a child of a navigator.
+- Each route must have a name and a screen component.
+- The name is usually unique across the app
+- The screen component is a React component that is rendered when the route is active.
+- The screen component can also be another navigator
+
+### Switch Navigator
+
+- Display one screen at a time
+- Inactive screens are unmounted
+- The only action a user can take to switch from one route to another
+
+### Higher order components
+
+- createSwitchNavigator is a Higher Order Component: it is a function that returns a React component.
+- “A higher-order component (HOC) is an advanced technique in Reactfor reusing component logic.”
+- This is similar to higher order functions, which are functions that either take functions as arguments or return a function as a result.
+
+### Stack Navigator
+
+- Display one screen at a time
+- The state of inactive screens is maintained and they remain mounted
+- Platform-specific layout, animations, and gestures○Screens are stacked on top of each other
+- iOS: screens slide in from right to left, can be dismissed with left to right gesture. Modal screens slide in from bottom to top, can be dismissed with top to bottom gesture.
+- Android: screens fade in on top of each other, no dismiss gesture. Hardware back button dismisses the active screen.
+- Users can push and pop items from the stack, replace the current item, and various other
+
+### Composing navigators
+
+- Navigators can be composed when one type of navigation visually appears to be inside another navigator
+- A navigator can be the Screen Component of another navigator
+- The app should only contain one top-level navigator
+- You can navigate() to any route in the app●goBack() works for the whole app, supports Android back button
+
+### Tab navigators
+
+- Display one screen at a time●The state of inactive screens is maintained
+- Platform-specific layout, animations, and gestures
+- The navigate() action is used to switch to different tabs
+- goBack() can be called to go back to the first tab
+- The tab navigator goBack behavior is configurable
+
 ---
 
 ## Data
+
+### Data
+
+- Not all apps are self-contained
+- Any app that wants to rely on information not computed within the app needs to get it from somewhere
+- Communicate with other resources using an API
+
+### API
+
+- “Application Programming Interface”
+- A defined set of ways with which a resource can be interacted
+- React components have APIs; you interact by passing props
+- A class has an API; you interact by invoking methods
+- A web service has an API; you interact by making network requests
+- Providers often get to decide on the API, but sometimes it’s decided for them
+- Consumers have to read docs to know how to use an API
+
+### Making Network Requests
+
+- fetch() is polyfilled
+- It’s not natively part of JavaScript, but it is implemented to match the usage of the browser fetch()
+- fetch() expects an URL and optionally some config
+- fetch() returns a Promise, which is fulfilled with a Response object
+
+### Promises
+
+- Allows writing asynchronous, non-blocking code
+- Allows chaining callbacks and/or error handlers
+- .then() - executed after the previous Promise block returns
+- .catch() - executed if the previous Promise block errors
+
+###Async/Await
+
+- Allows writing async code as if it were synchronous
+- Still non-blocking
+- A function can be marked as async, and it will return a Promise
+- Within an async function, you can await the value of another async function or Promise
+- Use try/catch to handle errors
+
+### Transforming Data
+
+- Sometimes the shape of the data returned by an API isn’t ideal
+- Where should we do this “transformation?”
+- Doing it early gives us an abstraction barrier and is more efficient
+
+### Authentication
+
+- A process to determine if a user is who they say they are
+- Generally done using a name and password
+- But how do we send the name and password in the request?
+
+### HTTP Methods
+
+- GET
+- The default in browsers and in fetch()
+- Add parameters in the url by appending a ? and chaining key=valuepairs separated by &
+- POST
+- Submit data (e.g. a form) to an endpoint
+- Parameters are included in the request body
+- If POSTing JSON, must have content-type: application/json header and body must be JSON string
+
+### HTTP Response Codes
+
+- Every network response has a “code” associated with it
+- 200: OK
+- 400: Bad Request
+- 404: Not Found
+- 500: Internal Server Error
 
 ---
 
