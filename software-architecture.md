@@ -4,6 +4,16 @@ Source: https://eu.udacity.com/course/software-architecture-design--ud821
 
 ## P1L1 Introduction
 
+Objectives:
+
+- Express the analysis and design of an application using UML
+- Specify functional semantics of an application using OCL
+- Specify and evaluate software architectures
+- Select and use appropriate architectural styles
+- Understand and apply OO design techniques
+- Select and use appropriate software design patterns
+- Understand and participate in a design review
+
 ## P1L2 Text Browser Exercise (Analysis)
 
 ## P1L3 Design Concepts
