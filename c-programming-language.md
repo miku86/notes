@@ -28,3 +28,29 @@
 - no I/O facilities and no file access methods
 - offers only straightforward, single-threaded control flows
 - not strongly-typed, but its type checking has been strengthened
+
+## A Tutorial Introduction
+
+- every program must have a `main` function
+
+```c
+#include <stdio.h>
+
+int main()
+{
+  printf("hello world\n");
+}
+```
+
+- first, compile: `gcc hello-world.c`
+- second, run: `./a.out`
+
+- `#include <stdio.h>` // standard I/O library
+- `%d` to print a variable with a digit/int type
+- semicolons at the end of statement
+- most used basic data types: int, float, char, short, long, double
+- integer divison truncates
+- `#define name value` for magic numbers, e.g. `#define MAX 300`
+- text I/O is dealt with as streams of chars, a text stream is a sequence of chars divided into lines, every line ends with a newline char
+- `getchar()` reads the next input char
+- `putchar(c)` prints the content
