@@ -16,6 +16,23 @@ Objectives:
 
 ## P1L2 Text Browser Exercise (Analysis)
 
+- GUI / structural elements:
+
+  - File Manager: manage the file
+  - Window / View Port: to show text
+  - Scrollbar: to show text, that is longer than window
+
+- user cases / behavior:
+  - read text
+  - change window size
+  - move window
+
+=> UML:
+
+- rectangle for class
+- each rectangle divided into: name, attributes, operations
+- lines between components denotes relationships
+
 ## P1L3 Design Concepts
 
 ## P2L1 Review of UML
