@@ -306,6 +306,43 @@ I put this on the first day, because it takes about a month to find somewhere el
 
 Of course some may be bound by mortgages or not having sufficient ready funds for making a deposit, and they may resort to just considering the move and start looking at a longer time frame.
 
+For the rest, I think there are three things that matter
+
+1. Location relative to your work.
+1. Location relative to your grocery outlet & most visited places
+1. Cost.
+
+So, the real estate motto is 2/3 true: It’s location-location-cost.
+
+I go to craigslist and click on housing.
+Then I put in my limits: $200 minimum (because that removes a lot of useless search results) and $350 maximum. If you are two persons, you could put $400-$700.
+Also consider cohousing, room mates, etc.
+Also consider radical alternatives. We live in an RV for example.
+In addition some of the cheaper places may not be heavily advertised.
+We lived in the same place for 2 years before discovering an option that was $400/month instead of $660/month. Ask around!
+
+What about buying? In that case I would use the same limit for the monthly payment. I do not think it is a good idea to consider the house you live in an “investment” unless you know more about real estate than the average person and in particular enough to speculate on its direction.
+
+I would also not be too tid down to a particular city. A frequent excuse is that “I need to live here”.
+Actually, unless you can document some need for a particular climate, you only want to live in a particular place.
+This want, then comes down to paying extra vs retiring early. I pick the latter.
+
+Now that you have a bunch of potential addresses, it is time to find routes to work and groceries respectively.
+I use google maps. Enter the address of your potential new home and then click on from here and enter you work address.
+Google maps should give you a route.
+
+Since we are going to get rid of the car tomorrow, I recommend checking to see if those streets are walkable or bikeable.
+Satellite view at maximum resolution or the street view option is helpful for this.
+
+If you live in a region with heavy winters, you will have to walk rather than ride a bike.
+In that case limit your maximum distance to 5km (will take about an hour to walk).
+Walking a 10km round trip daily is certainly doable — I did it for half a year once, but I wouldn’t want to walk much further than that.
+
+An alternative solution is to check out car commutes possibilities or public transport.
+While these cost money, something which is to be avoided, they may significantly expand your options.
+In that case use google maps to look for bus stops instead.
+Even if you are not going to move, try going through the craigslist/google maps exercise anyway just to realize that it is possible.
+
 ## Day 2: Decluttering and Managing Stuff
 
 ## Day 3: Grocery Shopping
