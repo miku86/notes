@@ -273,6 +273,39 @@ To make the change, you need to do three things:
 
 ## Day 1: Finding a Place to Live
 
+I think if there is anything that is holding people back from realizing their dreams, it is living in a place that is too big or too expensive.
+If the home is too big and mortgaged to the roof, it will make the pursuit of liberty and happiness quite difficult.
+
+I think there is a deliberate choice to make between early retirement and the standard sized house for your “socioeconomic status”.
+You can have one or the other, but not both.
+Living in something significantly smaller than what your peers are living in is key to early retirement.
+
+Unless you enjoy spending money on a large home, a home is basically only a place where you sleep and keep your stuff.
+Realize that you could in principle choose between having no kitchen and paying $300 more per month. 
+Consider that an extra bedroom might add $250 a month to the rent and the interior costs around $50 a month.
+Those $300 could be spent on eating out every day.
+
+To become financially independent of a $300/month expense requires investments between $90,000 and \$120,000.
+This is the so-called latte-effect at the large scale expect that instead of a daily superfluous cup of luxury coffee,
+we are talking about a superfluous bed or bathroom that is rarely used.
+How many years will it take you to save this much more money?
+
+I think that a good guideline per person for living arrangements is \$200-300/month/person.
+In some places this buys more than other places. The number is absolute.
+If I want to live in a “nicer place” it simply translates into a smaller place and vice versa.
+
+When I started out, I was paying about $275/month for a small room with a sink. 
+This was close to downtown of one of the more expensive cities in the world. 
+When I moved out of that place, I moved into my very own apartment for $400/month.
+Then I moved together with DW for $330/person/month. 
+We then made the mistake of moving into a house at $700/person/month.
+That lasted a year with stagnating savings as a result. We currently live at \$237/person/month.
+
+On the first day of the challenge, the idea is to seriously consider whether your current living arrangements are optimal for early retirement.
+I put this on the first day, because it takes about a month to find somewhere else to live and move.
+
+Of course some may be bound by mortgages or not having sufficient ready funds for making a deposit, and they may resort to just considering the move and start looking at a longer time frame.
+
 ## Day 2: Decluttering and Managing Stuff
 
 ## Day 3: Grocery Shopping
