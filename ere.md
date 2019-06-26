@@ -408,6 +408,58 @@ The effects of this exercise is
 
 ## Day 3: Grocery Shopping
 
+There are basically three big categories in a normal household budget that need to be severely modified to make retiring extremely early feasible.
+These are housing, transportation, and food.
+
+Whereas I have already dealt with housing, I am still a bit reluctant to deal with transportation.
+Therefore I’ll start with food.
+
+During my first 3 years, I ate mostly lentil soup (lentils, onion, garlic, cheese, rice, carrots) and tuna sandwiches with lettuce or kale.
+This accounted for 75% of my cooking and it was certainly healthier than the ramen noodles and cafeteria food my colleagues subsisted on.
+I would also eat a lot of stir fry (beans, onions, carrots, apples, broccoli, rice).
+
+By keeping to only a few meals, which together cover all bases, it is possible to learn to cook based on a small set of staples (rice, beans, onions).
+These staples are then bought in 10lbs bags.
+
+Avoid preprocessed food. Personally I draw the line at canned tomatoes and bread.
+I would never buy sauces, powders, or frozen ready meals.
+
+One will get used to eating just a few different kinds of meals surprisingly quickly and be as happy about eating as someone who eats out all the time.
+The great thing about this is that being invited somewhere for their regular dinner is a real treat.
+Those who eat a standard diet require much more to be happy about eating something they don’t usually eat.
+Of course if gourmet food is your thing, then maybe food is the area where one should spend a little extra effort or time (and maybe even money).
+Meals can be varied by adding loss leaders as the supermarket offers them up.
+
+Many have way too many kitchen gadgets. See this post on how to reduce your kitchen to something more useful without having to dig for everything.
+
+Before switching to a staples based dinner plan, I recommend getting rid of all the weird things in your cupboard.
+The best way is to not buy anything until your last strange ingredient is gone.
+Just imagine that there was an earth quake and the stores were closed for a week. How would you do?
+
+I highly recommend flipping the standard western idea of basing all meals on milk and meat around.
+Consider going vegetarian.
+It is much less expensive both in terms of food cost but also in terms of reduced medical costs (cholesterol and all that).
+Also it is very hard to stay overweight on a vegetarian diet.
+The emphasis on carbs also results in more energy.
+In addition, short of not having children, going vegetarian is the most effective way of reducing your impact on the world’s food supply.
+Incidentally do not throw away leftovers.
+It is wasteful and in light of the above also morally wrong.
+Besides, leftovers without meat tend to store longer.
+
+One way of not buying too much unneeded food is to strictly adhere to a grocery list.
+This is not optimal though.
+Using a list leads people to buy food even when it is not on sale.
+Anyway, a much better trick is to shop on foot.
+That means bringing a backpack and walking over to the supermarket instead of driving.
+
+I have always managed to live within a thirty minute walk from the nearest one, and chances are that you do too.
+You are now limited by the size of your backpack.
+
+Incidentally you can bike too depending on what kind of load you can handle on a bike.
+I was always set up to handle more on foot (about 20kg) than on the bike (about 10kg).
+
+Food limit: Depending on where you live: \$50-75/person/month.
+
 ## Day 4: Drop the Cell Phone Plan
 
 ## Day 5: Find a Free Hobby
