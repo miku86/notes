@@ -345,6 +345,67 @@ Even if you are not going to move, try going through the craigslist/google maps 
 
 ## Day 2: Decluttering and Managing Stuff
 
+I bet a lot of you were looking forward to putting your car up for sale today.
+There will be at least one car gone by the end of the month.
+
+Today I’m going to discuss the management of things, that is, what many of us refer to as “stuff”.
+It probably holds for most of you, myself included, that you have more stuff than you actually use.
+By extrapolation, it therefore holds that other people has more stuff than they use as well.
+The cumulative mountain of unused stuff is a symptom of economic inefficiency.
+Inefficiency is what will slow you and everyone else down from early retirement or even prevent it.
+
+Typical excuses for keeping stuff:
+
+1. I need it. (Answer: Then why haven’t you used it for the past 12 months?)
+1. I might need it. (Answer: Highly unlikely, since you haven’t used it for the past 12 months.)
+1. I didn’t know I still had that. (Answer: Roll eyes.)
+1. This was a gift from aunt Martha. (Answer: How about regifting it aunt Bertha?)
+1. This antique is worth a lot money. (Answer: Then sell it!)
+1. I will just hold on to it a little longer. (Answer: How long?)
+
+The main problem here is that people have grown accustomed to acquiring stuff by buying it new from stores and forgotten all the alternatives.
+As a result, everybody on your street owns a blender that they have used maybe 10 times over the past year.
+Everybody owns a ladder even though they have only been up on the roof once.
+Everybody stock a home library and a private movie collection.
+And everybody owns some kind of crafts/hobby supplies that were fun for about a month but which were then put on hold.
+
+This wasteful activity stops right now.
+
+There is a major untapped resource here though.
+You might be one of the few people that actually have some desire to own a blender, if only for a short while.
+Instead of buying it get it for free.
+
+Here’s how to get it for free.
+Use freecycle.org.
+Click on the link and see how it works.
+Then join.
+
+Your task is to find one (or several) of your unused possessions and OFFER it on freecycle.
+If you do not have a bicycle, your task is to get one for free.
+Simply post a WANTED ad detailing your desire to get one.
+Oh, and if someone actually offers you a bicycle be sure to pick it up!
+
+A good definition of unused is anything you have not used for one year.
+If you have used everything you own for a year, then congratulations. You get a C.
+Move the time frame back to six months. Still good? You get a B.
+Move the time frame back to one month. If you’re still good, I have nothing to teach you. You get and A.
+
+You will find that most things show up on freecycle sooner or later.
+Freecycle will also teach some valuable lessons about lifecycle management.
+Unless you repeat the stunt of our former neighbors, who put 15 large black trash bags of stuff (clothes, toys, …) out for garbage pickup during the last spring cleaning,
+you will probably see that getting rid of stuff is a lot harder than acquiring it.
+We truly live in an affluent society, otherwise people would be knocking down your door to get your superfluous things.
+However, be patient, sooner or later someone will take it.
+If not freecycle, then craigslist.
+
+The effects of this exercise is
+
+1. Saving other people money.
+1. Saving yourself money.
+1. Thinking more deeply about future purchases.
+1. Needing less storage and fewer bedrooms.
+1. Having an easier time to move to a new place.
+
 ## Day 3: Grocery Shopping
 
 ## Day 4: Drop the Cell Phone Plan
