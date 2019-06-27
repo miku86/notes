@@ -462,6 +462,40 @@ Food limit: Depending on where you live: \$50-75/person/month.
 
 ## Day 4: Drop the Cell Phone Plan
 
+There was a time, when people were able to make detailed advanced plans to meet their appointment to do a certain thing at a certain time.
+For instance, several people would schedule to meet at a certain time and place and they would all manage to do so.
+Or, say, a person could be given a list of groceries to pick up and the person would pick up the groceries.
+All this worked on a combination of small pieces of note paper and the ability to follow instructions.
+
+Today, cell phones have replaced these skills.
+In fact cell phones are now considered a need and have even begun to replace basic parenting as some parents are beginning to use cell phone tracking to keep track of their kids.
+
+In fact, phones are not really needed.
+For years I relied on email and now I have skype for talking.
+Data access is a need since I do use it for work, volunteering, writing the book, writing a blog, etc. but cell phones would merely be a nice to have feature.
+I would therefore suggest dropping it altogether.
+Alternatively, if you must, get a cell phone with a prepaid plan and wait to use it until you break your leg.
+Surely telling someone that you just saw a cute bunny rabbit on the street could wait until, say, next year.
+And please do try to get back to that whole “setting up appointments to meet”-deal.
+
+Is your cell phone worth it? This is easy to answer.
+Multiply your monthly bill with 300.
+Then divide this with your monthly savings rate.
+This is the number of months, that your cell phone is keeping you from retiring e.g.
+If your bill is $50 and your monthly savings is $500, then your cell phone is delaying your retirement by 50×300/500=30 months or almost three years
+For the geeks, the 300 comes from the principal 4% annual withdrawal rate, hence 12/0.04=300.
+
+There is a safety concern when it comes to being out of communication range so to speak.
+The way to get around this is to make detailed plans, tell someone where you are going and when you will arrive, and make sure that someone sends out a “rescue team” if you’re not heard from with X hours.
+In addition, never get “stuck” anywhere where you depend on reaching your destination in a certain time “or else”.
+This would include heading out in the cold in clothes that is not warm enough or heading out in the heat without water, and so on.
+I think cell phones creates a certain risk management hazard in that they encourage the lack of contingency planning
+and common sense as well as an “I got my cell phone – if anything goes wrong, I’ll just call”-mentality.
+There are basically two schools of risk management.
+The first school says that risks can be managed if one adheres to strict procedures.
+The second says that risks can not be managed because there is always some unknown unknowns that were not accounted for and that the best risk management is not to take chances and remain flexible.
+I belong to the latter school.
+
 ## Day 5: Find a Free Hobby
 
 ## Day 6: Clothes
