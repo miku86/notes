@@ -561,6 +561,74 @@ They do not enter on the factor 300 numerator though.
 
 ## Day 7: Going Car Free
 
+Everyone needs to live somewhere, but not everyone needs to drive somewhere, especially not those that found a place to live that is close to work on day 1.
+Next to housing cost, transportation costs are the second biggest source of expenses.
+The average American spends 18% on his income on transportation.
+
+That is 0.18×12=2.1 months a year of work. That is a lot of time that could conceivably be used for something better.
+
+Assume he also spends an hour daily in his car commuting, then that is 250 hours a year, assuming 250 working days.
+That is 1/8 of the working day on top of the working day. Hence, that is 12/8 = 1.5 month in addition.
+
+In other words almost 3 months a year goes into being able to drive back and forth from work.
+Hence if you would otherwise calculate 6 years until retirement, then if you own a car, you will only be able to save 9/12 as much,
+so your time until retirement would extend by 12/9\*6=8 years or two additional years.
+Correspondingly, if you calculate 12 years until retirement, then you are really looking at 16, or four more years.
+Conversely, if you were otherwise looking at 16 years, then giving up the car will reduce your “sentence” to 12 years.
+
+Not owning a car is therefore an extremely helpful measure towards early retirement.
+If you want to retire extremely early, it is almost a prerequisite.
+
+Not owning a car comes with other benefits.
+First you will save money on exercise.
+Driving your car over to a gym to run at a treadmill and then drive back again is inefficient at best.
+If you ran or at least walked or biked to and from work not only would you save the money for the car.
+You would also save the money for the gym.
+I know that many people past college age completely ignore their level of fitness.
+It seems like a degree and a career also serves as a ticket downhill the path of physical decline.
+Naturally if you are going to retire early, it will be sad to sit on the couch all day due to lack of “energy”. C
+ommuting under your own labor is a great way to avoid this.
+
+I would consider it normal to, without preparation and prior training other than your daily commute, to be able to run 10 miles, walk 30 miles, and bike 50 miles.
+Yet many think these numbers sound insane.
+This suggests a large chasm in terms of frame of mind between a driver that gets around using gasoline
+and a walker, a runner, or a rider that get around under his own power.
+
+Walkers easily go 4 miles by foot.
+Drivers get in their cars to get from one side of the parking lot to the other.
+
+So this is directed to those who are still attached to their cars.
+Once you get off of your addiction, you will find that it is easy to go without it too.
+Yeah, I don’t know how I manage live without being addicted to cigarettes, but I actually feel pretty good about it.
+As with all things the most trouble usually comes when you try to do things the new way by thinking in the old way,
+e.g. “it is so hard to walk 2 miles to the supermarket because I need a cup of cream for this recipe and I don’t have any” – what a terrible life to live.
+You will automatically plan ahead for these things so the problem will never appear.
+Conversely, a walker in the city will not have to stand and wait 15 minutes for a bus that is going to move him 10 blocks.
+
+But what about the children.
+They need to live close enough to their school so they can ride a bike or walk or take the bus.
+Good habits are best started early.
+Consider a trailer bike.
+Consider walking them to school or at least to the bus.
+When I was a kid I lived 2 miles from my school, and my mom walked me back and forth for the first year.
+When you are retired, you will have time for this — it is a meaningful thing to do!
+
+At least better than working for more years so you can drive them back and forth in a van.
+
+Now, if you are good with cars or motorcycles, there is an alternative.
+It is possible that you may buy “fixer-uppers” and resell them to recover most of your transportation costs.
+This is an enviable position to be in.
+For most of us, we will have to get a bike or take the bus.
+
+Car ownership has at least the following costs:
+
+1. Depreciation, leasing, or debt servicing costs. Leasing or debt servicing costs are relevant if you do not own your car outright. If you own your car outright and you intend to replace it, depreciation costs become relevant. For instance, $12000 for a car that lasts 10 years comes to $100 a month. That requires \$30,000 in extra savings.
+1. Gasoline and insurance. These are unavoidable if you want to drive your car anywhere.
+1. Opportunity costs from sitting behind the wheel when you could be exercising.
+1. Health costs or lack of energy from lack of exercise.
+1. Buying into an unsustainable model. Oil is not going to last forever.
+1. Green house gas emissions. Global warming is now considered a virtual certainty and it is considered extremely likely that humans are a contributing factor. The implications of global warming are enormous.
+
 ## Day 8: Get Engaged
 
 ## Day 9: Budgeting
