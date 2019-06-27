@@ -498,6 +498,28 @@ I belong to the latter school.
 
 ## Day 5: Find a Free Hobby
 
+Hobbies can be classified into three groups.
+Most hobbies belong in the first group and that can be detrimental.
+The challenge is therefore to move into the second group and maybe eventually even into the third group.
+
+1. From the time I was 12 until I was 24 I spent practically all my money on enjoying the bleeding edge of computing. I upgraded my system every two years or so and so I have owned more than 10 computers. I have also spent money on cameras, hifi equipment, telescopes, outdoor equipment, fantasy knives, and so on. Many other people spend their money on partying every weekend or going out to eat. In the end we all have the same to show for it: Nothing. We have been entertained, but I honestly put the value of the entertainment I received 5 years ago close to nothing. On the other hand, the investments I made 5 years ago give me almost unlimited freedom today. When I decided to become financially independent, I realized that that habit had to be replaced with something else.
+
+1. Enter the “free hobbies”. There are also hobbies that cost nothing or are in a sense close to price neutral. Learn Ancient Greek, play chess, start a vegetable garden. It is not hard to find free hobbies and in general it is possible to develop an interest in almost anything. The reason is that things are mostly uninteresting simply due to a lack of understanding of the hobby. Now, it is possible to remain at the free-passive state forever, but it is also possible to go further and I highly recommend it. This leads me to stage 3.
+
+1. Giving back. What I mean by this is to engage with other people. My interest in system administration meant that I got to run the department servers where I worked. My interest in geopolitics actually lead to a contribution to a book. I am definitely quite proud to be published in two different fields — not many people do that anymore. I also volunteered for the third rail of sustainability (overpopulation).
+
+Once you develop a passion for something that is free and maybe even rewarding, not necessarily strictly remuneratively, it is unlikely that you will have time to buy things because you are bored.
+It is also immensely more satisfying than shopping.
+It might even possible to turn it into a career.
+
+Find something that is highly meaningful to you and which does not cost a lot of money to engage in, and you will be a lot happier than the rats in the rat race.
+
+What is your current hobby costing you in years?
+Multiply your monthly outlay by 25 and divide by your monthly savings rate.
+E.g. if you save $1200 a month and spend $120 on your hobby, it is costing you 3 years!
+If you only save $300 a month, your $120/month hobby is costing you 10 years!
+I trust you to run your own numbers.
+
 ## Day 6: Clothes
 
 ## Day 7: Going Car Free
