@@ -522,6 +522,43 @@ I trust you to run your own numbers.
 
 ## Day 6: Clothes
 
+The most effective option to save money on clothing is not to buy any, hence this is what I would recommend.
+
+This strategy can work for several years because most people, simply have way too much clothing e.g. more than what we can wear at one time.
+If you have clothes you can not wear at all, get rid of it.
+Someone else can probably use it.
+
+Now, your average piece of clothing should survive the laundry cycle about 100 times.
+If you have 10 shirts, that’s 1000 cycles.
+Even if you only wear them once before you wash them, that’s three years.
+This should be sufficient to get well on the way towards financial independence.
+Some people have even more years worth than that.
+Consider that many things can happen during this time.
+You might change your size or the clothes might go out of fashion.
+Having less clothes makes it easier to keep up with current trends if you are into that sort of thing.
+It also means that you can get a new piece more often.
+This follows from Lanchester’s square law, also applicable to tank warfare.
+
+For the rest of us, I highly recommend sticking with “classical bland”, this means either gray or navy for the guys.
+For the girls like with most things, it’s more complicated.
+
+To make clothing last longer, you should seriously consider doing laundry less often than that as it wears down the fiber.
+One way to wash less often is to change clothes appropriate to the task.
+
+You should also learn how to mend holes.
+I think that pieces that are not directly visible, socks, underwear, anything that goes under the top layer basically should be mended, patches, etc. until it disintegrates.
+You can pursue the same strategy with towels and bedsheets.
+For instance, if you only use one towel, it lasts about 4 years. If you only use one bed sheet, it lasts about 3 years before it rips.
+
+Now, suppose after 2-3 years that you actually did run out of pants.
+I would get underwear and socks new, but everything I would get used.
+Start with freecycle, then move up to thrift stores, and then move on to extreme sales events at outlet stores.
+
+Now it may be that you work somewhere were you have to look expensively dressed because someone in corporate thinks it increases your productivity or inspires customer confidence.
+This often requires paying the part.
+Again, look for sales, but do not feel too bad about this one: You won’t need those clothes in retirement, therefore they do not delay your retirement by the standard calculation other than making your savings rate smaller.
+They do not enter on the factor 300 numerator though.
+
 ## Day 7: Going Car Free
 
 ## Day 8: Get Engaged
