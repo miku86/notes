@@ -717,7 +717,41 @@ Car ownership has at least the following costs:
 1. Buying into an unsustainable model. Oil is not going to last forever.
 1. Green house gas emissions. Global warming is now considered a virtual certainty and it is considered extremely likely that humans are a contributing factor. The implications of global warming are enormous.
 
-## Day 8: Get Engaged
+## Day 8: Get Motivated
+
+I’m talking about finding something that motivates you:
+Perhaps your calling, what you were meant to do if you did not have to go to work every day to support your … uh … lifestyle.
+
+The problem with our society is that we have basically been conditioned
+and programmed by marketeers to equate pointless consumption with rewards or entitlements after hard work.
+It is simply the only sanctioned way feeling good.
+This can easily go to such an extreme that the preferred way of feeling good about oneself involves buying some needless stuff.
+To pay it off, consumers go to work the next day to manufacture stuff for the next consumer that comes along and needs to feel good.
+This is the very definition of a consumer driven economy.
+It has little other purpose than building things for people to buy things so they will keep working.
+
+The conclusion is obvious.
+If you want to stop working, stop behaving like a consumer.
+
+I find the most engaging hobbies to be the ones that create value for others.
+Writing this blog is a hobby of mine and presumably it creates enough value for others to read it.
+The time I use to write, and respond to comments and emails is time I don’t spend shopping.
+Hence, when filling all one’s spare time with meaningful pursuits takes away all the time one would otherwise spend spending money.
+
+A frequent lament though is the lack of time and energy to pursue a high intensity hobby.
+It is sad when work sucks so much out of so many people’s soul that they have no energy to do anything else.
+If anything this is the death spiral of the consumer economy.
+People work hard, consequentially they have no energy and thus they do the easy thing: They shop, watch TV, and eat junk food.
+This takes away their money and leaves them without money as well as the mental or spiritual energy that would flow from being engaged in something important.
+Bad food and lack of strenuous physical exertion also atrophies the body and makes it sick.
+
+Start finding something you can identify instead of work.
+This is psychologically very important and it is one of the things that took me the longest to find out myself.
+Anyway, when somebody asks you “what do you do?”, answer with your hobby.
+If you don’t have a hobby or a calling (which may be your job) answer, you are still a drone — I am a middle manager.
+If this is not the case, start identifying with something else and spend a few hours a day doing it.
+People in a consumer driven society generally identify with how they earn and how they spend.
+Rarely do you see anyone identifying with what they do outside of work or by what they believe in.
 
 ## Day 9: Budgeting
 
