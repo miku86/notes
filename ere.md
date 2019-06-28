@@ -832,6 +832,32 @@ For most people the latter is far easier since the leverage factor is in the hun
 
 ## Day 11: Connecting Your Stuff with Your Neighbors
 
+… and all the other usual suspects: friends, family, loved ones, colleagues, ...
+
+On day 2, I recommended getting rid of a lot of your unused stuff, that is, stuff you haven’t used for the past 1 months.
+The point of that operation was to make it easy to move into smaller as recommended on day 1 and thus remove the main cost of having too much stuff namely, indirect housing costs.
+
+Whereas the above may be thought of as an inventory reduction, the next step is to take inventory management to the next step, to something akin to the Japanese Just-In-Time except what we’re going to do here is to store some or our things “off-site”.
+
+I suppose you’re familiar with the idea of borrowing things from your neighbors.
+But have you ever systematically done so?
+Set up a system so that each person provides a list of what they have but do not use every day.
+This could be tools, kitchen utensils, DVDs, and even bicycles.
+
+These lists are shared and then people borrow from each other following the standard rules of borrowing:
+
+- If you break it, you replace it.
+- Return it in a better or as good as condition as you got it in.
+
+If you don’t feel like making lists, you can do “intermediate scale freecycling” locally.
+Reserve a table at work for things you no longer need and put up a sign that says “free” and put things you are willing to give away there including weird ingredients, paperbacks, etc. Maybe others will get the point and the idea will take off.
+
+The last option is to lend things out on a semi-permanent basis e.g. give things away with the caveat that you can recall them if you ever feel like it.
+
+It goes without saying that the first and the last method requires some upstanding friends.
+Normally this will develop automatically.
+People who do not respect the system and other people’s things will eventually get excluded from the system.
+
 ## Day 12: Establishing a Savings Account
 
 ## Day 13: Insurance
