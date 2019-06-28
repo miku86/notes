@@ -802,6 +802,34 @@ When they meet, you have arrived.
 
 ## Day 10: Calculating Your Net Worth
 
+The only thing that matters to your net worth are assets that can easily generate income.
+Sum up the total of these categories:
+
+- All savings accounts and checking accounts.
+- All brokerage accounts.
+- All real estate you own that you rent out. If any are mortgaged, subtract the debt.
+
+Do not include the following:
+
+- Any kind of tax-deferred/locked retirement account.
+- The house you live in.
+- Cars, boats, airplanes, or other big ticket items (unless you rent them out).
+- Bling-bling.
+
+Now compute your expenses level.
+If you are a home-owner that does not own your home, the mortgage payment is an expense.
+If you own-own your home, your expense level should be lower.
+
+If you have any kind of pension coming in, subtract that number from your total expenses.
+
+Calculate your annual expenses.
+Multiply your expenses by 25. Is it lower than your net worth? If yes, congratulations, you are financially independent and you can go for a few decades without a job.
+Now multiply your expenses by 35. Do you still qualify? If yes, then historically, you could go on forever.
+
+If either is a no, then you still have work to do, literally.
+Work hard to maximize your networth while minimizing your expenses.
+For most people the latter is far easier since the leverage factor is in the hundreds e.g. $100 saved per month translates into $30000 less in retirement requirements.
+
 ## Day 11: Connecting Your Stuff with Your Neighbors
 
 ## Day 12: Establishing a Savings Account
