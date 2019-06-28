@@ -755,6 +755,51 @@ Rarely do you see anyone identifying with what they do outside of work or by wha
 
 ## Day 9: Budgeting
 
+I see no need for detailed budgets or tracking expenses. In my world there are basically two categories:
+
+- Money I spend
+- Money I keep
+
+There is to me no discernible difference in terms of how I spend the money, whether I pay by credit card or whether I pay by cash.
+Spending is by and large a rational process so I have and offer no tricks or tips in the sense of whether using credit, debit, notes, or coins only, changes spending behavior.
+
+If all other sources and possibilities to solve my problem have been exhausted and I absolutely have to buy something to solve it (failure!), I look on the price and calculate what my depreciation cost is.
+For example, I will look at the cost of buying and try to estimate the return from selling and divide the difference by the amount of use I intend to get out of it.
+This process will yield different numbers for different products.
+Then I pick the lowest number.
+
+These numbers for all my expenses should be seen in relation to category 2, the money I keep.
+The money I keep quickly turns into investments, that is, productive factors that pay me.
+
+In other words, when I see $100,000 in category 2 money, I don’t see it the same way as category 1 money. 
+$100,000 in savings/investments means an income of $4,000/year, hence translated mentally, $100k means \$4k/year.
+
+Conversely, $4k/year means $100k.
+Alternative, $4k/month means $1200k.
+Having that amount translates into a money stream and this money stream is equivalent to a salary in the sense of a job: except I don’t have to work for it.
+
+All category 1 expenses are therefore seen in terms of how large a principal I must accumulate to have them paid by interest from the money I keep.
+
+Money I keep, therefore, represents freedom.
+I value this very highly.
+To compare this to the spending category, I estimate the monthly cost of spending on some item, and then multiply it by 300.
+
+It is quite possibly that it is this enormous multiplier, the factor 300, that discourages people from saving for passive income.
+Saving $30000, after all, “only” results in 100 bucks a month and saving $30000 can take years or even decades when one is not aggressive about it.
+In that sense not-saving creates a double-whammy.
+Conversely, being fanatical about saving also works the other way, e.g. I’m paid a little over $30 an hour for freelancing. 
+This means that if I can save $9000, it means I don’t have to work for an hour each month.
+Once that is cleared, I start saving for the next hour of liberty.
+
+Hence, if I want to purchase something that will cost me $5 a month, I do not see a $5 price tag. I see that category 2 needs to be boosted by $1500. 
+Suddenly $5 does not seem so trivial anymore.
+On the other hand, paying $4000 for something that I can sell for $3500 and that will last for 15 years … that is only \$2.7 a month.
+
+This means that price tags become irrelevant.
+All that matters is monthly expenses and the size of the principal.
+I always try to decrease the former and increase the latter.
+When they meet, you have arrived.
+
 ## Day 10: Calculating Your Net Worth
 
 ## Day 11: Connecting Your Stuff with Your Neighbors
