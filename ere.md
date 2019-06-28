@@ -860,6 +860,22 @@ People who do not respect the system and other people’s things will eventually
 
 ## Day 12: Establishing a Savings Account
 
+It is vital to the early retirement plan to be able to access savings in your retirement.
+
+Having implemented all changes of the makeover so far, it should be possible to save at least $500/month… more if you’re making more than minimum wage ($12000/year).
+Those ambitious enough to retire extremely early should be able to save more as well as earn more.
+
+Initially, it is important to stay motivated.
+I wrote a post last year on how to compare your savings to big ticket items on a regular basis to stay motivated.
+To wit, being able to buy something worth \$10,000 makes one happy on a daily basis, or at least as often as one thinks about it, whereas buying it will only create happiness for a few weeks.
+
+It matters very little whether your saving is done in a savings account, a checking account, a money market, or even under the mattress.
+As long as your cash position is less than \$10,000, the difference in interest rates is minute.
+Besides, keeping a non-working cash position is useless for early retirement.
+The so-called emergency fund is only useful for workers who live above or close to their means, but for extreme early retirement you live at less than half your means.
+In a short while we’ll start building a position in a brokerage account.
+This will be accessible to be liquidated in case of any “emergency”.
+
 ## Day 13: Insurance
 
 ## Day 14: Investing for Early Retirement, part 1
