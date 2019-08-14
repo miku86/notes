@@ -2,7 +2,7 @@
 
 Last Update: 2019/08/14
 
-## Basics
+## Basic Theory
 
 - User Interface (UI): visual (what we see)
 - User Experience (UX): interaction (what we feel)
