@@ -39,3 +39,17 @@ Last Update: 2019/08/14
 ### Scale
 
 - the elements should match very well with each other
+
+## Basic Practice
+
+- https://www.figma.com
+- create new file: +new file
+- new canvas: Frame (F) => right side "Design"
+- move element (V)
+- select rectangle (R)
+- import svg: (Ctrl+Shift+K): change inner color
+- scale elements: (Shift+Alt+Mouse)
+- add text (T)
+- Zoom To Fit (Shift+1)
+- Combine to Group (Ctrl+G)
+- Create reusable Component (Ctrl+Alt+K)
