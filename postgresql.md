@@ -8,7 +8,7 @@
 - stored in tables
 - table has columns and rows
 
-## Connecting
+## General Commands
 
 - psql is a terminal-based front-end to PostgreSQL, you can type in queries, issue them to PostgreSQL, and see the query results.
 - connect to server: `sudo -iu postgres`
