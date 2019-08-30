@@ -18,8 +18,8 @@
 ### Bash Commands
 
 - create user: `createuser --interactive`
-- create db: `createdb [dbname]`
-- connect to psql: `psql -d [dbname] -U [username]`
+- create db: `createdb [db]`
+- connect to psql: `psql -d [db] -U [user]`
 
 ### PSQL Commands
 
@@ -28,12 +28,30 @@
 - quit psql: `\q`
 
 - list all dbs: `\l`
-- create db: `CREATE DATABASE [dbname];`
-- connect to db: `\c [dbname]`
+- create db: `CREATE DATABASE [db];`
+- connect to db: `\c [db]`
 - get connection info: `\conninfo`
-- delete db: `DROP DATABASE [dbname];`
+- delete db: `DROP DATABASE [db];`
 - display all tables: `\dt`
-- display specific table: `\d [tablename]`
-- create table: `CREATE TABLE [tablename]([columnname][datatype] [constraints])`
+- display specific table: `\d [table]`
+- create table: `CREATE TABLE [table]([col][datatype] [constraints])`
 - list of datatypes: https://www.postgresql.org/docs/current/datatype-character.html
 - list of constraints: https://www.postgresql.org/docs/current/ddl-constraints.html
+- run file: `\i [path-to-file]`
+- Create data: `INSERT INTO [table] ([col]) VALUES ([value]);`
+- Read data: `SELECT [col] FROM [table];`
+- sort data: `ORDER BY`
+- remove duplicates: `SELECT DISTINCT`
+- clauses: `WHERE [expression]`
+- limit: `LIMIT [number]`
+- Offset: `OFFSET [number]`
+- use Array for DRY: `IN ([values])` => `WHERE name IN ('Max', 'Heidi')`
+- Range: `WHERE [col] BETWEEN [value] AND [value]`
+- like: `WHERE [col] LIKE '[value]'`
+- like (ignore case): `WHERE [col] ILIKE '[value]'`
+- count: `SELECT [col], COUNT(*) FROM [table] GROUP BY [col];`
+
+## Notes
+
+- PostgreSQL interprets " as being quotes for identifiers, ' as being quotes for strings
+- use Mockaroo to create dummy data
