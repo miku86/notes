@@ -68,6 +68,14 @@
 - get current time: `SELECT NOW()::TIME;`
 - get year: `SELECT EXTRACT(YEAR FROM NOW());`
 
+## Update Data
+
+- update data: `UPDATE [table] SET [col] = [newvalue] WHERE [expression];`
+
+## Delete Data
+
+- delete row: `DELETE FROM [table] WHERE [expression];`
+
 ## Notes
 
 - PostgreSQL interprets " as being quotes for identifiers, ' as being quotes for strings
