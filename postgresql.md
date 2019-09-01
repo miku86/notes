@@ -76,6 +76,21 @@
 
 - delete row: `DELETE FROM [table] WHERE [expression];`
 
+## Inner Joins
+
+- combine data that is in _both_ tables
+- `SELECT * FROM [table1] JOIN [table2] ON [table1.col] = [table2.col];`
+
+## Left Joins
+
+- combine data that is table1
+- `SELECT * FROM [table1] LEFT JOIN [table2] ON [table1.col] = [table2.col];`
+
+## Right Joins
+
+- combine data that is table2
+- `SELECT * FROM [table1] RIGHT JOIN [table2] ON [table1.col] = [table2.col];`
+
 ## Notes
 
 - PostgreSQL interprets " as being quotes for identifiers, ' as being quotes for strings
