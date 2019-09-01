@@ -40,7 +40,7 @@
 
 - always add an id as `primary key`
 - use `unique key` for data like email, username
-- use `check` to only allow specific values
+- use `foreign key` to make relationships between tables, use `REFERENCES`
 
 ### Create Data
 
@@ -48,7 +48,7 @@
 
 ### Read Data
 
-- Read data: `SELECT [col] FROM [table];`
+- read data: `SELECT [col] FROM [table];`
 - sort data: `ORDER BY`
 - remove duplicates: `SELECT DISTINCT`
 - clauses: `WHERE [expression]`
@@ -75,3 +75,5 @@
 - list of datatypes: https://www.postgresql.org/docs/current/datatype-character.html
 - list of constraints: https://www.postgresql.org/docs/current/ddl-constraints.html
 - aggregate functions (e.g. `count()`): https://www.postgresql.org/docs/current/functions-aggregate.htmlS
+- handle conflicts: `ON CONFLICT`
+- use `check` to only allow specific values
