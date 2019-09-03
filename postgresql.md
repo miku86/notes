@@ -91,6 +91,17 @@
 - combine data that is table2
 - `SELECT * FROM [table1] RIGHT JOIN [table2] ON [table1.col] = [table2.col];`
 
+## Export to CSV
+
+- `copy (SELECT * FROM [table]) TO [path] DELIMITER ',' CSV HEADER;`
+
+## Extensions
+
+- show pg extensions: `SELECT * FROM pg_available_extensions;`
+- install extension: `CREATE EXTENSION IF NOT EXISTS [name];`
+- see functions: `\df`
+- run function: `SELECT [function]();`
+
 ## Notes
 
 - PostgreSQL interprets " as being quotes for identifiers, ' as being quotes for strings
@@ -100,3 +111,4 @@
 - aggregate functions (e.g. `count()`): https://www.postgresql.org/docs/current/functions-aggregate.htmlS
 - handle conflicts: `ON CONFLICT`
 - use `check` to only allow specific values
+- bigserial is a bigint, that auto-increments
