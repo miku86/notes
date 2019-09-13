@@ -79,7 +79,7 @@
 ## Inner Joins
 
 - combine data that is in _both_ tables
-- `SELECT * FROM [table1] JOIN [table2] ON [table1.col] = [table2.col];`
+- `SELECT * FROM [table1] INNER JOIN [table2] ON [table1.col] = [table2.col];`
 
 ## Left Joins
 
