@@ -102,6 +102,17 @@
 - see functions: `\df`
 - run function: `SELECT [function]();`
 
+## Use Sequelize
+
+- create new database named 'sequelize': `CREATE DATABASE sequelize`
+- connect to it: `\c sequelize`
+- create table: `CREATE TABLE orders (id SERIAL PRIMARY KEY, order_title VARCHAR(100), email VARCHAR(50), createdAt DATE, updatedAt DATE);`
+- create folder for project
+- use `npm init`
+- install needed packages: `npm install express express-handlebars body-parser sequelize pg pg-hstore`
+- READ: `findAll()`
+- CREATE: `create()`
+
 ## Notes
 
 - PostgreSQL interprets " as being quotes for identifiers, ' as being quotes for strings
